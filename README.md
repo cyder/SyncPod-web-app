@@ -8,7 +8,7 @@ SyncPod for web
 ## Setup
 1. Execute the following command.
 ```sh
-git@github.com:git@github.com:cyder/SyncPod-web-app.git
+git clone git@github.com:git@github.com:cyder/SyncPod-web-app.git
 cd SyncPod-web-app
 yarn
 ```
