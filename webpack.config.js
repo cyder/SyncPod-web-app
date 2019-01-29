@@ -1,4 +1,4 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 module.exports = {
@@ -9,9 +9,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {from: 'public', to: ''}
-    ])
+    new HtmlWebpackPlugin()
   ],
   devtool: "source-map",
   module: {
@@ -25,17 +23,21 @@ module.exports = {
         enforce: "pre",
         test: /\.js$/,
         loader: 'source-map-loader'
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: "javascript/esm",
       }
     ]
   },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.mjs', '.ts', '.tsx', '.js', '.jsx']
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     watchContentBase: true,
-    open: true,
-    hot: true
+    open: true
   },
 };
