@@ -11,7 +11,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'template/index.html')
+    })
   ],
   devtool: "source-map",
   module: {
