@@ -1,5 +1,3 @@
 import * as React from 'react';
 
-export default () => (
-  <>Hello World!</>
-);
+export default () => <>Hello World!</>;
