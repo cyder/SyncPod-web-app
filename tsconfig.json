@@ -5,7 +5,8 @@
     "jsx": "react",
     "lib": [
       "es2018",
-      "dom"
+      "dom",
+      "esnext.asynciterable"
     ],
     "outDir": "dist",
     "baseUrl": "./src",
