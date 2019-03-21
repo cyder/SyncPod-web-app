@@ -7,21 +7,23 @@
     "browser": true
   },
   "rules": {
-    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }]
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+    "no-undef": "off"
   },
   "parserOptions": {
-    "ecmaVersion":  2018,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
   },
   "settings": {
-    "import/extensions": [
-      ".ts",
-      ".tsx"
-    ],
+    "import/extensions": [".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
     "import/resolver": {
+      "typescript": {},
       "node": {
         "moduleDirectory": ["node_modules", "/"],
         "extensions": [".ts", ".tsx"]
