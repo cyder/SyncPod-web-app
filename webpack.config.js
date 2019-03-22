@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -14,6 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'template/index.html'),
     }),
+    new Dotenv({ systemvars: true }),
   ],
   devtool: 'source-map',
   module: {
@@ -30,19 +32,19 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/i,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 20000,
-            name: '[path][name].[ext]',
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 20000,
+              name: '[path][name].[ext]',
+            },
           },
-        }],
+        ],
       },
       {
         test: /\.(eot|otf|ttf|woff2?|svg)(\?.+)?$/,
-        include: [
-          path.resolve(__dirname, 'node_modules'),
-        ],
+        include: [path.resolve(__dirname, 'node_modules')],
         use: {
           loader: 'file-loader',
           options: {
