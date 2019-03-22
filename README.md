@@ -6,14 +6,22 @@ SyncPod for web
 * [editorconfig plugin](http://editorconfig.org/#download)
 
 ## Setup
-1. Execute the following command.
+1. Clone repository and install dependencies
 ```sh
 git clone git@github.com:git@github.com:cyder/SyncPod-web-app.git
 cd SyncPod-web-app
-yarn
+yarn install
 ```
 
-2. Start webpack-dev-server
+2. Setup GraphQL server
+```sh
+git clone https://github.com/cyder/SyncPod-BFF.git
+cd SyncPod-BFF
+yarn install
+yarn start
+```
+
+3. Start webpack-dev-server
 ```sh
 yarn start
 ```
