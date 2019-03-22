@@ -25,3 +25,19 @@ yarn start
 ```sh
 yarn start
 ```
+
+## Script
+本番ビルド
+```sh
+yarn build
+```
+
+lintチェック
+```sh
+yarn lint
+```
+
+graphqlからtypescriptの型を生成する
+```sh
+yarn apollo-codegen
+```
