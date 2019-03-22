@@ -1,15 +1,11 @@
 import * as React from 'react';
-import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 
-const PING = gql`
-  {
-    ping
-  }
-`;
+import PING from 'queries/ping';
+import { ping as PING_TYPE } from 'queries/__generated__/ping';
 
 export default (): JSX.Element => {
-  const { data, error, loading } = useQuery(PING);
+  const { data, error, loading } = useQuery<PING_TYPE>(PING);
   if (loading) {
     return <>Loading...</>;
   }
@@ -17,5 +13,5 @@ export default (): JSX.Element => {
     return <>Error!</>;
   }
 
-  return <>{data.ping}</>;
+  return <>{data && data.ping}</>;
 };
