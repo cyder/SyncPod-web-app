@@ -13,15 +13,29 @@ cd SyncPod-web-app
 yarn install
 ```
 
-2. Setup GraphQL server
+2. Edit .env file
 ```sh
-git clone https://github.com/cyder/SyncPod-BFF.git
-cd SyncPod-BFF
-yarn install
-yarn start
+cp .env.sample .env
+vim .env
 ```
 
 3. Start webpack-dev-server
 ```sh
 yarn start
+```
+
+## Script
+Build production
+```sh
+yarn build
+```
+
+Check lint
+```sh
+yarn lint
+```
+
+Generate typescript types for GraphQL queries
+```sh
+yarn apollo-codegen
 ```

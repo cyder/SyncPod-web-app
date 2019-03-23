@@ -8,7 +8,8 @@
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --hot --inline",
-    "lint": "eslint -c ./.eslintrc.json 'src/**/*.{ts,tsx}'"
+    "lint": "eslint -c ./.eslintrc.json 'src/**/*.{ts,tsx}'",
+    "apollo-codegen": "apollo client:codegen --target=typescript --globalTypesFile=src/__generated__/globalTypes.ts"
   },
   "devDependencies": {
     "@types/graphql": "14.0.7",
@@ -16,6 +17,7 @@
     "@typescript-eslint/eslint-plugin": "1.2.0",
     "@typescript-eslint/parser": "1.2.0",
     "@typescript-eslint/typescript-estree": "1.2.0",
+    "apollo": "2.6.2",
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "1.0.1",
     "dotenv-webpack": "1.7.0",
