@@ -1,6 +1,9 @@
 # Output
 dist/*
 
+# generated code
+src/**/__generated__/*
+
 ### gibo 2.1.0 by Simon Whitaker <sw@netcetera.org>
 ### https://github.com/simonwhitaker/gibo
 ### https://raw.github.com/github/gitignore/6cd6c885ed226acbc9d76bfeb12aa9cdab0befd5/Node.gitignore
