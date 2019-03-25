@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/graphql": "14.0.7",
+    "@types/history": "4.7.2",
     "@types/node": "11.11.5",
     "@typescript-eslint/eslint-plugin": "1.2.0",
     "@typescript-eslint/parser": "1.2.0",
@@ -46,6 +47,8 @@
     "apollo-link-http": "1.5.14",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
+    "history": "4.9.0",
+    "path-to-regexp": "3.0.0",
     "react": "16.8.4",
     "react-apollo-hooks": "0.4.3",
     "react-dom": "16.8.4"
