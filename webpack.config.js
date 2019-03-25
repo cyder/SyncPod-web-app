@@ -10,6 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle-[hash].js',
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -68,5 +69,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     watchContentBase: true,
     open: true,
+    historyApiFallback: true,
   },
 };
