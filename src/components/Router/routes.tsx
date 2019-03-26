@@ -23,4 +23,5 @@ export const roomRoute: Route<RoomParams> = {
   },
 };
 
+// 注意: この配列の順番にルーティングの検索が行われる。
 export default [topRoute, roomRoute];

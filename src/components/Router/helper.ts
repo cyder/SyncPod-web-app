@@ -6,6 +6,14 @@ export interface Route<T = undefined> {
   component(params: Record<string, string> | null): JSX.Element;
 }
 
+/**
+ * 指定したpathから正規表現を用いてパラメータをobjectに変換する
+ * @param currentPath 指定するpath
+ * @param regexPath パース用の正規表現（例： /room/:roomId)
+ * @returns パースされたパラメータのオブジェクト
+ *
+ * 例： toParams(/room/test, /room/:roomId) -> {roomId: test}
+ */
 export const toParams = (
   currentPath: string,
   regexPath: pathToRegexp.Path,
