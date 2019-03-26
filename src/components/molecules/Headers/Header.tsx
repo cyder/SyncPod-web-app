@@ -7,8 +7,10 @@ import { topRoute, roomRoute } from 'components/Router/routes';
 
 export default () => (
   <Wrapper>
-    <InternalLink to={topRoute.navigate(undefined)}>Top</InternalLink>
-    <InternalLink to={roomRoute.navigate({ roomKey: 'test' })}>Room</InternalLink>
+    <InternalLink to={topRoute.generatePath(undefined)}>Top</InternalLink>
+    <InternalLink to={roomRoute.generatePath({ roomKey: 'test' })}>
+      Room
+    </InternalLink>
   </Wrapper>
 );
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface Props {
-  roomKey?: string;
+  roomKey?: string | null | undefined;
 }
 
 export default ({ roomKey }: Props) => (
