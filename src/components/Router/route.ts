@@ -13,13 +13,18 @@ export default class Route<T extends object = {}> {
 
   private component: (params: T) => JSX.Element;
 
+  /**
+   * このルートのページコンポーネントを生成する
+   * @param params コンポーネント作成に必要なパラメータ
+   * @returns - 生成されたコンポーネント
+   */
   public generateComponent(params: T): JSX.Element {
     return this.component(params);
   }
 
   /**
    * 正規表現の実行
-   * @param currentPath 現在のpath
+   * @currentPath currentPath 現在のpath
    * @returns - matchしたらparamsのobjectを、matchしなかったらnullを返す。
    */
   public execRegexp(currentPath: string): T | null {
@@ -38,6 +43,11 @@ export default class Route<T extends object = {}> {
     return params as T;
   }
 
+  /**
+   * 遷移用のurlを生成する
+   * @param params 遷移に必要なパラメータ
+   * @returns - urlのstring、指定されたpathがstring型でなければ空文字を返す
+   */
   public toPath(params: T): string {
     if (typeof this.path !== 'string') {
       return '';
