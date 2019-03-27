@@ -1,13 +1,10 @@
-import * as pathToRegexp from 'path-to-regexp';
 import * as React from 'react';
 import { Location } from 'history';
 
-import routes from 'components/Router/routes';
-import NotFound from 'components/pages/NotFound';
+import routes from 'components/Router/config';
 import { historyContext } from 'components/providers/BrowserHistory';
-import { toParams } from 'components/Router/helper';
 
-export default (): JSX.Element => {
+export default (): JSX.Element | null => {
   const history = React.useContext(historyContext);
   const [currentPath, setCurrentPath] = React.useState(
     history.location.pathname,
@@ -19,16 +16,13 @@ export default (): JSX.Element => {
     });
   }, []);
 
-  const currentRoute = routes.find(
-    (route: { regexPath: pathToRegexp.Path }) => {
-      const result = pathToRegexp(route.regexPath).exec(currentPath);
-      return !!result;
-    },
-  );
-
-  if (!currentRoute) {
-    return <NotFound />;
+  for (let i = 0; i < routes.length; i += 1) {
+    const route = routes[i];
+    const result = route.execRegexp(currentPath);
+    if (result) {
+      return route.generateComponent(result);
+    }
   }
 
-  return currentRoute.component(toParams(currentPath, currentRoute.regexPath));
+  return null;
 };

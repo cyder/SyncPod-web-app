@@ -3,14 +3,12 @@ import styled from 'styled-components';
 
 import InternalLink from 'components/atoms/Links/InternalLink';
 
-import { topRoute, roomRoute } from 'components/Router/routes';
+import { topRoute, roomRoute } from 'components/Router/config';
 
 export default () => (
   <Wrapper>
-    <InternalLink to={topRoute.generatePath(undefined)}>Top</InternalLink>
-    <InternalLink to={roomRoute.generatePath({ roomKey: 'test' })}>
-      Room
-    </InternalLink>
+    <InternalLink to={topRoute.toPath({})}>Top</InternalLink>
+    <InternalLink to={roomRoute.toPath({ roomKey: 'test' })}>Room</InternalLink>
   </Wrapper>
 );
 
