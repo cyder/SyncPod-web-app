@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -18,6 +19,13 @@ module.exports = {
       template: path.resolve(__dirname, 'template/index.html'),
     }),
     new Dotenv({ systemvars: true }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'public'),
+        to: path.resolve(__dirname, 'dist'),
+        ignore: ['.*'],
+      },
+    ]),
   ],
   devtool: 'source-map',
   module: {

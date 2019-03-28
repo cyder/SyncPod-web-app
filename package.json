@@ -22,6 +22,7 @@
     "apollo": "2.6.2",
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "1.0.1",
+    "copy-webpack-plugin": "^5.0.2",
     "dotenv-webpack": "1.7.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
