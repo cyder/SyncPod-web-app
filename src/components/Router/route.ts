@@ -1,4 +1,7 @@
 import * as pathToRegexp from 'path-to-regexp';
+import * as React from 'react';
+
+import InternalLink from 'components/atoms/Links/InternalLink';
 
 export default class Route<T extends object = {}> {
   public constructor(
@@ -7,6 +10,7 @@ export default class Route<T extends object = {}> {
   ) {
     this.path = path;
     this.component = component;
+    this.Link = this.Link.bind(this);
   }
 
   private path: pathToRegexp.Path;
@@ -44,11 +48,22 @@ export default class Route<T extends object = {}> {
   }
 
   /**
+   * 遷移用のLinkComponentを生成する
+   * @param props 遷移に必要なパラメータ
+   * @returns - LinkComponent
+   */
+  public Link(props: { params: T; children: React.ReactNode }): JSX.Element {
+    const href = this.generatePath(props.params);
+
+    return InternalLink({ children: props.children, to: href });
+  }
+
+  /**
    * 遷移用のurlを生成する
    * @param params 遷移に必要なパラメータ
    * @returns - urlのstring、指定されたpathがstring型でなければ空文字を返す
    */
-  public toPath(params: T): string {
+  private generatePath(params: T): string {
     if (typeof this.path !== 'string') {
       return '';
     }

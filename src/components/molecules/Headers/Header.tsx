@@ -1,14 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import InternalLink from 'components/atoms/Links/InternalLink';
-
 import { topRoute, roomRoute } from 'components/Router/config';
 
 export default () => (
   <Wrapper>
-    <InternalLink to={topRoute.toPath({})}>Top</InternalLink>
-    <InternalLink to={roomRoute.toPath({ roomKey: 'test' })}>Room</InternalLink>
+    <topRoute.Link params>Top</topRoute.Link>
+    <roomRoute.Link params={{ roomKey: 'test' }}>Room</roomRoute.Link>
   </Wrapper>
 );
 
