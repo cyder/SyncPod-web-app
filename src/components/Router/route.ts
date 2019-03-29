@@ -52,20 +52,23 @@ export default class Route<T extends object = {}> {
    * @param props 遷移に必要なパラメータ
    * @returns - LinkComponent
    */
-  public Link(props: { params: T; children: React.ReactNode }): JSX.Element {
+  public Link(props: {
+    params: T;
+    children: React.ReactNode;
+  }): JSX.Element | null {
     const href = this.generatePath(props.params);
 
-    return InternalLink({ children: props.children, to: href });
+    return href ? InternalLink({ children: props.children, to: href }) : null;
   }
 
   /**
    * 遷移用のurlを生成する
    * @param params 遷移に必要なパラメータ
-   * @returns - urlのstring、指定されたpathがstring型でなければ空文字を返す
+   * @returns - urlのstring、指定されたpathがstring型でなければnullを返す
    */
-  private generatePath(params: T): string {
+  private generatePath(params: T): string | null {
     if (typeof this.path !== 'string') {
-      return '';
+      return null;
     }
 
     const toPath = pathToRegexp.compile<T>(this.path);
