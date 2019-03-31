@@ -9,7 +9,7 @@ export default (): JSX.Element | null => {
 
   const selectComponent = React.useCallback(
     (currentPath: string): JSX.Element | null => {
-      const components = routes
+      const component = routes
         .map(route => {
           const params = route.execRegexp(currentPath);
           if (params) {
@@ -19,8 +19,8 @@ export default (): JSX.Element | null => {
         })
         .find(x => !!x);
 
-      if (components) {
-        return components;
+      if (component) {
+        return component;
       }
       return null;
     },
