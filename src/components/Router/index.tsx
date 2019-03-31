@@ -9,13 +9,15 @@ export default (): JSX.Element | null => {
 
   const selectComponent = React.useCallback(
     (currentPath: string): JSX.Element | null => {
-      const components = routes.map(route => {
-        const params = route.execRegexp(currentPath);
-        if (params) {
-          return route.generateComponent(params);
-        }
-        return null;
-      }).find(x => !!x);
+      const components = routes
+        .map(route => {
+          const params = route.execRegexp(currentPath);
+          if (params) {
+            return route.generateComponent(params);
+          }
+          return null;
+        })
+        .find(x => !!x);
 
       if (components) {
         return components;
