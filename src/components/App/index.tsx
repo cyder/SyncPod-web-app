@@ -1,10 +1,15 @@
 import * as React from 'react';
 
 import ApolloProvider from 'components/providers/Apollo';
-import Sample from 'components/App/Sample';
+import HistoryProvider from 'components/providers/BrowserHistory';
+import Router from 'components/Router';
+import Header from 'components/molecules/Headers/Header';
 
 export default () => (
   <ApolloProvider>
-    <Sample />
+    <HistoryProvider>
+      <Header />
+      <Router />
+    </HistoryProvider>
   </ApolloProvider>
 );

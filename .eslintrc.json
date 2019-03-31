@@ -1,6 +1,6 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "parser": "@typescript-eslint/parser",
   "env": {
     "es6": true,
@@ -8,7 +8,7 @@
   },
   "rules": {
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-    "no-undef": "off"
+    "no-unused-vars": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -33,8 +33,8 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "airbnb",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended",
-    "airbnb"
+    "plugin:prettier/recommended"
   ]
 }

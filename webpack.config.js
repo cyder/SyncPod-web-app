@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle-[hash].js',
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -17,6 +19,13 @@ module.exports = {
       template: path.resolve(__dirname, 'template/index.html'),
     }),
     new Dotenv({ systemvars: true }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'public'),
+        to: path.resolve(__dirname, 'dist'),
+        ignore: ['.*'],
+      },
+    ]),
   ],
   devtool: 'source-map',
   module: {
@@ -68,5 +77,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     watchContentBase: true,
     open: true,
+    historyApiFallback: true,
   },
 };

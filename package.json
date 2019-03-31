@@ -13,13 +13,16 @@
   },
   "devDependencies": {
     "@types/graphql": "14.0.7",
+    "@types/history": "4.7.2",
     "@types/node": "11.11.5",
+    "@types/styled-components": "4.1.12",
     "@typescript-eslint/eslint-plugin": "1.2.0",
     "@typescript-eslint/parser": "1.2.0",
     "@typescript-eslint/typescript-estree": "1.2.0",
     "apollo": "2.6.2",
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "1.0.1",
+    "copy-webpack-plugin": "^5.0.2",
     "dotenv-webpack": "1.7.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
@@ -46,8 +49,11 @@
     "apollo-link-http": "1.5.14",
     "graphql": "14.1.1",
     "graphql-tag": "2.10.1",
+    "history": "4.9.0",
+    "path-to-regexp": "3.0.0",
     "react": "16.8.4",
     "react-apollo-hooks": "0.4.3",
-    "react-dom": "16.8.4"
+    "react-dom": "16.8.4",
+    "styled-components": "4.2.0"
   }
 }
