@@ -5,6 +5,8 @@ import HistoryProvider from 'components/providers/BrowserHistory';
 import Router from 'components/Router';
 import Header from 'components/molecules/Headers/Header';
 
+import 'reset-css';
+
 export default () => (
   <ApolloProvider>
     <HistoryProvider>
