@@ -53,6 +53,11 @@ module.exports = {
         ],
       },
       {
+        test: /\.css$/,
+        include: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.(eot|otf|ttf|woff2?|svg)(\?.+)?$/,
         include: [path.resolve(__dirname, 'node_modules')],
         use: {
