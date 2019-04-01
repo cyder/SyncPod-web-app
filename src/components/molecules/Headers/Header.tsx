@@ -1,15 +1,15 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import { css } from '@emotion/core';
 
 import { topRoute, roomRoute } from 'components/Router/config';
 
 export default () => (
-  <Wrapper>
+  <div
+    css={css`
+      display: flex;
+    `}
+  >
     <topRoute.Link params>Top</topRoute.Link>
     <roomRoute.Link params={{ roomKey: 'test' }}>Room</roomRoute.Link>
-  </Wrapper>
+  </div>
 );
-
-const Wrapper = styled.div`
-  display: flex;
-`;
