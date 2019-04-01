@@ -6,8 +6,6 @@ import GlobalStyles from 'components/providers/GlobalStyles';
 import Router from 'components/Router';
 import Header from 'components/molecules/Headers/Header';
 
-import 'reset-css';
-
 export default () => (
   <ApolloProvider>
     <HistoryProvider>
