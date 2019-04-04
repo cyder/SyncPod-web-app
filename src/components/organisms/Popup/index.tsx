@@ -1,64 +1,30 @@
-/** @jsx jsx */
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
 
 import { PopupContext, PopupType } from 'components/providers/Context/popup';
+import Wrapper from 'components/organisms/Popup/Wrapper';
+import Login from 'components/organisms/Popup/Login';
+import Signup from 'components/organisms/Popup/Signup';
 
 export default () => {
   const popupContext = React.useContext(PopupContext);
   const selectComponent = React.useCallback(
-    (type: PopupType): JSX.Element | null => {
+    (type?: PopupType): React.ReactNode => {
       switch (type) {
         case 'LOGIN':
-          return <>login</>;
+          return <Login />;
         case 'SIGNUP':
-          return <>signup</>;
+          return <Signup />;
         default:
           return null;
       }
     },
     [],
   );
-
-  const component =
-    popupContext.current && selectComponent(popupContext.current);
+  const component = selectComponent(popupContext.current);
 
   if (!component) {
     return null;
   }
 
-  return (
-    <div
-      css={css`
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      `}
-      onClick={popupContext.close}
-      onKeyDown={() => {}}
-      role="presentation"
-    >
-      <div
-        onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-        onKeyDown={() => {}}
-        role="presentation"
-        css={css`
-          background-color: #ffffff;
-          cursor: auto;
-        `}
-      >
-        {component}
-      </div>
-    </div>
-  );
+  return <Wrapper>{component}</Wrapper>;
 };
