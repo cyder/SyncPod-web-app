@@ -8,7 +8,8 @@
   },
   "rules": {
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "no-undef": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -19,9 +20,6 @@
   },
   "settings": {
     "import/extensions": [".ts", ".tsx"],
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
     "import/resolver": {
       "typescript": {},
       "node": {

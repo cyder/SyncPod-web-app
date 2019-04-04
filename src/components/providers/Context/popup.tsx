@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type PopupType = 'LOGIN' | 'SIGNUP';
+type PopupType = 'LOGIN' | 'SIGNUP';
 
 interface State {
   current?: PopupType;
@@ -30,3 +30,5 @@ export default ({ children }: { children: React.ReactNode }) => {
     <PopupContext.Provider value={state}>{children}</PopupContext.Provider>
   );
 };
+
+export { PopupType };
