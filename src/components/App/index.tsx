@@ -6,6 +6,7 @@ import ContextProvider from 'components/providers/Context';
 import GlobalStyles from 'components/providers/GlobalStyles';
 import Router from 'components/Router';
 import Header from 'components/molecules/Headers/Header';
+import Popup from 'components/organisms/Popup';
 
 export default () => (
   <ApolloProvider>
@@ -14,6 +15,7 @@ export default () => (
         <GlobalStyles />
         <Header />
         <Router />
+        <Popup />
       </ContextProvider>
     </HistoryProvider>
   </ApolloProvider>
