@@ -6,12 +6,14 @@ interface State {
   current?: PopupType;
   showLogin(): void;
   showSignup(): void;
+  close(): void;
 }
 
 const defaultState: State = {
   current: undefined,
   showLogin: () => {},
   showSignup: () => {},
+  close: () => {},
 };
 
 export const PopupContext = React.createContext<State>(defaultState);
@@ -22,6 +24,7 @@ export default ({ children }: { children: React.ReactNode }) => {
     current: currentPopup,
     showLogin: () => setCurrentPopup('LOGIN'),
     showSignup: () => setCurrentPopup('SIGNUP'),
+    close: () => setCurrentPopup(undefined),
   };
   return (
     <PopupContext.Provider value={state}>{children}</PopupContext.Provider>
