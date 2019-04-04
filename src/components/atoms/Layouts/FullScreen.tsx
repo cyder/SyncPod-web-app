@@ -2,6 +2,9 @@
 import * as React from 'react';
 import { jsx, css } from '@emotion/core';
 
+/**
+ * position fixedで全画面に広がるwrapper
+ */
 export default (
   props: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,

@@ -11,7 +11,7 @@ export const roomRoute = new Route(
   '/room/:roomKey',
   (params: { roomKey: string }) => <Room roomKey={params.roomKey} />,
 );
-export const testRoute = new Route('/test', () => <Test />);
+export const testRoute = new Route('/test', () => <Test />); // TODO: 削除
 export const notFoundRoute = new Route(/.*/, () => <NotFound />);
 
 // 注意: この配列の順番にルーティングの検索が行われる。
