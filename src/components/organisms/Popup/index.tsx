@@ -12,7 +12,7 @@ import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
 export default () => {
   const { data } = useQuery<CurrentPopup>(getCurrentPopupQuery);
   const selectComponent = React.useCallback(
-    (type?: PopupType | null): React.ReactNode => {
+    (type: PopupType | null): React.ReactNode => {
       switch (type) {
         case PopupType.LOGIN:
           return <Login />;
@@ -24,7 +24,7 @@ export default () => {
     },
     [],
   );
-  const component = selectComponent(data && data.currentPopup);
+  const component = data && selectComponent(data.currentPopup);
 
   if (!component) {
     return null;
