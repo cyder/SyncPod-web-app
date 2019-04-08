@@ -1,15 +1,22 @@
-import * as React from 'react';
-import { css } from '@emotion/core';
+/** @jsx jsx */
 
-import { topRoute, roomRoute } from 'components/Router/config';
+import { jsx, css } from '@emotion/core';
+
+import Logo from 'components/atoms/Logo';
+import Navbar from 'components/molecules/Navbar';
 
 export default () => (
   <div
     css={css`
+      position: sticky;
       display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 50px;
+      background-color: #F05C00;
     `}
   >
-    <topRoute.Link params>Top</topRoute.Link>
-    <roomRoute.Link params={{ roomKey: 'test' }}>Room</roomRoute.Link>
+    <Logo path="img/logo.svg"/>
+    <Navbar/>
   </div>
 );
