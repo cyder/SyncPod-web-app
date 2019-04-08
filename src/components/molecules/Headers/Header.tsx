@@ -13,10 +13,10 @@ export default () => (
       justify-content: flex-end;
       align-items: flex-end;
       height: 50px;
-      background-color: #F05C00;
+      background-color: #f05c00;
     `}
   >
-    <Logo path="img/logo.svg"/>
-    <Navbar/>
+    <Logo path="img/logo.svg" alt="logo" />
+    <Navbar />
   </div>
 );
