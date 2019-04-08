@@ -1,16 +1,20 @@
 import * as React from 'react';
+import { useMutation } from 'react-apollo-hooks';
 
-import { PopupContext } from 'components/providers/Context';
+import { showLoginPopupMutation, showSignupPopupMutation } from 'queries/popup';
+import { ShowLoginPopup } from 'queries/__generated__/ShowLoginPopup';
+import { ShowSignupPopup } from 'queries/__generated__/ShowSignupPopup';
 
 export default () => {
-  const popupContext = React.useContext(PopupContext);
+  const showLoginPopup = useMutation<ShowLoginPopup>(showLoginPopupMutation);
+  const showSignupPopup = useMutation<ShowSignupPopup>(showSignupPopupMutation);
 
   return (
     <>
-      <button type="button" onClick={popupContext.showLogin}>
+      <button type="button" onClick={() => showLoginPopup()}>
         login
       </button>
-      <button type="button" onClick={popupContext.showSignup}>
+      <button type="button" onClick={() => showSignupPopup()}>
         signup
       </button>
     </>

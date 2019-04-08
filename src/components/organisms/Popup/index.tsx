@@ -1,14 +1,17 @@
 import * as React from 'react';
+import { useQuery } from 'react-apollo-hooks';
 
-import { PopupContext, PopupType } from 'components/providers/Context/popup';
 import Wrapper from 'components/organisms/Popup/Wrapper';
 import Login from 'components/organisms/Popup/Login';
 import Signup from 'components/organisms/Popup/Signup';
 
+import { getCurrentPopupQuery } from 'queries/popup';
+import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
+
 export default () => {
-  const popupContext = React.useContext(PopupContext);
+  const { data } = useQuery<CurrentPopup>(getCurrentPopupQuery);
   const selectComponent = React.useCallback(
-    (type?: PopupType): React.ReactNode => {
+    (type?: string | null): React.ReactNode => {
       switch (type) {
         case 'LOGIN':
           return <Login />;
@@ -20,7 +23,7 @@ export default () => {
     },
     [],
   );
-  const component = selectComponent(popupContext.current);
+  const component = selectComponent(data && data.currentPopup);
 
   if (!component) {
     return null;
