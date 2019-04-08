@@ -6,16 +6,17 @@ import Login from 'components/organisms/Popup/Login';
 import Signup from 'components/organisms/Popup/Signup';
 
 import { getCurrentPopupQuery } from 'queries/popup';
+import { PopupType } from '__generated__/globalTypes';
 import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
 
 export default () => {
   const { data } = useQuery<CurrentPopup>(getCurrentPopupQuery);
   const selectComponent = React.useCallback(
-    (type?: string | null): React.ReactNode => {
+    (type?: PopupType | null): React.ReactNode => {
       switch (type) {
-        case 'LOGIN':
+        case PopupType.LOGIN:
           return <Login />;
-        case 'SIGNUP':
+        case PopupType.SIGNUP:
           return <Signup />;
         default:
           return null;

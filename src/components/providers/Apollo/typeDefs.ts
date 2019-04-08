@@ -2,12 +2,17 @@ import gql from 'graphql-tag';
 
 export default gql`
   extend type Query {
-    currentPopup: String
+    currentPopup: PopupType
   }
 
   extend type Mutation {
-    showLoginPopup: String
-    showSignupPopup: String
-    clearPopup: String
+    showLoginPopup: PopupType
+    showSignupPopup: PopupType
+    clearPopup: PopupType
+  }
+
+  enum PopupType {
+    LOGIN
+    SIGNUP
   }
 `;
