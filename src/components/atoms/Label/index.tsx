@@ -3,6 +3,8 @@
 import * as React from 'react';
 import { jsx, css } from '@emotion/core';
 
+import { color } from 'constants/styles';
+
 interface Props {
   children: React.ReactNode;
 }
@@ -10,7 +12,7 @@ interface Props {
 export default ({ children }: Props) => (
   <span
     css={css`
-      color: white;
+      color: ${color.WHITE};
       padding: 16px;
     `}
   >
