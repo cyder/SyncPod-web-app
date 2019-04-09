@@ -2,7 +2,7 @@
 
 import { jsx, css } from '@emotion/core';
 
-import Label from 'components/atoms/Label';
+import MenuItem from 'components/atoms/Menus/HeaderMenuItem';
 import { topRoute } from 'components/Router/config';
 
 export default () => (
@@ -12,16 +12,16 @@ export default () => (
     `}
   >
     <topRoute.Link params>
-      <Label>アカウント名</Label>
+      <MenuItem>アカウント名</MenuItem>
     </topRoute.Link>
     <topRoute.Link params>
-      <Label>ログイン</Label>
+      <MenuItem>ログイン</MenuItem>
     </topRoute.Link>
     <topRoute.Link params>
-      <Label>ルームに参加する</Label>
+      <MenuItem>ルームに参加する</MenuItem>
     </topRoute.Link>
     <topRoute.Link params>
-      <Label>ルームを作成する</Label>
+      <MenuItem>ルームを作成する</MenuItem>
     </topRoute.Link>
   </div>
 );

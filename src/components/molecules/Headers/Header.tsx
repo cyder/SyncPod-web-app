@@ -3,7 +3,7 @@
 import { jsx, css } from '@emotion/core';
 
 import Logo from 'components/atoms/Logo';
-import Navbar from 'components/molecules/Navbar';
+import HeaderMenu from 'components/molecules/Menus/HeaderMenu';
 
 export default () => (
   <div
@@ -17,6 +17,6 @@ export default () => (
     `}
   >
     <Logo path="img/logo.svg" alt="logo" />
-    <Navbar />
+    <HeaderMenu />
   </div>
 );
