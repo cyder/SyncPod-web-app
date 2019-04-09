@@ -11,7 +11,6 @@ export default ({ children }: Props) => (
   <span
     css={css`
       color: white;
-      font-family: 'Yu Gothic', YuGothic;
       padding: 16px;
     `}
   >
