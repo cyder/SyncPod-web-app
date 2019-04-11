@@ -5,6 +5,8 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import config from 'config';
+import resolvers from 'components/providers/Apollo/resolvers';
+import typeDefs from 'components/providers/Apollo/typeDefs';
 
 interface Props {
   children: React.ReactNode;
@@ -18,6 +20,8 @@ export default ({ children }: Props): JSX.Element => {
   const client = new ApolloClient({
     link,
     cache,
+    resolvers,
+    typeDefs,
   });
 
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
