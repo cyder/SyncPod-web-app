@@ -41,7 +41,7 @@ module.exports = {
         loader: 'source-map-loader',
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|svg)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -58,7 +58,7 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(eot|otf|ttf|woff2?|svg)(\?.+)?$/,
+        test: /\.(eot|otf|ttf|woff2?)(\?.+)?$/,
         include: [path.resolve(__dirname, 'node_modules')],
         use: {
           loader: 'file-loader',

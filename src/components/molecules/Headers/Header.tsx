@@ -16,7 +16,7 @@ export default () => (
       background-color: #f05c00;
     `}
   >
-    <Logo path="img/logo.svg" alt="logo" />
+    <Logo />
     <HeaderMenu />
   </div>
 );
