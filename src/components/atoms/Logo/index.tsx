@@ -9,7 +9,7 @@ interface Props {
   readonly height?: string;
 }
 
-export default ({height = "50px"} : Props) => (
+export default ({ height = '50px' }: Props) => (
   <img
     css={css`
       height: ${height};
@@ -18,5 +18,6 @@ export default ({height = "50px"} : Props) => (
       margin-right: auto;
     `}
     src={logo}
+    alt="logo"
   />
 );

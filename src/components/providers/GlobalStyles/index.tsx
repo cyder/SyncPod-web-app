@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Global, css} from "@emotion/core";
+import { Global, css } from '@emotion/core';
 import 'reset-css';
 
 import Boxsize from 'components/providers/GlobalStyles/Boxsize';
