@@ -14,6 +14,7 @@ export default ({ children }: Props) => (
     css={css`
       color: ${color.WHITE};
       padding: 16px;
+      font-size: 1.4rem;
     `}
   >
     {children}

@@ -7,6 +7,7 @@ import Boxsize from 'components/providers/GlobalStyles/Boxsize';
 const globalStyles = css`
   body {
     font-family: 'Yu Gothic', YuGothic;
+    font-size: 10px;
   }
   a {
     text-decoration: none;
