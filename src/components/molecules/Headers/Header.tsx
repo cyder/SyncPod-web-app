@@ -14,6 +14,7 @@ export default () => (
       align-items: flex-end;
       height: 50px;
       background-color: #f05c00;
+      padding-bottom: 4px;
     `}
   >
     <Logo />

@@ -1,21 +1,14 @@
-/** @jsx jsx */
+import * as React from 'react';
 
-import { jsx, css } from '@emotion/core';
-
-// @ts-ignore
-import * as logo from 'components/atoms/Logo/logo.svg';
+import SvgIcon, { icons } from 'components/atoms/SvgIcons';
 
 interface Props {
   readonly height?: string;
 }
 
-export default ({ height = '50px' }: Props) => (
-  <img
-    css={css`
-      height: ${height};
-      object-fit: contain;
-    `}
-    src={logo}
-    alt="logo"
+export default ({ height = '32px' }: Props) => (
+  <SvgIcon
+    height={height}
+    icon={icons.logo}
   />
 );
