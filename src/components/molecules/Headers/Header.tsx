@@ -10,7 +10,7 @@ export default () => (
     css={css`
       position: sticky;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: flex-end;
       height: 50px;
       background-color: #f05c00;

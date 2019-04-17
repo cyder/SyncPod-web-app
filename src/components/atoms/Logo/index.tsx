@@ -14,8 +14,6 @@ export default ({ height = '50px' }: Props) => (
     css={css`
       height: ${height};
       object-fit: contain;
-      margin-left: -16px;
-      margin-right: auto;
     `}
     src={logo}
     alt="logo"
