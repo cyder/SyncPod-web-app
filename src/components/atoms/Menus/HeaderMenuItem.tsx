@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default ({ children }: Props) => (
-  <span
+  <div
     css={css`
       color: ${color.WHITE};
       padding: 16px;
@@ -18,5 +18,5 @@ export default ({ children }: Props) => (
     `}
   >
     {children}
-  </span>
+  </div>
 );

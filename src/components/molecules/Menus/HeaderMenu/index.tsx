@@ -8,7 +8,7 @@ import { topRoute } from 'components/Router/config';
 export default () => (
   <div
     css={css`
-      padding-bottom: 8px;
+      display: flex;
     `}
   >
     <topRoute.Link params>
