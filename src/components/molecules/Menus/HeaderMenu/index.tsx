@@ -11,17 +11,25 @@ export default () => (
       display: flex;
     `}
   >
-    <topRoute.Link params>
-      <MenuItem>アカウント名</MenuItem>
-    </topRoute.Link>
-    <topRoute.Link params>
-      <MenuItem>ログイン</MenuItem>
-    </topRoute.Link>
-    <topRoute.Link params>
-      <MenuItem>ルームに参加する</MenuItem>
-    </topRoute.Link>
-    <topRoute.Link params>
-      <MenuItem>ルームを作成する</MenuItem>
-    </topRoute.Link>
+    <MenuItem>
+      <topRoute.Link params>
+        アカウント名
+      </topRoute.Link>
+    </MenuItem>
+    <MenuItem>
+      <topRoute.Link params>
+        ログイン
+      </topRoute.Link>
+    </MenuItem>
+    <MenuItem>
+      <topRoute.Link params>
+        ルームに参加する
+      </topRoute.Link>
+    </MenuItem>
+    <MenuItem>
+      <topRoute.Link params>
+        ルームを作成する
+      </topRoute.Link>
+    </MenuItem>
   </div>
 );
