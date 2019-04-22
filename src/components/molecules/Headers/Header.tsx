@@ -2,7 +2,7 @@
 
 import { jsx, css } from '@emotion/core';
 
-import Logo from 'components/atoms/Logo';
+import SvgIcon, { icons } from 'components/atoms/SvgIcons';
 import HeaderMenu from 'components/molecules/Menus/HeaderMenu';
 
 export default () => (
@@ -17,7 +17,7 @@ export default () => (
       padding-bottom: 4px;
     `}
   >
-    <Logo />
+    <SvgIcon height="32px" icon={icons.logo} />
     <HeaderMenu />
   </div>
 );
