@@ -5,7 +5,8 @@ import 'reset-css';
 import Boxsize from 'components/providers/GlobalStyles/Boxsize';
 
 const globalStyles = css`
-  body, html {
+  body,
+  html {
     font-family: 'Yu Gothic', YuGothic;
     font-size: 10px;
   }

@@ -7,7 +7,7 @@ interface SvgIcons {
 }
 
 export const icons: SvgIcons = {
-  logo: "/logo.svg"
+  logo: '/logo.svg',
 };
 
 interface Props {
@@ -15,5 +15,13 @@ interface Props {
   icon: string;
 }
 
-export default ({icon, height} : Props ) => <img css={css` height: ${height}; object-fit: contain; `
-} src={icon} />
+export default ({ icon, height }: Props) => (
+  <img
+    css={css`
+      height: ${height};
+      object-fit: contain;
+    `}
+    src={icon}
+    alt="this is logo"
+  />
+);

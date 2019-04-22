@@ -7,8 +7,5 @@ interface Props {
 }
 
 export default ({ height = '32px' }: Props) => (
-  <SvgIcon
-    height={height}
-    icon={icons.logo}
-  />
+  <SvgIcon height={height} icon={icons.logo} />
 );

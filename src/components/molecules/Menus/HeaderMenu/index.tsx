@@ -12,24 +12,16 @@ export default () => (
     `}
   >
     <MenuItem>
-      <topRoute.Link params>
-        アカウント名
-      </topRoute.Link>
+      <topRoute.Link params>アカウント名</topRoute.Link>
     </MenuItem>
     <MenuItem>
-      <topRoute.Link params>
-        ログイン
-      </topRoute.Link>
+      <topRoute.Link params>ログイン</topRoute.Link>
     </MenuItem>
     <MenuItem>
-      <topRoute.Link params>
-        ルームに参加する
-      </topRoute.Link>
+      <topRoute.Link params>ルームに参加する</topRoute.Link>
     </MenuItem>
     <MenuItem>
-      <topRoute.Link params>
-        ルームを作成する
-      </topRoute.Link>
+      <topRoute.Link params>ルームを作成する</topRoute.Link>
     </MenuItem>
   </div>
 );
