@@ -7,7 +7,7 @@ interface SvgIcons {
 }
 
 export const icons: SvgIcons = {
-  logo: '/logo.svg',
+  logo: '/svg/logo.svg',
 };
 
 interface Props {
