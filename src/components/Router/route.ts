@@ -1,7 +1,10 @@
 import * as pathToRegexp from 'path-to-regexp';
-import * as React from 'react';
 
-import InternalLink from 'components/atoms/Links/InternalLink';
+import { Drop } from 'util/typescript';
+
+import InternalLink, {
+  InternalLinkProps,
+} from 'components/atoms/Links/InternalLink';
 
 export default class Route<T extends object = {}> {
   public constructor(
@@ -52,13 +55,10 @@ export default class Route<T extends object = {}> {
    * @param props 遷移に必要なパラメータ
    * @returns - LinkComponent
    */
-  public Link(props: {
-    params: T;
-    children: React.ReactNode;
-  }): JSX.Element | null {
+  public Link(props: LinkProps<T>): JSX.Element | null {
     const href = this.generatePath(props.params);
 
-    return href ? InternalLink({ children: props.children, to: href }) : null;
+    return href ? InternalLink({ ...props, to: href }) : null;
   }
 
   /**
@@ -74,4 +74,8 @@ export default class Route<T extends object = {}> {
     const toPath = pathToRegexp.compile<T>(this.path);
     return toPath(params);
   }
+}
+
+interface LinkProps<T> extends Drop<InternalLinkProps, 'to'> {
+  params: T;
 }
