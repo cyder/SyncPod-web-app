@@ -18,6 +18,12 @@ export const showSignupPopupMutation = gql`
   }
 `;
 
+export const showJoinRoomMutation = gql`
+  mutation ShowJoinRoomPopup {
+    showJoinRoomPopup @client
+  }
+`;
+
 export const clearPopupMutation = gql`
   mutation ClearPopup {
     clearPopup @client

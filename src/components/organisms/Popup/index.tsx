@@ -4,6 +4,7 @@ import { useQuery } from 'react-apollo-hooks';
 import Wrapper from 'components/organisms/Popup/Wrapper';
 import Login from 'components/organisms/Popup/Login';
 import Signup from 'components/organisms/Popup/Signup';
+import JoinRoom from 'components/organisms/Popup/JoinRoom';
 
 import { getCurrentPopupQuery } from 'queries/popup';
 import { PopupType } from '__generated__/globalTypes';
@@ -18,6 +19,8 @@ export default () => {
           return <Login />;
         case PopupType.SIGNUP:
           return <Signup />;
+        case PopupType.JOIN_ROOM:
+          return <JoinRoom />;
         default:
           return null;
       }

@@ -8,11 +8,13 @@ export default gql`
   extend type Mutation {
     showLoginPopup: PopupType
     showSignupPopup: PopupType
+    showJoinRoomPopup: PopupType
     clearPopup: PopupType
   }
 
   enum PopupType {
     LOGIN
     SIGNUP
+    JOIN_ROOM
   }
 `;
