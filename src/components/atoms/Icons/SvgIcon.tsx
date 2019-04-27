@@ -2,17 +2,16 @@
 
 import { jsx, css } from '@emotion/core';
 
-interface SvgIcons {
-  [key: string]: string;
-}
+export type Icon = 'logo' | 'close';
 
-export const icons: SvgIcons = {
+const icons: Record<Icon, string> = {
   logo: '/svg/logo.svg',
+  close: '/svg/close.svg',
 };
 
 interface Props {
   className?: string;
-  icon: string;
+  icon: Icon;
   alt?: string;
 }
 
@@ -22,7 +21,7 @@ export default ({ icon, className, alt }: Props) => (
     css={css`
       object-fit: contain;
     `}
-    src={icon}
+    src={icons[icon]}
     alt={alt || 'アイコン'}
   />
 );

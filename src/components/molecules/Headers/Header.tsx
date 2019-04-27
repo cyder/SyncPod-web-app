@@ -2,7 +2,7 @@
 
 import { jsx, css } from '@emotion/core';
 
-import SvgIcon, { icons } from 'components/atoms/SvgIcons';
+import SvgIcon from 'components/atoms/Icons/SvgIcon';
 import HeaderMenu from 'components/molecules/Menus/HeaderMenu';
 
 import { color } from 'constants/styles';
@@ -25,7 +25,7 @@ export default () => (
         padding: 0 0.5rem;
         height: 2.5rem;
       `}
-      icon={icons.logo}
+      icon="logo"
       alt="SyncPod"
     />
     <HeaderMenu />
