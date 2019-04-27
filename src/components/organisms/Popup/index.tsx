@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useQuery } from 'react-apollo-hooks';
 
-import Wrapper from 'components/organisms/Popup/Wrapper';
+import Wrapper, { PropPopups } from 'components/organisms/Popup/Wrapper';
 import Login from 'components/organisms/Popup/Login';
 import Signup from 'components/organisms/Popup/Signup';
 import JoinRoom from 'components/organisms/Popup/JoinRoom';
@@ -12,26 +12,26 @@ import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
 
 export default () => {
   const { data } = useQuery<CurrentPopup>(getCurrentPopupQuery);
-  const selectComponent = React.useCallback(
-    (type: PopupType | null): React.ReactNode => {
+  const selectPopup = React.useCallback(
+    (type: PopupType | null): PropPopups | null => {
       switch (type) {
         case PopupType.LOGIN:
-          return <Login />;
+          return { title: 'ログイン', children: <Login /> };
         case PopupType.SIGNUP:
-          return <Signup />;
+          return { title: 'アカウント作成', children: <Signup /> };
         case PopupType.JOIN_ROOM:
-          return <JoinRoom />;
+          return { title: 'ルームに参加', children: <JoinRoom /> };
         default:
           return null;
       }
     },
     [],
   );
-  const component = data && selectComponent(data.currentPopup);
+  const popup = data && selectPopup(data.currentPopup);
 
-  if (!component) {
+  if (!popup) {
     return null;
   }
 
-  return <Wrapper>{component}</Wrapper>;
+  return <Wrapper {...popup} />;
 };
