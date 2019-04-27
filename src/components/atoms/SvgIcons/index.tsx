@@ -11,17 +11,18 @@ export const icons: SvgIcons = {
 };
 
 interface Props {
-  height: string;
+  className?: string;
   icon: string;
+  alt?: string;
 }
 
-export default ({ icon, height }: Props) => (
+export default ({ icon, className, alt }: Props) => (
   <img
+    className={className}
     css={css`
-      height: ${height};
       object-fit: contain;
     `}
     src={icon}
-    alt="this is logo"
+    alt={alt || 'アイコン'}
   />
 );
