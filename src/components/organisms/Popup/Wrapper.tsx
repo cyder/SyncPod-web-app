@@ -68,6 +68,7 @@ export default ({ children, title }: PropPopups) => {
               right: 2rem;
             `}
             icon="close"
+            alt="閉じる"
             onClick={onClickBack}
           />
         </div>

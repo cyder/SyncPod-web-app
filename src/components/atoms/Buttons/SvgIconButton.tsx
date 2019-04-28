@@ -8,11 +8,12 @@ import BaseButton from 'components/atoms/Buttons/TextButton';
 
 interface Props {
   icon: Icon;
+  alt?: string;
   className?: string;
   onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-export default ({ icon, className, onClick }: Props) => (
+export default ({ icon, alt, className, onClick }: Props) => (
   <BaseButton
     css={css`
       :hover {
@@ -22,6 +23,6 @@ export default ({ icon, className, onClick }: Props) => (
     className={className}
     onClick={onClick}
   >
-    <SvgIcon icon={icon} />
+    <SvgIcon icon={icon} alt={alt} />
   </BaseButton>
 );

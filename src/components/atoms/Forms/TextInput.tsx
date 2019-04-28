@@ -87,6 +87,7 @@ export default ({
                 margin: auto;
               `}
               icon="warning"
+              alt="エラー"
             />
           )}
         </div>
