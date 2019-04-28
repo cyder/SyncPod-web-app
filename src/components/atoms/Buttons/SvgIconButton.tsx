@@ -1,7 +1,10 @@
+/** @jsx jsx */
+
 import * as React from 'react';
+import { jsx, css } from '@emotion/core';
 
 import SvgIcon, { Icon } from 'components/atoms/Icons/SvgIcon';
-import TextButton from 'components/atoms/Buttons/TextButton';
+import BaseButton from 'components/atoms/Buttons/TextButton';
 
 interface Props {
   icon: Icon;
@@ -10,7 +13,15 @@ interface Props {
 }
 
 export default ({ icon, className, onClick }: Props) => (
-  <TextButton className={className} onClick={onClick}>
+  <BaseButton
+    css={css`
+      :hover {
+        opacity: 0.6;
+      }
+    `}
+    className={className}
+    onClick={onClick}
+  >
     <SvgIcon icon={icon} />
-  </TextButton>
+  </BaseButton>
 );
