@@ -14,6 +14,7 @@ interface Props {
   placeholder?: string;
   className?: string;
   warning?: boolean;
+  type?: string;
   onChange?(value: string): void;
 }
 
@@ -25,6 +26,7 @@ export default ({
   className,
   onChange,
   warning,
+  type,
 }: Props) => {
   const [currentValue, setCurrentValue] = React.useState(value || '');
   const handleChange = React.useCallback(
@@ -72,7 +74,7 @@ export default ({
             `}
             placeholder={placeholder}
             name={name}
-            type="test"
+            type={type || 'text'}
             onChange={handleChange}
           />
           {warning && (

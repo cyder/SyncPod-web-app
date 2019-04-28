@@ -19,6 +19,7 @@ export default () => {
         <TextInput
           label="パスワード"
           placeholder="入力してください。"
+          type="password"
           warning
         />
       ),

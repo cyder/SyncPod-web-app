@@ -16,13 +16,21 @@ export default () => {
     {
       key: 'email_address',
       component: (
-        <TextInput label="メールアドレス" placeholder="example@sync-pod.com" />
+        <TextInput
+          label="メールアドレス"
+          placeholder="example@sync-pod.com"
+          type="email"
+        />
       ),
     },
     {
       key: 'password',
       component: (
-        <TextInput label="パスワード" placeholder="入力してください。" />
+        <TextInput
+          label="パスワード"
+          placeholder="入力してください。"
+          type="password"
+        />
       ),
     },
     {
@@ -31,6 +39,7 @@ export default () => {
         <TextInput
           label="パスワード（確認）"
           placeholder="入力してください。"
+          type="password"
           warning
         />
       ),
