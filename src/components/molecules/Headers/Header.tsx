@@ -15,7 +15,7 @@ export default () => (
       justify-content: space-between;
       align-items: flex-end;
       height: 5rem;
-      background-color: ${color.PRIMALY};
+      background-color: ${color.PRIMALY_DARK};
       padding: 1rem 1rem;
       color: ${color.WHITE};
     `}

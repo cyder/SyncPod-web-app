@@ -1,7 +1,8 @@
 export default {
   WHITE: '#FFFFFF',
-  BLACK: '#000000',
-  PRIMALY: '#F05C00',
+  BLACK: '#3B4043',
+  PRIMALY_DARK: '#F05C00',
+  PRIMALY: '#FBB143',
 
   POPUP_BACKGROUND: 'rgba(0, 0, 0, 0.8)',
 };
