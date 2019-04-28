@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useQuery } from 'react-apollo-hooks';
 
-import Wrapper, { PropPopups } from 'components/organisms/Popup/Wrapper';
+import Wrapper, { PopupProps } from 'components/organisms/Popup/Wrapper';
 import Login from 'components/organisms/Popup/Login';
 import Signup from 'components/organisms/Popup/Signup';
 import JoinRoom from 'components/organisms/Popup/JoinRoom';
@@ -13,7 +13,7 @@ import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
 export default () => {
   const { data } = useQuery<CurrentPopup>(getCurrentPopupQuery);
   const selectPopup = React.useCallback(
-    (type: PopupType | null): PropPopups | null => {
+    (type: PopupType | null): PopupProps | null => {
       switch (type) {
         case PopupType.LOGIN:
           return { title: 'ログイン', children: <Login /> };

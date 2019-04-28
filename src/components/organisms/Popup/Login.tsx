@@ -2,7 +2,7 @@
 
 import { jsx } from '@emotion/core';
 
-import TextInput from 'components/atoms/Forms/TextInput';
+import TextInput from 'components/atoms/Forms/TextInputWithLabel';
 import Form, { FormElement } from 'components/molecules/Forms/Form';
 
 export default () => {

@@ -22,7 +22,7 @@ export default () => (
   >
     <SvgIcon
       css={css`
-        padding: 0 0.5rem;
+        padding: 0 1rem;
         height: 2.5rem;
       `}
       icon="logo"

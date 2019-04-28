@@ -11,12 +11,12 @@ import { color, zIndex } from 'constants/styles';
 import { clearPopupMutation } from 'queries/popup';
 import { ClearPopup } from 'queries/__generated__/ClearPopup';
 
-export interface PropPopups {
+export interface PopupProps {
   title: string;
   children: React.ReactNode;
 }
 
-export default ({ children, title }: PropPopups) => {
+export default ({ children, title }: PopupProps) => {
   const clearPopup = useMutation<ClearPopup>(clearPopupMutation);
   const onClickBack = React.useCallback(() => {
     clearPopup();
