@@ -84,7 +84,8 @@ export default () => (
       time,
       mark,
       audio,
-      video {
+      video,
+      input {
         box-sizing: border-box;
       }
     `}
