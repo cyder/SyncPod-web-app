@@ -28,7 +28,9 @@ export default ({
   warning,
   type,
 }: Props) => {
-  const [currentValue, setCurrentValue] = React.useState(value || '');
+  const [currentValue, setCurrentValue] = React.useState('');
+  const [inFocus, setInFocus] = React.useState(false);
+
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const data = e.target.value;
@@ -39,6 +41,12 @@ export default ({
     },
     [],
   );
+  const handleFocus = React.useCallback(() => {
+    setInFocus(true);
+  }, []);
+  const handleBlur = React.useCallback(() => {
+    setInFocus(false);
+  }, []);
 
   React.useEffect(() => {
     if (value != null) {
@@ -71,8 +79,16 @@ export default ({
               font-size: 1.4rem;
               outline: 0;
               width: 100%;
+              color: inherit;
+
+              ::placeholder {
+                font-size: 1rem;
+                transform: translate(0, -0.1rem);
+              }
             `}
-            placeholder={placeholder}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={inFocus ? '' : placeholder}
             name={name}
             type={type || 'text'}
             onChange={handleChange}
