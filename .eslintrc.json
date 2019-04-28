@@ -9,7 +9,8 @@
   "rules": {
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
     "no-unused-vars": "off",
-    "no-undef": "off"
+    "no-undef": "off",
+    "import/named": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2018,
