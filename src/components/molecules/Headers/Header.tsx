@@ -17,6 +17,7 @@ export default () => (
       height: ${size.HEADER_HEIGHT};
       background-color: ${color.PRIMALY_DARK};
       padding: 1rem 1rem;
+      color: ${color.WHITE};
       top: 0;
       z-index: ${zIndex.HEADER};
     `}

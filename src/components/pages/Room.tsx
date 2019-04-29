@@ -15,8 +15,6 @@ interface Props {
 export default ({ roomKey }: Props) => {
   const [isEditing, setIsEditing] = React.useState(false);
 
-  console.log(roomKey);
-
   return (
     <div
       css={css`
@@ -29,7 +27,7 @@ export default ({ roomKey }: Props) => {
           overflow-y: auto;
         `}
       >
-        <RoomMain isEditing={isEditing} />
+        <RoomMain roomKey={roomKey} isEditing={isEditing} />
       </div>
       <RoomTab
         css={css`
