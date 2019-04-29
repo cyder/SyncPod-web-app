@@ -2,12 +2,13 @@ import * as React from 'react';
 
 import { historyContext } from 'components/providers/BrowserHistory';
 
-interface Props {
+export interface InternalLinkProps {
+  className?: string;
   to: string;
   children?: React.ReactNode;
 }
 
-export default ({ to, children }: Props) => {
+export default ({ className, to, children }: InternalLinkProps) => {
   const history = React.useContext(historyContext);
   const isModifiedEvent = React.useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>): boolean =>
@@ -30,7 +31,7 @@ export default ({ to, children }: Props) => {
     [to],
   );
   return (
-    <a href={to} onClick={onClick}>
+    <a href={to} onClick={onClick} className={className}>
       {children}
     </a>
   );

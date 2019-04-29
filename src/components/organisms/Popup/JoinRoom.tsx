@@ -8,18 +8,11 @@ import Form, { FormElement } from 'components/molecules/Forms/Form';
 export default () => {
   const forms: FormElement[] = [
     {
-      key: 'account_name',
-      component: (
-        <TextInput label="アカウント名" placeholder="入力してください。" />
-      ),
-    },
-    {
-      key: 'password',
+      key: 'room_key',
       component: (
         <TextInput
-          label="パスワード"
+          label="ルームキー"
           placeholder="入力してください。"
-          type="password"
           warning
         />
       ),
@@ -30,7 +23,7 @@ export default () => {
     <Form
       forms={forms}
       errorMessage="エラーメッセージが入ります。"
-      submitLabel="ログイン"
+      submitLabel="参加"
     />
   );
 };

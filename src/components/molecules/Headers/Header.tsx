@@ -2,8 +2,10 @@
 
 import { jsx, css } from '@emotion/core';
 
-import SvgIcon, { icons } from 'components/atoms/SvgIcons';
+import SvgIcon from 'components/atoms/Icons/SvgIcon';
 import HeaderMenu from 'components/molecules/Menus/HeaderMenu';
+
+import { color } from 'constants/styles';
 
 export default () => (
   <div
@@ -12,12 +14,20 @@ export default () => (
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      height: 50px;
-      background-color: #f05c00;
-      padding-bottom: 4px;
+      height: 5rem;
+      background-color: ${color.PRIMALY_DARK};
+      padding: 1rem 1rem;
+      color: ${color.WHITE};
     `}
   >
-    <SvgIcon height="32px" icon={icons.logo} />
+    <SvgIcon
+      css={css`
+        padding: 0 1rem;
+        height: 2.5rem;
+      `}
+      icon="logo"
+      alt="SyncPod"
+    />
     <HeaderMenu />
   </div>
 );

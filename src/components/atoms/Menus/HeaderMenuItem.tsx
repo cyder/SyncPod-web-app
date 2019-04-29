@@ -1,22 +1,16 @@
 /** @jsx jsx */
 
-import * as React from 'react';
 import { jsx, css } from '@emotion/core';
+import TextButton, {
+  TextButtonProps,
+} from 'components/atoms/Buttons/TextButton';
 
-import { color } from 'constants/styles';
-
-interface Props {
-  children: React.ReactNode;
-}
-
-export default ({ children }: Props) => (
-  <div
+export default (props: TextButtonProps) => (
+  <TextButton
+    {...props}
     css={css`
-      color: ${color.WHITE};
-      padding: 16px;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      padding: 0.2rem 1rem;
     `}
-  >
-    {children}
-  </div>
+  />
 );
