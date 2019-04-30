@@ -29,7 +29,8 @@ export default ({ className, enableMiniPlayer }: Props) => {
     <BrowserFullScreen
       enableFullScreen={mode === 'fullscreen'}
       css={css`
-        background-color: #ffff00;
+        background-color: #333333;
+        color: #ffffff;
       `}
       className={className}
     >

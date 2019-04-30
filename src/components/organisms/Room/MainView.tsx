@@ -13,19 +13,13 @@ interface Props {
 export default ({ roomKey, className, getVideoAreaElement }: Props) => (
   <div
     css={css`
-      background-color: #ff0000;
       height: 200vh;
     `}
     className={className}
   >
     <h1>Room名</h1>
     <p>{roomKey}</p>
-    <div
-      css={css`
-        background-color: #333333;
-      `}
-      ref={getVideoAreaElement}
-    >
+    <div ref={getVideoAreaElement}>
       <AspectRatio width={16} height={9}>
         Video
       </AspectRatio>

@@ -3,11 +3,11 @@
 import * as React from 'react';
 import { jsx, css, SerializedStyles } from '@emotion/core';
 
-import { useResizeEvent } from 'utils/hooks/window-events';
+import { useResizeEvent } from 'util/hooks/window-events';
 
 import RoomFooter from 'components/molecules/Footers/RoomFooter';
-import RoomView from 'components/organisms/Room/RoomView';
-import VideoSearch from 'components/organisms/Room/VideoSearch';
+import MainView from 'components/organisms/Room/MainView';
+import VideoSearch from 'components/organisms/VideoSearch';
 import Video from 'components/organisms/Video';
 
 interface Props {
@@ -58,10 +58,7 @@ export default ({ roomKey, isEditing, className }: Props) => {
     <div
       css={css`
         position: relative;
-        margin-left: auto;
-        margin-right: 2rem;
-        width: 90%;
-        max-width: 1000px;
+        margin: 0 2rem;
       `}
       className={className}
       ref={(el: HTMLDivElement) => setWrapperElement(el)}
@@ -69,7 +66,7 @@ export default ({ roomKey, isEditing, className }: Props) => {
       {isEditing ? (
         <VideoSearch />
       ) : (
-        <RoomView roomKey={roomKey} getVideoAreaElement={setVideoAreaElement} />
+        <MainView roomKey={roomKey} getVideoAreaElement={setVideoAreaElement} />
       )}
       <RoomFooter />
       {wrapperElement && <Video css={style} enableMiniPlayer={isEditing} />}
