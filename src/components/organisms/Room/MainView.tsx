@@ -1,5 +1,6 @@
 /** @jsx jsx */
 
+import * as React from 'react';
 import { jsx, css } from '@emotion/core';
 
 import AspectRatio from 'components/atoms/Layouts/AspectRatio';
@@ -7,10 +8,10 @@ import AspectRatio from 'components/atoms/Layouts/AspectRatio';
 interface Props {
   roomKey: string;
   className?: string;
-  getVideoAreaElement(el: HTMLDivElement): void;
+  videoAreaRef: React.RefObject<HTMLDivElement>;
 }
 
-export default ({ roomKey, className, getVideoAreaElement }: Props) => (
+export default ({ roomKey, className, videoAreaRef }: Props) => (
   <div
     css={css`
       height: 200vh;
@@ -19,7 +20,7 @@ export default ({ roomKey, className, getVideoAreaElement }: Props) => (
   >
     <h1>Room名</h1>
     <p>{roomKey}</p>
-    <div ref={getVideoAreaElement}>
+    <div ref={videoAreaRef}>
       <AspectRatio width={16} height={9}>
         Video
       </AspectRatio>

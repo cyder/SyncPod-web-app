@@ -15,18 +15,18 @@ interface Props {
  * html5のbrowser full screen
  */
 export default ({ enableFullScreen, children, className }: Props) => {
-  const [element, setElement] = React.useState<HTMLDivElement>();
+  const ref = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    if (!element) {
+    if (!ref.current) {
       return;
     }
     if (enableFullScreen) {
-      openFullScreen(element);
+      openFullScreen(ref.current);
     } else {
       closeFullScreen();
     }
-  }, [enableFullScreen, element]);
+  }, [enableFullScreen, ref]);
 
   return (
     <div
@@ -47,7 +47,7 @@ export default ({ enableFullScreen, children, className }: Props) => {
           }
         `
       }
-      ref={(el: HTMLDivElement) => setElement(el)}
+      ref={ref}
       className={className}
     >
       {children}

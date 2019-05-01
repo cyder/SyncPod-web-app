@@ -17,17 +17,15 @@ interface Props {
 }
 
 export default ({ roomKey, isEditing, className }: Props) => {
-  const [wrapperElement, setWrapperElement] = React.useState<HTMLDivElement>();
-  const [videoAreaElement, setVideoAreaElement] = React.useState<
-    HTMLDivElement
-  >();
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
+  const videoAreaRef = React.useRef<HTMLDivElement>(null);
   const [style, setStyle] = React.useState<SerializedStyles>();
   const calcStyle = React.useCallback(() => {
     if (isEditing) {
-      if (!wrapperElement) {
+      if (!wrapperRef.current) {
         return;
       }
-      const rect = wrapperElement.getBoundingClientRect();
+      const rect = wrapperRef.current.getBoundingClientRect();
       const width = 320;
       const height = 180;
       setStyle(css`
@@ -38,21 +36,21 @@ export default ({ roomKey, isEditing, className }: Props) => {
         left: ${rect.right - width}px;
       `);
     } else {
-      if (!videoAreaElement) {
+      if (!videoAreaRef.current) {
         return;
       }
       setStyle(css`
         position: absolute;
-        top: ${videoAreaElement.offsetTop}px;
-        left: ${videoAreaElement.offsetLeft}px;
-        width: ${videoAreaElement.clientWidth}px;
-        height: ${videoAreaElement.clientHeight}px;
+        top: ${videoAreaRef.current.offsetTop}px;
+        left: ${videoAreaRef.current.offsetLeft}px;
+        width: ${videoAreaRef.current.clientWidth}px;
+        height: ${videoAreaRef.current.clientHeight}px;
       `);
     }
-  }, [isEditing, wrapperElement, videoAreaElement]);
+  }, [isEditing, wrapperRef, videoAreaRef]);
 
   useResizeEvent(calcStyle);
-  React.useEffect(calcStyle, [isEditing, wrapperElement, videoAreaElement]);
+  React.useEffect(calcStyle, [isEditing, wrapperRef, videoAreaRef]);
 
   return (
     <div
@@ -61,15 +59,15 @@ export default ({ roomKey, isEditing, className }: Props) => {
         margin: 0 2rem;
       `}
       className={className}
-      ref={(el: HTMLDivElement) => setWrapperElement(el)}
+      ref={wrapperRef}
     >
       {isEditing ? (
         <VideoSearch />
       ) : (
-        <MainView roomKey={roomKey} getVideoAreaElement={setVideoAreaElement} />
+        <MainView roomKey={roomKey} videoAreaRef={videoAreaRef} />
       )}
       <RoomFooter />
-      {wrapperElement && <Video css={style} enableMiniPlayer={isEditing} />}
+      {wrapperRef && <Video css={style} enableMiniPlayer={isEditing} />}
     </div>
   );
 };
