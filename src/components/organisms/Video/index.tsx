@@ -17,22 +17,36 @@ export default ({ className, enableMiniPlayer }: Props) => {
   const [mode, setMode] = React.useState<PlayerMode>(
     enableMiniPlayer ? 'miniplayer' : 'default',
   );
+  const enableFullScreen = React.useCallback(() => {
+    setMode('fullscreen');
+  }, []);
+  const disableFullScreen = React.useCallback(() => {
+    setMode(enableMiniPlayer ? 'miniplayer' : 'default');
+  }, []);
   const handleFullScreenButton = React.useCallback(() => {
     if (mode === 'fullscreen') {
-      setMode(enableMiniPlayer ? 'miniplayer' : 'default');
+      disableFullScreen();
     } else {
-      setMode('fullscreen');
+      enableFullScreen();
     }
   }, [mode, enableMiniPlayer]);
+  const handleFullScreenChange = React.useCallback((enable: boolean) => {
+    if (enable) {
+      enableFullScreen();
+    } else {
+      disableFullScreen();
+    }
+  }, []);
 
   return (
     <BrowserFullScreen
-      enableFullScreen={mode === 'fullscreen'}
+      enable={mode === 'fullscreen'}
       css={css`
         background-color: #333333;
         color: #ffffff;
       `}
       className={className}
+      onChange={handleFullScreenChange}
     >
       video
       <button type="button" onClick={handleFullScreenButton}>
