@@ -2,12 +2,13 @@
 
 import { jsx, css } from '@emotion/core';
 
-export type Icon = 'logo' | 'close' | 'warning';
+export type Icon = 'logo' | 'close' | 'warning' | 'icon';
 
 const icons: Record<Icon, string> = {
   logo: '/svg/logo.svg',
   close: '/svg/close.svg',
   warning: '/svg/warning.svg',
+  icon: '/svg/icon.svg',
 };
 
 interface Props {
@@ -24,5 +25,6 @@ export default ({ icon, className, alt }: Props) => (
     `}
     src={icons[icon]}
     alt={alt || 'アイコン'}
+    draggable={false}
   />
 );
