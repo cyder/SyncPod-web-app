@@ -1,7 +1,8 @@
 /** @jsx jsx */
 
 import { jsx, css } from '@emotion/core';
-import RoomThumbnail from './RoomThumbnail';
+
+import RoomThumbnail from 'components/molecules/Rooms/RoomThumbnail';
 
 import { color } from 'constants/styles';
 

@@ -18,9 +18,15 @@ interface Props {
   nowPlayingVideo?: Video;
   lastPlayingVideo?: Video;
   className?: string;
+  isHover?: boolean;
 }
 
-export default ({ nowPlayingVideo, lastPlayingVideo, className }: Props) => {
+export default ({
+  nowPlayingVideo,
+  lastPlayingVideo,
+  isHover,
+  className,
+}: Props) => {
   const video = nowPlayingVideo || lastPlayingVideo;
   return (
     <AspectRatio className={className} width={16} height={9}>
@@ -30,29 +36,38 @@ export default ({ nowPlayingVideo, lastPlayingVideo, className }: Props) => {
           width: 100%;
           height: 100%;
           background-color: ${color.GRAY_LIGHT};
+          overflow: hidden;
         `}
       >
-        {video ? (
-          <LazyLoadImage
-            css={css`
-              border-radius: 0.8rem;
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
-            `}
-            src={video.thumbnailUrl}
-            alt={video.title}
-          />
-        ) : (
-          <Center>
-            <SvgIcon
+        <div
+          css={css`
+            width: 100%;
+            height: 100%;
+            transform: scale(${isHover ? '1.2' : '1.0'});
+            transition: transform 300ms ease;
+          `}
+        >
+          {video ? (
+            <LazyLoadImage
               css={css`
-                width: 30%;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
               `}
-              icon="icon"
+              src={video.thumbnailUrl}
+              alt={video.title}
             />
-          </Center>
-        )}
+          ) : (
+            <Center>
+              <SvgIcon
+                css={css`
+                  width: 25%;
+                `}
+                icon="icon"
+              />
+            </Center>
+          )}
+        </div>
       </div>
     </AspectRatio>
   );
