@@ -6,10 +6,16 @@ import { jsx, css } from '@emotion/core';
 export interface BaseButtonProps {
   children?: React.ReactNode;
   className?: string;
+  disabled?: boolean;
   onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-export default ({ children, className, onClick }: BaseButtonProps) => (
+export default ({
+  children,
+  className,
+  disabled,
+  onClick,
+}: BaseButtonProps) => (
   <button
     css={css`
       display: block;
@@ -24,6 +30,7 @@ export default ({ children, className, onClick }: BaseButtonProps) => (
     `}
     className={className}
     type="button"
+    disabled={disabled}
     onClick={onClick}
   >
     {children}
