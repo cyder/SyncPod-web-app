@@ -5,6 +5,8 @@ import * as React from 'react';
 
 import Hoverable from 'components/atoms/Features/Hoverable';
 import RoomThumbnail from 'components/molecules/Rooms/RoomThumbnail';
+import SingleLineText from 'components/atoms/Labels/SingleLineText';
+import FilledLabel from 'components/atoms/Labels/FilledLabel';
 
 import { roomRoute } from 'components/Router/config';
 import { color } from 'constants/styles';
@@ -29,7 +31,7 @@ export default ({
   lastPlayingVideo,
   onlineUserCount,
 }: RoomListItemProps) => {
-  const generateVideoInfo = React.useCallback((): string | null => {
+  const generateVideoInfo = React.useCallback((): string => {
     if (nowPlayingVideo) {
       return `再生中：${nowPlayingVideo.title}`;
     }
@@ -53,43 +55,32 @@ export default ({
           lastPlayingVideo={lastPlayingVideo}
           isHover={isHover}
         />
-        <h3
+        <SingleLineText
           css={css`
             font-size: 1.2rem;
             font-weight: bold;
             padding: 1rem 0 0.4rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
           `}
         >
           {name}
-        </h3>
-        <p
+        </SingleLineText>
+        <SingleLineText
           css={css`
             font-size: 1.2rem;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
             padding: 0.4rem 0;
             color: ${color.GRAY_MEDIUM};
           `}
         >
           {generateVideoInfo()}
-        </p>
-        <span
+        </SingleLineText>
+        <FilledLabel
           css={css`
-            display: inline-block;
-            border-radius: 1000px;
-            padding: 0.4rem 2rem;
-            background-color: ${color.PRIMALY};
             font-size: 1.1rem;
             margin: 0.4rem 0;
           `}
         >
-          視聴者：
-          {onlineUserCount}
-        </span>
+          {`視聴者：${onlineUserCount}`}
+        </FilledLabel>
       </roomRoute.Link>
     </Hoverable>
   );

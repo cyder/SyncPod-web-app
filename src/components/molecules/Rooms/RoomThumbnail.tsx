@@ -6,6 +6,7 @@ import LazyLoadImage from 'components/atoms/Images/LazyLoadImage';
 import AspectRatio from 'components/atoms/Layouts/AspectRatio';
 import SvgIcon from 'components/atoms/Icons/SvgIcon';
 import Center from 'components/atoms/Layouts/Center';
+import Card from 'components/atoms/Cards/Card';
 
 import { color } from 'constants/styles';
 
@@ -30,13 +31,9 @@ export default ({
   const video = nowPlayingVideo || lastPlayingVideo;
   return (
     <AspectRatio className={className} width={16} height={9}>
-      <div
+      <Card
         css={css`
-          border-radius: 0.8rem;
-          width: 100%;
-          height: 100%;
           background-color: ${color.GRAY_LIGHT};
-          overflow: hidden;
         `}
       >
         <div
@@ -68,7 +65,7 @@ export default ({
             </Center>
           )}
         </div>
-      </div>
+      </Card>
     </AspectRatio>
   );
 };
