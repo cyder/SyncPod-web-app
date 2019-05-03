@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/core';
 import { useMutation } from 'react-apollo-hooks';
 
 import Center from 'components/atoms/Layouts/Center';
-import FullScreen from 'components/atoms/Layouts/FullScreen';
+import FullScreen from 'components/atoms/FullScreens/BodyFullScreen';
 import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
 
 import { color, zIndex } from 'constants/styles';

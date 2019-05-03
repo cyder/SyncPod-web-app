@@ -5,7 +5,7 @@ import { jsx, css } from '@emotion/core';
 import SvgIcon from 'components/atoms/Icons/SvgIcon';
 import HeaderMenu from 'components/molecules/Menus/HeaderMenu';
 
-import { color } from 'constants/styles';
+import { color, size, zIndex } from 'constants/styles';
 
 export default () => (
   <div
@@ -14,10 +14,12 @@ export default () => (
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      height: 5rem;
+      height: ${size.HEADER_HEIGHT};
       background-color: ${color.PRIMALY_DARK};
       padding: 1rem 1rem;
       color: ${color.WHITE};
+      top: 0;
+      z-index: ${zIndex.HEADER};
     `}
   >
     <SvgIcon
