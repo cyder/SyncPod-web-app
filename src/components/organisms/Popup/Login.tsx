@@ -31,11 +31,29 @@ export default () => {
     handleSuccess,
     handleError,
   );
-  const handleSubmit = useCallback(() => {
+  const clearForm = useCallback(() => {
     setEmailError(false);
     setPasswordError(false);
     setErrorMessage(undefined);
-    login();
+  }, []);
+  const validateForm = useCallback((): boolean => {
+    if (!email) {
+      setEmailError(true);
+      setErrorMessage('メールアドレスを入力してください。');
+      return false;
+    }
+    if (!password) {
+      setPasswordError(true);
+      setErrorMessage('パスワードを入力してください。');
+      return false;
+    }
+    return true;
+  }, [email, password]);
+  const handleSubmit = useCallback(() => {
+    clearForm();
+    if (validateForm()) {
+      login();
+    }
   }, [email, password]);
 
   const forms: FormElement[] = [

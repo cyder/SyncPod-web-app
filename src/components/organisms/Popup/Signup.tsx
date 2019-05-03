@@ -7,6 +7,7 @@ import TextInput from 'components/atoms/Forms/TextInputWithLabel';
 import Form, { FormElement } from 'components/molecules/Forms/Form';
 
 import { useSignup, useClearPopup } from 'util/hooks/apollo';
+import { validateEmail, validatePassword } from 'util/validation';
 
 export default () => {
   const clearPopup = useClearPopup();
@@ -24,7 +25,9 @@ export default () => {
   }, []);
   const handleError = useCallback(() => {
     setEmailError(true);
-    setErrorMessage('メールアドレスが使われている可能性があります。');
+    setErrorMessage(
+      '登録に失敗しました。メールアドレスが使われている可能性があります。',
+    );
   }, []);
   const { loading, signup } = useSignup(
     name,
@@ -33,14 +36,50 @@ export default () => {
     handleSuccess,
     handleError,
   );
-  const handleSubmit = useCallback(() => {
+  const clearForm = useCallback(() => {
     setNameError(false);
     setEmailError(false);
     setPasswordError(false);
     setPasswordConfirmError(false);
     setErrorMessage(undefined);
-    signup();
-  }, [email, password]);
+  }, []);
+  const validateForm = useCallback((): boolean => {
+    if (!name) {
+      setNameError(true);
+      setErrorMessage('アカウント名を入力してください。');
+      return false;
+    }
+    const {
+      validity: emailValidity,
+      errorMessage: emailErrorMessage,
+    } = validateEmail(email);
+    if (!emailValidity) {
+      setEmailError(true);
+      setErrorMessage(emailErrorMessage);
+      return false;
+    }
+    const {
+      validity: passwordValidity,
+      errorMessage: passwordErrorMessage,
+    } = validatePassword(password);
+    if (!passwordValidity) {
+      setPasswordError(true);
+      setErrorMessage(passwordErrorMessage);
+      return false;
+    }
+    if (password !== passwordConfirm) {
+      setPasswordConfirmError(true);
+      setErrorMessage('パスワードが異なります。');
+      return false;
+    }
+    return true;
+  }, [name, email, password, passwordConfirm]);
+  const handleSubmit = useCallback(() => {
+    clearForm();
+    if (validateForm()) {
+      signup();
+    }
+  }, [name, email, password, passwordConfirm]);
 
   const forms: FormElement[] = [
     {
