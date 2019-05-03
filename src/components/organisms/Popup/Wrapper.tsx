@@ -1,15 +1,13 @@
 /** @jsx jsx */
 import * as React from 'react';
 import { jsx, css } from '@emotion/core';
-import { useMutation } from 'react-apollo-hooks';
 
 import Center from 'components/atoms/Layouts/Center';
 import FullScreen from 'components/atoms/FullScreens/BodyFullScreen';
 import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
 
 import { color, zIndex } from 'constants/styles';
-import { clearPopupMutation } from 'queries/popup';
-import { ClearPopup } from 'queries/__generated__/ClearPopup';
+import { useClearPopup } from 'util/hooks/apollo';
 
 export interface PopupProps {
   title: string;
@@ -17,10 +15,7 @@ export interface PopupProps {
 }
 
 export default ({ children, title }: PopupProps) => {
-  const clearPopup = useMutation<ClearPopup>(clearPopupMutation);
-  const onClickBack = React.useCallback(() => {
-    clearPopup();
-  }, []);
+  const onClickBack = useClearPopup();
   const onClickContent = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();

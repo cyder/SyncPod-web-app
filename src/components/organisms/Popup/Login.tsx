@@ -11,8 +11,10 @@ import LoginMutation from 'queries/login';
 import GetOwnUser from 'queries/own-user';
 import { Login, LoginVariables } from 'queries/__generated__/Login';
 import { OwnUser } from 'queries/__generated__/OwnUser';
+import { useClearPopup } from 'util/hooks/apollo';
 
 export default () => {
+  const clearPopup = useClearPopup();
   const login = useMutation<Login, LoginVariables>(LoginMutation, {
     update: (proxy, result) => {
       if (!result.data) {
@@ -40,6 +42,7 @@ export default () => {
     }).then(
       () => {
         setLoading(false);
+        clearPopup();
       },
       () => {
         setLoading(false);
