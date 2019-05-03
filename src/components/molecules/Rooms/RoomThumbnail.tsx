@@ -42,6 +42,7 @@ export default ({
             height: 100%;
             transform: scale(${isHover ? '1.2' : '1.0'});
             transition: transform 300ms ease;
+            backface-visibility: hidden;
           `}
         >
           {video ? (
