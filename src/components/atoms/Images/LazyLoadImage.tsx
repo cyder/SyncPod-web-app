@@ -1,4 +1,9 @@
-import * as React from 'react';
+/** @jsx jsx */
+
+import { useRef, useState, useCallback } from 'react';
+import { jsx, css } from '@emotion/core';
+
+import { useIntersectionOnece } from 'utils/hooks/use-intersection';
 
 export interface ImageProps {
   src: string;
@@ -6,7 +11,27 @@ export interface ImageProps {
   className?: string;
 }
 
-// TODO: Lazy Loadを実装
-export default ({ src, alt, className }: ImageProps) => (
-  <img className={className} src={src} alt={alt} />
-);
+export default ({ src, alt, className }: ImageProps) => {
+  const ref = useRef<HTMLImageElement>(null);
+  const intersected = useIntersectionOnece(ref);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const handleLoad = useCallback(() => {
+    setIsLoaded(true);
+  }, []);
+
+  return (
+    <img
+      css={css`
+        width: 100%;
+        height: 100%;
+        visibility: ${isLoaded ? 'visible' : 'hidden'};
+      `}
+      ref={ref}
+      className={className}
+      src={intersected ? src : undefined}
+      alt={alt}
+      onLoad={handleLoad}
+      onError={handleLoad}
+    />
+  );
+};
