@@ -2,57 +2,40 @@
 
 import { useCallback, useState } from 'react';
 import { jsx } from '@emotion/core';
-import { useMutation } from 'react-apollo-hooks';
 
 import TextInput from 'components/atoms/Forms/TextInputWithLabel';
 import Form, { FormElement } from 'components/molecules/Forms/Form';
 
-import LoginMutation from 'queries/login';
-import GetOwnUser from 'queries/own-user';
-import { Login, LoginVariables } from 'queries/__generated__/Login';
-import { OwnUser } from 'queries/__generated__/OwnUser';
-import { useClearPopup } from 'util/hooks/apollo';
+import { useLogin, useClearPopup } from 'util/hooks/apollo';
 
 export default () => {
   const clearPopup = useClearPopup();
-  const login = useMutation<Login, LoginVariables>(LoginMutation, {
-    update: (proxy, result) => {
-      if (!result.data) {
-        return;
-      }
-      proxy.writeQuery<OwnUser>({
-        query: GetOwnUser,
-        data: { ownUser: result.data.login },
-      });
-    },
-  });
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>();
-  const [loading, setLoading] = useState(false);
+  const handleSuccess = useCallback(() => {
+    clearPopup();
+  }, []);
+  const handleError = useCallback(() => {
+    setEmailError(true);
+    setPasswordError(true);
+    setErrorMessage(
+      'メールアドレス、もしくはパスワードが間違っている可能性があります。',
+    );
+  }, []);
+  const { loading, login } = useLogin(
+    email,
+    password,
+    handleSuccess,
+    handleError,
+  );
   const handleSubmit = useCallback(() => {
-    setLoading(true);
     setEmailError(false);
     setPasswordError(false);
     setErrorMessage(undefined);
-    login({
-      variables: { email, password },
-    }).then(
-      () => {
-        setLoading(false);
-        clearPopup();
-      },
-      () => {
-        setLoading(false);
-        setEmailError(true);
-        setPasswordError(true);
-        setErrorMessage(
-          'メールアドレス、もしくはパスワードが間違っている可能性があります。',
-        );
-      },
-    );
+    login();
   }, [email, password]);
 
   const forms: FormElement[] = [
