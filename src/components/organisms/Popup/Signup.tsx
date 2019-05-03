@@ -1,25 +1,70 @@
 /** @jsx jsx */
 
+import { useCallback, useState } from 'react';
 import { jsx } from '@emotion/core';
 
 import TextInput from 'components/atoms/Forms/TextInputWithLabel';
 import Form, { FormElement } from 'components/molecules/Forms/Form';
 
+import { useSignup, useClearPopup } from 'util/hooks/apollo';
+
 export default () => {
+  const clearPopup = useClearPopup();
+  const [name, setName] = useState('');
+  const [nameError, setNameError] = useState(false);
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState(false);
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [passwordConfirmError, setPasswordConfirmError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string>();
+  const handleSuccess = useCallback(() => {
+    clearPopup();
+  }, []);
+  const handleError = useCallback(() => {
+    setEmailError(true);
+    setErrorMessage('メールアドレスが使われている可能性があります。');
+  }, []);
+  const { loading, signup } = useSignup(
+    name,
+    email,
+    password,
+    handleSuccess,
+    handleError,
+  );
+  const handleSubmit = useCallback(() => {
+    setNameError(false);
+    setEmailError(false);
+    setPasswordError(false);
+    setPasswordConfirmError(false);
+    setErrorMessage(undefined);
+    signup();
+  }, [email, password]);
+
   const forms: FormElement[] = [
     {
       key: 'account_name',
       component: (
-        <TextInput label="アカウント名" placeholder="入力してください。" />
+        <TextInput
+          value={name}
+          onChange={setName}
+          label="アカウント名"
+          placeholder="入力してください。"
+          warning={nameError}
+        />
       ),
     },
     {
       key: 'email_address',
       component: (
         <TextInput
+          value={email}
+          onChange={setEmail}
           label="メールアドレス"
           placeholder="example@sync-pod.com"
           type="email"
+          warning={emailError}
         />
       ),
     },
@@ -27,9 +72,12 @@ export default () => {
       key: 'password',
       component: (
         <TextInput
+          value={password}
+          onChange={setPassword}
           label="パスワード"
           placeholder="入力してください。"
           type="password"
+          warning={passwordError}
         />
       ),
     },
@@ -37,10 +85,12 @@ export default () => {
       key: 'password_confirm',
       component: (
         <TextInput
+          value={passwordConfirm}
+          onChange={setPasswordConfirm}
           label="パスワード（確認）"
           placeholder="入力してください。"
           type="password"
-          warning
+          warning={passwordConfirmError}
         />
       ),
     },
@@ -49,8 +99,10 @@ export default () => {
   return (
     <Form
       forms={forms}
-      errorMessage="エラーメッセージが入ります。"
+      errorMessage={errorMessage}
       submitLabel="作成"
+      onSubmit={handleSubmit}
+      loading={loading}
     />
   );
 };
