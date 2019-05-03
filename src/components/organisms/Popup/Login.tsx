@@ -8,10 +8,22 @@ import TextInput from 'components/atoms/Forms/TextInputWithLabel';
 import Form, { FormElement } from 'components/molecules/Forms/Form';
 
 import LoginMutation from 'queries/login';
+import GetOwnUser from 'queries/own-user';
 import { Login, LoginVariables } from 'queries/__generated__/Login';
+import { OwnUser } from 'queries/__generated__/OwnUser';
 
 export default () => {
-  const login = useMutation<Login, LoginVariables>(LoginMutation);
+  const login = useMutation<Login, LoginVariables>(LoginMutation, {
+    update: (proxy, result) => {
+      if (!result.data) {
+        return;
+      }
+      proxy.writeQuery<OwnUser>({
+        query: GetOwnUser,
+        data: { ownUser: result.data.login },
+      });
+    },
+  });
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [password, setPassword] = useState('');
@@ -26,9 +38,8 @@ export default () => {
     login({
       variables: { email, password },
     }).then(
-      result => {
+      () => {
         setLoading(false);
-        console.log(result.data && result.data.login);
       },
       () => {
         setLoading(false);
