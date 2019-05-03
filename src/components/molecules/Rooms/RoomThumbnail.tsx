@@ -53,6 +53,7 @@ export default ({
               `}
               src={video.thumbnailUrl}
               alt={video.title}
+              draggable={false}
             />
           ) : (
             <Center>

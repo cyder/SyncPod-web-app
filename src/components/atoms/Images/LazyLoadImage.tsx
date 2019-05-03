@@ -8,10 +8,11 @@ import { useIntersectionOnece } from 'utils/hooks/use-intersection';
 export interface ImageProps {
   src: string;
   alt: string;
+  draggable?: boolean;
   className?: string;
 }
 
-export default ({ src, alt, className }: ImageProps) => {
+export default ({ src, alt, draggable, className }: ImageProps) => {
   const ref = useRef<HTMLImageElement>(null);
   const intersected = useIntersectionOnece(ref);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,6 +31,7 @@ export default ({ src, alt, className }: ImageProps) => {
       className={className}
       src={intersected ? src : undefined}
       alt={alt}
+      draggable={draggable}
       onLoad={handleLoad}
       onError={handleLoad}
     />
