@@ -26,7 +26,23 @@ export default ({ onlineUsers, createUser, description, className }: Props) => {
   `;
   return (
     <div className={className}>
-      <h3 css={h3Style}>オンラインメンバー</h3>
+      <div
+        css={css`
+          display: flex;
+          align-items: baseline;
+        `}
+      >
+        <h3 css={h3Style}>オンラインメンバー</h3>
+        <div
+          css={css`
+            font-size: 1.2rem;
+            color: ${color.GRAY_DARK};
+            margin-left: 1rem;
+          `}
+        >
+          {`視聴者：${onlineUsers.length}`}
+        </div>
+      </div>
       <UserIconList users={onlineUsers} />
       <h3 css={h3Style}>ルームオーナー</h3>
       <UserIcon {...createUser} visibleName />
