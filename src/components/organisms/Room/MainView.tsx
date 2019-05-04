@@ -59,9 +59,7 @@ export default ({ room, className, videoAreaRef }: Props) => (
       </SvgIconButton>
     </div>
     <div ref={videoAreaRef}>
-      <AspectRatio width={16} height={9}>
-        Video
-      </AspectRatio>
+      <AspectRatio width={16} height={9} />
     </div>
     <h2>動画名</h2>
     <p>チャンネル名</p>
