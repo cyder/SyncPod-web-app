@@ -56,12 +56,11 @@ export default ({ children, title }: PopupProps) => {
           {children}
           <SvgIconButton
             css={css`
-              width: 2rem;
-              height: 2rem;
               position: absolute;
               top: 2rem;
               right: 2rem;
             `}
+            size="2rem"
             icon="close"
             alt="閉じる"
             onClick={onClickBack}

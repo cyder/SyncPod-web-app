@@ -6,6 +6,7 @@ import { jsx, css } from '@emotion/core';
 import AspectRatio from 'components/atoms/Layouts/AspectRatio';
 
 import { color } from 'constants/styles';
+import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
 
 export interface RoomInfo {
   name: string;
@@ -48,6 +49,14 @@ export default ({ room, className, videoAreaRef }: Props) => (
       >
         {room.key}
       </p>
+      <div
+        css={css`
+          flex: 1;
+        `}
+      />
+      <SvgIconButton icon="share" size="1.2rem">
+        共有
+      </SvgIconButton>
     </div>
     <div ref={videoAreaRef}>
       <AspectRatio width={16} height={9}>
