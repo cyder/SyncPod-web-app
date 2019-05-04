@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/core';
 
 import Tab from 'components/organisms/Tab';
+import Chat from 'components/organisms/Chat';
 
 interface Props {
   className?: string;
@@ -21,7 +22,7 @@ export default ({ className }: Props) => (
   >
     <Tab
       tabs={[
-        { title: 'チャット', component: 'チャット' },
+        { title: 'チャット', component: <Chat /> },
         { title: 'プレイリスト', component: 'プレイリスト' },
       ]}
     />
