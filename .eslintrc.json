@@ -11,7 +11,8 @@
     "no-unused-vars": "off",
     "no-undef": "off",
     "import/named": "off",
-    "jsx-a11y/label-has-for": "off"
+    "jsx-a11y/label-has-for": "off",
+    "import/no-cycle": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2018,

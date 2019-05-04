@@ -1,5 +1,8 @@
 export default {
   WHITE: '#FFFFFF',
+  GRAY_DARK: '#6F7579',
+  GRAY_MEDIUM: '#959EA7',
+  GRAY_LIGHT: '#F0F3F5',
   BLACK: '#3B4043',
   PRIMALY_DARK: '#F05C00',
   PRIMALY: '#FBB143',
