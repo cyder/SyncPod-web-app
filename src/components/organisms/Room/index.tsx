@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/core';
 import * as React from 'react';
 
 import RightColumn from 'components/organisms/Room/RightColumn';
-import LeftColumn, { RoomInfo } from 'components/organisms/Room/LeftColumn';
+import LeftColumn, { RoomData } from 'components/organisms/Room/LeftColumn';
 
 import { size } from 'constants/styles';
 
@@ -14,10 +14,10 @@ interface Props {
 
 export default ({ roomKey }: Props) => {
   const [isEditing, setIsEditing] = React.useState(false);
-  const room: RoomInfo = {
-    key: roomKey,
+  const room: RoomData = {
+    roomKey,
     name: 'ルーム名',
-    video: {
+    currentVideo: {
       title: '現在再生中の動画名',
       channelTitle: '現在再生中の動画のチャンネル名',
     },

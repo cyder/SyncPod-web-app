@@ -38,7 +38,7 @@ export default ({ name, icon, visibleName, className }: Props) => (
       {icon ? (
         <LazyLoadImage src={icon} alt={name} draggable={false} />
       ) : (
-        <DefaultImage />
+        <DefaultImage iconSize="50%" />
       )}
     </div>
     {visibleName && (

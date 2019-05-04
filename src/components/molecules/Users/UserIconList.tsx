@@ -30,3 +30,5 @@ export default ({ users }: Props) => (
     </div>
   </Slider>
 );
+
+export { User };

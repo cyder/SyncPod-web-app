@@ -6,12 +6,12 @@ import { jsx, css, SerializedStyles } from '@emotion/core';
 import { useResizeEvent } from 'util/hooks/window-events';
 
 import RoomFooter from 'components/molecules/Footers/RoomFooter';
-import MainView, { RoomInfo } from 'components/organisms/Room/MainView';
+import MainView, { RoomData } from 'components/organisms/Room/MainView';
 import VideoSearch from 'components/organisms/VideoSearch';
 import Video from 'components/organisms/Video';
 
 interface Props {
-  room: RoomInfo;
+  room: RoomData;
   isEditing: boolean;
   className?: string;
 }
@@ -64,7 +64,7 @@ export default ({ room, isEditing, className }: Props) => {
       {isEditing ? (
         <VideoSearch />
       ) : (
-        <MainView room={room} videoAreaRef={videoAreaRef} />
+        <MainView {...room} videoAreaRef={videoAreaRef} />
       )}
       <RoomFooter />
       {wrapperRef.current && <Video css={style} enableMiniPlayer={isEditing} />}
@@ -72,4 +72,4 @@ export default ({ room, isEditing, className }: Props) => {
   );
 };
 
-export { RoomInfo };
+export { RoomData };
