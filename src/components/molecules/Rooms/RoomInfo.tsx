@@ -45,7 +45,22 @@ export default ({ onlineUsers, createUser, description, className }: Props) => {
       </div>
       <UserIconList users={onlineUsers} />
       <h3 css={h3Style}>ルームオーナー</h3>
-      <UserIcon {...createUser} visibleName />
+      <div
+        css={css`
+          display: flex;
+          align-items: center;
+        `}
+      >
+        <UserIcon {...createUser} />
+        <div
+          css={css`
+            font-size: 1.2rem;
+            margin-left: 1rem;
+          `}
+        >
+          {createUser.name}
+        </div>
+      </div>
       <h3 css={h3Style}>ルームの説明</h3>
       <MultiLineText
         css={css`

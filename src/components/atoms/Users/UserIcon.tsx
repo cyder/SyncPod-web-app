@@ -14,42 +14,25 @@ export interface User {
 }
 
 interface Props extends User {
-  visibleName?: boolean;
   className?: string;
+  size?: string;
 }
 
-export default ({ name, icon, visibleName, className }: Props) => (
+export default ({ name, icon, size, className }: Props) => (
   <div
     css={css`
-      display: flex;
-      align-items: center;
+      width: ${size || '5rem'};
+      height: ${size || '5rem'};
+      border-radius: 1000px;
+      overflow: hidden;
+      background: ${color.GRAY_LIGHT};
     `}
     className={className}
   >
-    <div
-      css={css`
-        width: 5rem;
-        height: 5rem;
-        border-radius: 2.5rem;
-        overflow: hidden;
-        background: ${color.GRAY_LIGHT};
-      `}
-    >
-      {icon ? (
-        <LazyLoadImage src={icon} alt={name} draggable={false} />
-      ) : (
-        <DefaultImage iconSize="50%" />
-      )}
-    </div>
-    {visibleName && (
-      <div
-        css={css`
-          font-size: 1.2rem;
-          margin-left: 1rem;
-        `}
-      >
-        {name}
-      </div>
+    {icon ? (
+      <LazyLoadImage src={icon} alt={name} draggable={false} />
+    ) : (
+      <DefaultImage iconSize="50%" />
     )}
   </div>
 );
