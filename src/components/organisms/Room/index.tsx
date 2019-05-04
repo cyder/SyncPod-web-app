@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/core';
 import * as React from 'react';
 
 import RightColumn from 'components/organisms/Room/RightColumn';
-import LeftColumn from 'components/organisms/Room/LeftColumn';
+import LeftColumn, { RoomInfo } from 'components/organisms/Room/LeftColumn';
 
 import { size } from 'constants/styles';
 
@@ -14,6 +14,10 @@ interface Props {
 
 export default ({ roomKey }: Props) => {
   const [isEditing, setIsEditing] = React.useState(false);
+  const room: RoomInfo = {
+    key: roomKey,
+    name: 'ルーム名',
+  };
 
   return (
     <div
@@ -29,7 +33,7 @@ export default ({ roomKey }: Props) => {
           flex: 1;
         `}
       >
-        <LeftColumn roomKey={roomKey} isEditing={isEditing} />
+        <LeftColumn room={room} isEditing={isEditing} />
       </div>
       <div
         css={css`

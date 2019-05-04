@@ -5,21 +5,50 @@ import { jsx, css } from '@emotion/core';
 
 import AspectRatio from 'components/atoms/Layouts/AspectRatio';
 
+import { color } from 'constants/styles';
+
+export interface RoomInfo {
+  name: string;
+  key: string;
+}
+
 interface Props {
-  roomKey: string;
+  room: RoomInfo;
   className?: string;
   videoAreaRef: React.RefObject<HTMLDivElement>;
 }
 
-export default ({ roomKey, className, videoAreaRef }: Props) => (
+export default ({ room, className, videoAreaRef }: Props) => (
   <div
     css={css`
-      height: 200vh;
+      padding: 2rem 0;
     `}
     className={className}
   >
-    <h1>Room名</h1>
-    <p>{roomKey}</p>
+    <div
+      css={css`
+        display: flex;
+        align-items: baseline;
+        padding: 1rem 0;
+      `}
+    >
+      <h1
+        css={css`
+          font-size: 2rem;
+        `}
+      >
+        {room.name}
+      </h1>
+      <p
+        css={css`
+          font-size: 1.4rem;
+          color: ${color.GRAY_MEDIUM};
+          padding: 0 1rem;
+        `}
+      >
+        {room.key}
+      </p>
+    </div>
     <div ref={videoAreaRef}>
       <AspectRatio width={16} height={9}>
         Video
