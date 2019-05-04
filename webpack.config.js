@@ -41,7 +41,7 @@ module.exports = {
         loader: 'source-map-loader',
       },
       {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -66,6 +66,10 @@ module.exports = {
             name: '[path][name].[ext]',
           },
         },
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       },
       {
         test: /\.mjs$/,
