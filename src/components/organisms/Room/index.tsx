@@ -17,6 +17,62 @@ export default ({ roomKey }: Props) => {
   const room: RoomInfo = {
     key: roomKey,
     name: 'ルーム名',
+    video: {
+      title: '現在再生中の動画名',
+      channelTitle: '現在再生中の動画のチャンネル名',
+    },
+    onlineUsers: [
+      {
+        id: 'user1',
+        name: 'ユーザ1',
+        icon:
+          'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
+      },
+      {
+        id: 'user2',
+        name: 'ユーザ2',
+      },
+      {
+        id: 'user3',
+        name: 'ユーザ3',
+      },
+      {
+        id: 'user4',
+        name: 'ユーザ4',
+      },
+      {
+        id: 'user5',
+        name: 'ユーザ5',
+      },
+      {
+        id: 'user6',
+        name: 'ユーザ6',
+      },
+      {
+        id: 'user7',
+        name: 'ユーザ7',
+      },
+      {
+        id: 'user8',
+        name: 'ユーザ8',
+      },
+      {
+        id: 'user9',
+        name: 'ユーザ9',
+      },
+      {
+        id: 'user10',
+        name: 'ユーザ10',
+      },
+    ],
+    createUser: {
+      id: 'room owner',
+      name: 'ユーザ名',
+      icon:
+        'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
+    },
+    description:
+      'ルームの説明ルームの説明ルームの説明\nルームの説明ルームの説明ルームの説明ルームの説明ルームの説明ルームの説明ルームの説明',
   };
 
   return (
@@ -31,13 +87,14 @@ export default ({ roomKey }: Props) => {
       <div
         css={css`
           flex: 1;
+          min-width: 0;
         `}
       >
         <LeftColumn room={room} isEditing={isEditing} />
       </div>
       <div
         css={css`
-          width: 360px;
+          flex: 0 0 360px;
           height: calc(100vh - ${size.HEADER_HEIGHT});
           position: sticky;
           top: ${size.HEADER_HEIGHT};

@@ -67,9 +67,7 @@ export default ({ room, isEditing, className }: Props) => {
         <MainView room={room} videoAreaRef={videoAreaRef} />
       )}
       <RoomFooter />
-      {wrapperRef.current && videoAreaRef.current && (
-        <Video css={style} enableMiniPlayer={isEditing} />
-      )}
+      {wrapperRef.current && <Video css={style} enableMiniPlayer={isEditing} />}
     </div>
   );
 };

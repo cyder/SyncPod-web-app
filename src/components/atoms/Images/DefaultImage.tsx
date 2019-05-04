@@ -5,15 +5,11 @@ import { jsx, css } from '@emotion/core';
 import SvgIcon from 'components/atoms/Icons/SvgIcon';
 import Center from 'components/atoms/Layouts/Center';
 
-interface Props {
-  iconSize: string;
-}
-
-export default ({ iconSize }: Props) => (
+export default () => (
   <Center>
     <SvgIcon
       css={css`
-        width: ${iconSize};
+        width: 50%;
       `}
       icon="icon"
     />
