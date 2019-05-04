@@ -4,6 +4,7 @@ import { jsx, css } from '@emotion/core';
 
 import Tab from 'components/organisms/Tab';
 import Chat from 'components/organisms/Chat';
+import PlayList from 'components/organisms/PlayList';
 
 interface Props {
   className?: string;
@@ -11,7 +12,7 @@ interface Props {
   setIsEditing(flag: boolean): void;
 }
 
-export default ({ className }: Props) => (
+export default ({ className, isEditing, setIsEditing }: Props) => (
   <div
     className={className}
     css={css`
@@ -23,7 +24,12 @@ export default ({ className }: Props) => (
     <Tab
       tabs={[
         { title: 'チャット', component: <Chat /> },
-        { title: 'プレイリスト', component: 'プレイリスト' },
+        {
+          title: 'プレイリスト',
+          component: (
+            <PlayList isEditing={isEditing} setIsEditing={setIsEditing} />
+          ),
+        },
       ]}
     />
   </div>
