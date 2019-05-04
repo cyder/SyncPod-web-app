@@ -5,7 +5,7 @@ import * as React from 'react';
 
 import Hoverable from 'components/atoms/Features/Hoverable';
 import RoomThumbnail from 'components/molecules/Rooms/RoomThumbnail';
-import SingleLineText from 'components/atoms/Labels/SingleLineText';
+import SingleLineText from 'components/atoms/Texts/SingleLineText';
 import FilledLabel from 'components/atoms/Labels/FilledLabel';
 
 import { roomRoute } from 'components/Router/config';

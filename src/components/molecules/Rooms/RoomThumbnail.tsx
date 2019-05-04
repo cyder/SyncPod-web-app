@@ -4,8 +4,7 @@ import { jsx, css } from '@emotion/core';
 
 import LazyLoadImage from 'components/atoms/Images/LazyLoadImage';
 import AspectRatio from 'components/atoms/Layouts/AspectRatio';
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-import Center from 'components/atoms/Layouts/Center';
+import DefaultImage from 'components/atoms/Images/DefaultImage';
 import Card from 'components/atoms/Cards/Card';
 
 import { color } from 'constants/styles';
@@ -57,14 +56,7 @@ export default ({
               draggable={false}
             />
           ) : (
-            <Center>
-              <SvgIcon
-                css={css`
-                  width: 25%;
-                `}
-                icon="icon"
-              />
-            </Center>
+            <DefaultImage iconSize="25%" />
           )}
         </div>
       </Card>

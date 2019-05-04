@@ -3,7 +3,7 @@
 import { useRef, useState, useCallback } from 'react';
 import { jsx, css } from '@emotion/core';
 
-import { useIntersectionOnece } from 'utils/hooks/use-intersection';
+import { useIntersectionOnece } from 'util/hooks/use-intersection';
 
 export interface ImageProps {
   src: string;
