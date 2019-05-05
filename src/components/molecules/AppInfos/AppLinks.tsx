@@ -24,7 +24,7 @@ export default ({ className, justifyContent }: Props) => {
       css={css`
         display: flex;
         flex-wrap: wrap;
-        justify-content: ${justifyContent};
+        justify-content: ${justifyContent || 'start'};
       `}
       className={className}
     >

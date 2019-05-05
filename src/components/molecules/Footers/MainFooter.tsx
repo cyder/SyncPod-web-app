@@ -35,10 +35,10 @@ export default ({ className }: Props) => (
     >
       <FooterMenu
         css={css`
-          margin: 6rem 0;
+          margin: 6rem 0 4rem;
         `}
       />
+      <Copylight />
     </div>
-    <Copylight />
   </footer>
 );

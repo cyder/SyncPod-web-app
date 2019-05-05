@@ -5,6 +5,8 @@ import { jsx, css } from '@emotion/core';
 import SvgIcon, { Icon } from 'components/atoms/Icons/SvgIcon';
 import ExternalLink from 'components/atoms/Links/ExternalLink';
 
+import links from 'constants/links';
+
 type App = 'ios' | 'android';
 
 interface AppData {
@@ -16,13 +18,12 @@ interface AppData {
 const apps: Record<App, AppData> = {
   ios: {
     icon: 'appStore',
-    url: 'https://itunes.apple.com/jp/app/syncpod/id1347783355',
+    url: links.APP_STORE,
     alt: 'App Store',
   },
   android: {
     icon: 'googlePlay',
-    url:
-      'https://play.google.com/store/apps/details?id=com.cyder.android.syncpod',
+    url: links.GOOGLE_PLAY,
     alt: 'Google Play',
   },
 };

@@ -4,9 +4,11 @@ import { jsx, css } from '@emotion/core';
 
 import FooterMenuItem from 'components/atoms/Menus/FooterMenuItem';
 
-import { color } from 'constants/styles';
 import ExternalLink from 'components/atoms/Links/ExternalLink';
 import SvgIcon from 'components/atoms/Icons/SvgIcon';
+
+import { color } from 'constants/styles';
+import links from 'constants/links';
 
 interface Props {
   className?: string;
@@ -28,7 +30,7 @@ export default ({ className }: Props) => (
         margin-bottom: 2rem;
       `}
     >
-      <ExternalLink href="https://cyder.jp">
+      <ExternalLink href={links.CYDER}>
         <SvgIcon
           icon="cyder"
           alt="Cyder"
@@ -39,13 +41,13 @@ export default ({ className }: Props) => (
       </ExternalLink>
     </FooterMenuItem>
     <FooterMenuItem>
-      <ExternalLink href="https://cyder.jp/contact/">お問い合わせ</ExternalLink>
+      <ExternalLink href={links.CONTACT}>お問い合わせ</ExternalLink>
     </FooterMenuItem>
     <FooterMenuItem>
-      <ExternalLink href="http://app.sync-pod.com/">アプリ情報</ExternalLink>
+      <ExternalLink href={links.APP_INFO}>アプリ情報</ExternalLink>
     </FooterMenuItem>
     <FooterMenuItem>
-      <ExternalLink href="http://app.sync-pod.com/terms">利用規約</ExternalLink>
+      <ExternalLink href={links.TERMS}>利用規約</ExternalLink>
     </FooterMenuItem>
   </div>
 );
