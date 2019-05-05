@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/core';
 
 import RoomList, { RoomListItemProps } from 'components/organisms/RoomList';
+import MainFooter from 'components/molecules/Footers/MainFooter';
 
 export default () => {
   const popularRooms: RoomListItemProps[] = [
@@ -59,28 +60,31 @@ export default () => {
   const recommendedRooms: RoomListItemProps[] = [];
 
   return (
-    <div
-      css={css`
-        max-width: 140rem;
-        margin: 0 auto;
-        padding: 1rem 5%;
-      `}
-    >
-      <RoomList
-        title="人気のルーム"
-        emptyMessage="人気のルームはまだありません。"
-        items={popularRooms}
-      />
-      <RoomList
-        title="最近参加したルーム"
-        emptyMessage="最近入ったルームはありません。ルームを作成するか、友達のルームに参加しよう。"
-        items={recentlyJoinedRooms}
-      />
-      <RoomList
-        title="おすすめのルーム"
-        emptyMessage="おすすめのルームはありません。"
-        items={recommendedRooms}
-      />
+    <div>
+      <div
+        css={css`
+          max-width: 140rem;
+          margin: 0 auto;
+          padding: 1rem 5%;
+        `}
+      >
+        <RoomList
+          title="人気のルーム"
+          emptyMessage="人気のルームはまだありません。"
+          items={popularRooms}
+        />
+        <RoomList
+          title="最近参加したルーム"
+          emptyMessage="最近入ったルームはありません。ルームを作成するか、友達のルームに参加しよう。"
+          items={recentlyJoinedRooms}
+        />
+        <RoomList
+          title="おすすめのルーム"
+          emptyMessage="おすすめのルームはありません。"
+          items={recommendedRooms}
+        />
+      </div>
+      <MainFooter />
     </div>
   );
 };
