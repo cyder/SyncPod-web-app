@@ -2,6 +2,10 @@
 
 import { jsx, css } from '@emotion/core';
 
+import AppLinks from 'components/molecules/AppInfos/AppLinks';
+
+import { color } from 'constants/styles';
+
 interface Props {
   className?: string;
 }
@@ -9,10 +13,13 @@ interface Props {
 export default ({ className }: Props) => (
   <div
     css={css`
-      height: 100px;
+      border-top: 1px solid ${color.BLACK};
+      padding: 5rem 0;
+      max-width: 110rem;
+      margin: 0 auto;
     `}
     className={className}
   >
-    RoomFooter
+    <AppLinks justifyContent="center" />
   </div>
 );

@@ -3,12 +3,14 @@
 import { jsx, css } from '@emotion/core';
 
 import AppLink from 'components/molecules/Links/AppLink';
+import SvgIcon from 'components/atoms/Icons/SvgIcon';
 
 interface Props {
   className?: string;
+  justifyContent?: 'start' | 'center';
 }
 
-export default ({ className }: Props) => {
+export default ({ className, justifyContent }: Props) => {
   const linkStyle = css`
     height: 100%;
 
@@ -18,26 +20,22 @@ export default ({ className }: Props) => {
   `;
 
   return (
-    <div className={className}>
-      <h2
+    <div
+      css={css`
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: ${justifyContent};
+      `}
+      className={className}
+    >
+      <SvgIcon
         css={css`
-          font-size: 2rem;
-          font-weight: bold;
-          margin-bottom: 1rem;
-        `}
-      >
-        アプリでもっと気軽に視聴！
-      </h2>
-      <div
-        css={css`
+          height: 8rem;
           margin-bottom: 3rem;
-          font-size: 1.4rem;
-          line-height: 2.5rem;
+          margin-right: 3rem;
         `}
-      >
-        <p>アプリをダウンロードすればいつでもどこでもみんなと動画が見れる！</p>
-        <p>{`下のリンクからダウンロード。`}</p>
-      </div>
+        icon="appInfo"
+      />
       <div
         css={css`
           height: 5rem;

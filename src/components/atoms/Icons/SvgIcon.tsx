@@ -11,6 +11,7 @@ export type Icon =
   | 'appStore'
   | 'googlePlay'
   | 'spImage'
+  | 'appInfo'
   | 'share'
   | 'cyder';
 
@@ -23,6 +24,7 @@ const icons: Record<Icon, string> = {
   appStore: '/svg/app-store.svg',
   googlePlay: '/svg/google-play.svg',
   spImage: '/svg/sp-image.svg',
+  appInfo: '/svg/app-info.svg',
   share: '/svg/share.svg',
   cyder: '/svg/cyder.svg',
 };
