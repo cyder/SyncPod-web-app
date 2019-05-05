@@ -44,6 +44,8 @@ export default ({ className, enableMiniPlayer }: Props) => {
       css={css`
         background-color: #333333;
         color: #ffffff;
+        width: 100%;
+        height: 100%;
       `}
       className={className}
       onChange={handleFullScreenChange}
