@@ -6,17 +6,17 @@ import { jsx, css, SerializedStyles } from '@emotion/core';
 import { useResizeEvent } from 'util/hooks/window-events';
 
 import RoomFooter from 'components/molecules/Footers/RoomFooter';
-import MainView from 'components/organisms/Room/MainView';
+import MainView, { RoomData } from 'components/organisms/Room/MainView';
 import VideoSearch from 'components/organisms/VideoSearch';
 import Video from 'components/organisms/Video';
 
 interface Props {
-  roomKey: string;
+  room: RoomData;
   isEditing: boolean;
   className?: string;
 }
 
-export default ({ roomKey, isEditing, className }: Props) => {
+export default ({ room, isEditing, className }: Props) => {
   const wrapperRef = React.useRef<HTMLDivElement>(null);
   const videoAreaRef = React.useRef<HTMLDivElement>(null);
   const [style, setStyle] = React.useState<SerializedStyles>();
@@ -64,10 +64,12 @@ export default ({ roomKey, isEditing, className }: Props) => {
       {isEditing ? (
         <VideoSearch />
       ) : (
-        <MainView roomKey={roomKey} videoAreaRef={videoAreaRef} />
+        <MainView {...room} videoAreaRef={videoAreaRef} />
       )}
       <RoomFooter />
-      {wrapperRef && <Video css={style} enableMiniPlayer={isEditing} />}
+      {wrapperRef.current && <Video css={style} enableMiniPlayer={isEditing} />}
     </div>
   );
 };
+
+export { RoomData };

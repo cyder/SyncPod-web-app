@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/core';
 import * as React from 'react';
 
 import RightColumn from 'components/organisms/Room/RightColumn';
-import LeftColumn from 'components/organisms/Room/LeftColumn';
+import LeftColumn, { RoomData } from 'components/organisms/Room/LeftColumn';
 
 import { size } from 'constants/styles';
 
@@ -14,6 +14,66 @@ interface Props {
 
 export default ({ roomKey }: Props) => {
   const [isEditing, setIsEditing] = React.useState(false);
+  const room: RoomData = {
+    roomKey,
+    name: 'ルーム名',
+    currentVideo: {
+      title: '現在再生中の動画名',
+      channelTitle: '現在再生中の動画のチャンネル名',
+    },
+    onlineUsers: [
+      {
+        id: 'user1',
+        name: 'ユーザ1',
+        icon:
+          'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
+      },
+      {
+        id: 'user2',
+        name: 'ユーザ2',
+      },
+      {
+        id: 'user3',
+        name: 'ユーザ3',
+      },
+      {
+        id: 'user4',
+        name: 'ユーザ4',
+      },
+      {
+        id: 'user5',
+        name: 'ユーザ5',
+      },
+      {
+        id: 'user6',
+        name: 'ユーザ6',
+      },
+      {
+        id: 'user7',
+        name: 'ユーザ7',
+      },
+      {
+        id: 'user8',
+        name: 'ユーザ8',
+      },
+      {
+        id: 'user9',
+        name: 'ユーザ9',
+      },
+      {
+        id: 'user10',
+        name: 'ユーザ10',
+      },
+    ],
+    createUser: {
+      id: 'room owner',
+      name: 'ユーザ名',
+      icon:
+        'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
+    },
+    description:
+      'ルームの説明ルームの説明ルームの説明\nルームの説明ルームの説明ルームの説明ルームの説明ルームの説明ルームの説明ルームの説明',
+  };
 
   return (
     <div
@@ -27,13 +87,14 @@ export default ({ roomKey }: Props) => {
       <div
         css={css`
           flex: 1;
+          min-width: 0;
         `}
       >
-        <LeftColumn roomKey={roomKey} isEditing={isEditing} />
+        <LeftColumn room={room} isEditing={isEditing} />
       </div>
       <div
         css={css`
-          width: 360px;
+          flex: 0 0 360px;
           height: calc(100vh - ${size.HEADER_HEIGHT});
           position: sticky;
           top: ${size.HEADER_HEIGHT};
