@@ -2,7 +2,7 @@
 
 import { jsx, css } from '@emotion/core';
 
-import AppLink from 'components/atoms/Links/AppLink';
+import AppLink from 'components/molecules/Links/AppLink';
 
 interface Props {
   className?: string;

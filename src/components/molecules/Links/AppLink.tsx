@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/core';
 
 import SvgIcon, { Icon } from 'components/atoms/Icons/SvgIcon';
+import ExternalLink from 'components/atoms/Links/ExternalLink';
 
 type App = 'ios' | 'android';
 
@@ -35,14 +36,12 @@ export default ({ className, app }: Props) => {
   const data = apps[app];
 
   return (
-    <a
+    <ExternalLink
       css={css`
         display: inline-block;
       `}
       className={className}
-      target="_blank"
       href={data.url}
-      rel="noreferrer noopener"
     >
       <SvgIcon
         css={css`
@@ -51,6 +50,6 @@ export default ({ className, app }: Props) => {
         alt={data.alt}
         icon={data.icon}
       />
-    </a>
+    </ExternalLink>
   );
 };
