@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/core';
 
 import UserIcon, { User } from 'components/atoms/Users/UserIcon';
+import ShortDate from 'components/atoms/Date/ShortDate';
 
 import { color } from 'constants/styles';
 
@@ -32,7 +33,7 @@ export default ({ className, user, text, createdAt }: Props) => (
         margin-left: 0.8rem;
       `}
     >
-      <div>{`${createdAt.getHours()}:${createdAt.getMinutes()}`}</div>
+      <ShortDate>{createdAt}</ShortDate>
       <div
         css={css`
           font-size: 1.4rem;

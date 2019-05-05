@@ -31,7 +31,7 @@ export default ({ src, alt, draggable, className }: ImageProps) => {
       className={className}
       src={intersected ? src : undefined}
       alt={alt}
-      draggable={draggable}
+      draggable={draggable || false}
       onLoad={handleLoad}
       onError={handleLoad}
     />

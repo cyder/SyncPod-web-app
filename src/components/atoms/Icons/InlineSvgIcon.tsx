@@ -1,11 +1,15 @@
 /** @jsx jsx */
 
 import { jsx, css } from '@emotion/core';
-import { useMemo } from 'react';
 
 import SubmitIcon from 'constants/svg/submit.svg';
 
 export type Icon = 'submit';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const icons: Record<Icon, any> = {
+  submit: SubmitIcon,
+};
 
 interface Props {
   icon: Icon;
@@ -13,14 +17,7 @@ interface Props {
 }
 
 export default ({ icon, className }: Props) => {
-  const SelectedIcon = useMemo(() => {
-    switch (icon) {
-      case 'submit':
-        return SubmitIcon;
-      default:
-        return null;
-    }
-  }, [icon]);
+  const SelectedIcon = icons[icon];
   return (
     SelectedIcon && (
       <SelectedIcon

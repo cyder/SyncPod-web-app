@@ -2,11 +2,8 @@
 
 import { jsx, css } from '@emotion/core';
 
-import LazyLoadImage from 'components/atoms/Images/LazyLoadImage';
-import AspectRatio from 'components/atoms/Layouts/AspectRatio';
-import Card from 'components/atoms/Cards/Card';
-
-import { color } from 'constants/styles';
+import VideoThumbnail from 'components/molecules/Videos/VideoThumbnail';
+import PublishedDate from 'components/atoms/Date/PublishedDate';
 
 export interface VideoData {
   id: string;
@@ -27,38 +24,14 @@ export default ({ title, channelTitle, thumbnailUrl, published }: Props) => (
       padding: 0.5rem 0;
     `}
   >
-    <AspectRatio
+    <VideoThumbnail
       css={css`
         width: 12rem;
         margin-right: 2rem;
       `}
-      width={16}
-      height={9}
-    >
-      <Card
-        css={css`
-          background-color: ${color.GRAY_LIGHT};
-        `}
-      >
-        <div
-          css={css`
-            width: 100%;
-            height: 100%;
-          `}
-        >
-          <LazyLoadImage
-            css={css`
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
-            `}
-            src={thumbnailUrl}
-            alt={title}
-            draggable={false}
-          />
-        </div>
-      </Card>
-    </AspectRatio>
+      title={title}
+      thumbnailUrl={thumbnailUrl}
+    />
     <div>
       <h3
         css={css`
@@ -76,15 +49,14 @@ export default ({ title, channelTitle, thumbnailUrl, published }: Props) => (
       >
         {channelTitle}
       </h4>
-      <p
+      <PublishedDate
         css={css`
           font-size: 1.2rem;
           margin-bottom: 0.5rem;
         `}
       >
-        {`${published.getFullYear()}/${published.getMonth() +
-          1}/${published.getDate()}に公開`}
-      </p>
+        {published}
+      </PublishedDate>
     </div>
   </div>
 );
