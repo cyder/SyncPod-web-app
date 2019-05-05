@@ -46,7 +46,7 @@ export default ({ name, roomKey, className }: Props) => (
         flex: 1;
       `}
     />
-    <SvgIconButton icon="share" size="1.2rem">
+    <SvgIconButton icon="share" fontSize="1.2rem">
       共有
     </SvgIconButton>
   </div>

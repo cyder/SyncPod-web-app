@@ -9,13 +9,20 @@ import BaseButton from 'components/atoms/Buttons/TextButton';
 interface Props {
   icon: Icon;
   alt?: string;
-  size: string;
+  fontSize: string;
   children?: React.ReactNode;
   className?: string;
   onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
 }
 
-export default ({ icon, alt, size, children, className, onClick }: Props) => (
+export default ({
+  icon,
+  alt,
+  fontSize,
+  children,
+  className,
+  onClick,
+}: Props) => (
   <BaseButton
     css={css`
       display: flex;
@@ -29,7 +36,7 @@ export default ({ icon, alt, size, children, className, onClick }: Props) => (
   >
     <SvgIcon
       css={css`
-        height: ${size};
+        height: ${fontSize};
         ${children && 'margin-right: 0.3rem'}
       `}
       icon={icon}
@@ -38,8 +45,8 @@ export default ({ icon, alt, size, children, className, onClick }: Props) => (
     {children && (
       <div
         css={css`
-          line-height: ${size};
-          font-size: ${size};
+          line-height: ${fontSize};
+          font-size: ${fontSize};
         `}
       >
         {children}

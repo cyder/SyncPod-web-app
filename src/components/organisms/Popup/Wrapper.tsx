@@ -60,7 +60,7 @@ export default ({ children, title }: PopupProps) => {
               top: 2rem;
               right: 2rem;
             `}
-            size="2rem"
+            fontSize="2rem"
             icon="close"
             alt="閉じる"
             onClick={onClickBack}
