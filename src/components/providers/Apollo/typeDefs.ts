@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 export default gql`
   extend type Query {
     currentPopup: PopupType
+    ownUser: User
   }
 
   extend type Mutation {

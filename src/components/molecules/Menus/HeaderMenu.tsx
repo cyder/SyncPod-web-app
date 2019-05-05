@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import { jsx, css } from '@emotion/core';
-import { useMutation } from 'react-apollo-hooks';
+import { useQuery, useMutation } from 'react-apollo-hooks';
 
 import HeaderMenuItem from 'components/atoms/Menus/HeaderMenuItem';
 
@@ -10,9 +10,11 @@ import {
   showSignupPopupMutation,
   showJoinRoomMutation,
 } from 'queries/popup';
+import GetOwnUser from 'queries/own-user';
 import { ShowLoginPopup } from 'queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from 'queries/__generated__/ShowSignupPopup';
 import { ShowJoinRoomPopup } from 'queries/__generated__/ShowJoinRoomPopup';
+import { OwnUser } from 'queries/__generated__/OwnUser';
 
 export default () => {
   const showLoginPopup = useMutation<ShowLoginPopup>(showLoginPopupMutation);
@@ -20,6 +22,11 @@ export default () => {
   const showJoinRoomPopup = useMutation<ShowJoinRoomPopup>(
     showJoinRoomMutation,
   );
+  const { data, loading } = useQuery<OwnUser>(GetOwnUser);
+  if (loading) {
+    return null;
+  }
+  const ownUser = data && data.ownUser;
 
   return (
     <div
@@ -27,13 +34,28 @@ export default () => {
         display: flex;
       `}
     >
-      <HeaderMenuItem onClick={() => showSignupPopup()}>
-        アカウント作成
-      </HeaderMenuItem>
-      <HeaderMenuItem onClick={() => showLoginPopup()}>ログイン</HeaderMenuItem>
+      {!ownUser && (
+        <HeaderMenuItem onClick={() => showSignupPopup()}>
+          アカウント作成
+        </HeaderMenuItem>
+      )}
+      {!ownUser && (
+        <HeaderMenuItem onClick={() => showLoginPopup()}>
+          ログイン
+        </HeaderMenuItem>
+      )}
+      {ownUser && (
+        <HeaderMenuItem onClick={() => {}}>{ownUser.name}</HeaderMenuItem>
+      )}
+      {ownUser && (
+        <HeaderMenuItem onClick={() => {}}>ログアウト</HeaderMenuItem>
+      )}
       <HeaderMenuItem onClick={() => showJoinRoomPopup()}>
         ルームに参加する
       </HeaderMenuItem>
+      {ownUser && (
+        <HeaderMenuItem onClick={() => {}}>ルームを作成する</HeaderMenuItem>
+      )}
     </div>
   );
 };

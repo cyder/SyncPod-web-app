@@ -16,10 +16,17 @@ interface Props {
   forms: FormElement[];
   errorMessage?: string;
   submitLabel?: string;
+  loading?: boolean;
   onSubmit?(): void;
 }
 
-export default ({ forms, errorMessage, submitLabel, onSubmit }: Props) => (
+export default ({
+  forms,
+  errorMessage,
+  submitLabel,
+  loading,
+  onSubmit,
+}: Props) => (
   <form
     css={css`
       width: 30rem;
@@ -53,8 +60,9 @@ export default ({ forms, errorMessage, submitLabel, onSubmit }: Props) => (
           min-width: 14rem;
         `}
         onClick={onSubmit}
+        disabled={loading}
       >
-        {submitLabel}
+        {loading ? '送信中…' : submitLabel}
       </FilledButton>
     )}
   </form>
