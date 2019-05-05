@@ -82,6 +82,7 @@ export default ({ roomKey }: Props) => {
         width: 100%;
         max-width: 1600px;
         margin: auto;
+        padding: 0 1rem;
       `}
     >
       <div
