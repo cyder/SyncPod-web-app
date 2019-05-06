@@ -28,12 +28,10 @@ export default ({
   children,
 }: Props) => {
   const playerRef = useRef<HTMLDivElement>(null);
-  const [style, setStyle] = useState<SerializedStyles>(
-    css`
-      display: none;
-    `,
-  );
-  const [isMinified, setIsMinified] = useState<boolean>();
+  const initStyle = css`
+    display: none;
+  `;
+  const [style, setStyle] = useState<SerializedStyles>(initStyle);
   const animationSec = 0.4;
 
   const toMiniPlayer = useCallback(
@@ -46,36 +44,35 @@ export default ({
       const wrapperRect = wrapperElement.getBoundingClientRect();
       const width = 320;
       const height = 180;
-      const setBefore = (): void =>
-        setStyle(css`
-          position: fixed;
-          width: ${playerRect.width}px;
-          height: ${playerRect.height}px;
-          bottom: ${window.innerHeight - playerRect.bottom}px;
-          left: ${playerRect.left}px;
-        `);
-      const setAfter = (): void =>
-        setStyle(css`
-          ${enableAnimation &&
-            css`
-              transition: all ${animationSec}s ease;
-            `}
-          position: fixed;
-          width: ${width}px;
-          height: ${height}px;
-          bottom: 20px;
-          left: ${wrapperRect.right - width}px;
-        `);
+      const beforeStyle = css`
+        position: fixed;
+        width: ${playerRect.width}px;
+        height: ${playerRect.height}px;
+        bottom: ${window.innerHeight - playerRect.bottom}px;
+        left: ${playerRect.left}px;
+      `;
+      const afterStyle = css`
+        ${enableAnimation &&
+          css`
+            transition: all ${animationSec}s ease;
+          `}
+        position: fixed;
+        width: ${width}px;
+        height: ${height}px;
+        bottom: 20px;
+        left: ${wrapperRect.right - width}px;
+      `;
       if (enableAnimation) {
         window.requestAnimationFrame(() => {
-          setBefore();
+          setStyle(beforeStyle);
           window.requestAnimationFrame(() => {
-            setAfter();
+            setStyle(afterStyle);
           });
         });
       } else {
-        setAfter();
+        setStyle(afterStyle);
       }
+      onChanged(true);
     },
     [],
   );
@@ -89,37 +86,36 @@ export default ({
     ) => {
       const wrapperRect = wrapperElement.getBoundingClientRect();
       const playerRect = videoPlayerElement.getBoundingClientRect();
-      const setBefore = (): void =>
-        setStyle(css`
-          position: absolute;
-          top: ${playerRect.top - wrapperRect.top}px;
-          left: ${playerRect.left - wrapperRect.left}px;
-          width: ${playerRect.width}px;
-          height: ${playerRect.height}px;
-        `);
-      const setAfter = (): void =>
-        setStyle(css`
-          ${enableAnimation &&
-            css`
-              transition: all ${animationSec}s ease;
-            `}
-          position: absolute;
-          top: ${videoAreaElement.offsetTop}px;
-          left: ${videoAreaElement.offsetLeft}px;
-          width: ${videoAreaElement.clientWidth}px;
-          height: ${videoAreaElement.clientHeight}px;
-        `);
+      const beforeStyle = css`
+        position: absolute;
+        top: ${playerRect.top - wrapperRect.top}px;
+        left: ${playerRect.left - wrapperRect.left}px;
+        width: ${playerRect.width}px;
+        height: ${playerRect.height}px;
+      `;
+      const afterStyle = css`
+        ${enableAnimation &&
+          css`
+            transition: all ${animationSec}s ease;
+          `}
+        position: absolute;
+        top: ${videoAreaElement.offsetTop}px;
+        left: ${videoAreaElement.offsetLeft}px;
+        width: ${videoAreaElement.clientWidth}px;
+        height: ${videoAreaElement.clientHeight}px;
+      `;
 
       if (enableAnimation) {
         window.requestAnimationFrame(() => {
-          setBefore();
+          setStyle(beforeStyle);
           window.requestAnimationFrame(() => {
-            setAfter();
+            setStyle(afterStyle);
           });
         });
       } else {
-        setAfter();
+        setStyle(afterStyle);
       }
+      onChanged(false);
     },
     [],
   );
@@ -137,33 +133,24 @@ export default ({
 
   useResizeEvent(updateStyle);
   useEffect(() => {
-    if (isMinified === undefined) {
+    if (style === initStyle) {
       updateStyle();
-      setIsMinified(isEditing);
       return;
     }
     if (!wrapperRef.current || !playerRef.current) {
       return;
     }
-    if (isEditing && !isMinified) {
+    if (isEditing) {
       toMiniPlayer(wrapperRef.current, playerRef.current, true);
-      setIsMinified(isEditing);
-    } else if (!isEditing && isMinified && areaRef.current) {
+    } else if (areaRef.current) {
       toNormalPlayer(
         wrapperRef.current,
         areaRef.current,
         playerRef.current,
         true,
       );
-      setIsMinified(isEditing);
     }
   }, [isEditing]);
-
-  useEffect(() => {
-    if (isMinified !== undefined) {
-      onChanged(isMinified);
-    }
-  }, [isMinified]);
 
   return (
     <div css={style} ref={playerRef}>
