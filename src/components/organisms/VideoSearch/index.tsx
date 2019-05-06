@@ -3,6 +3,7 @@
 import { jsx, css } from '@emotion/core';
 
 import SearchInput from 'components/organisms/VideoSearch/SearchInput';
+import VideoList from 'components/organisms/VideoSearch/VideoList';
 
 import { color, size } from 'constants/styles';
 
@@ -11,23 +12,20 @@ interface Props {
 }
 
 export default ({ className }: Props) => (
-  <div css={css``} className={className}>
-    <div
+  <div
+    css={css`
+      margin-bottom: 3rem;
+    `}
+    className={className}
+  >
+    <SearchInput
       css={css`
-        padding: 2rem 0;
+        padding: 2rem 0 1rem;
         position: sticky;
         top: ${size.HEADER_HEIGHT};
         background: ${color.WHITE};
       `}
-    >
-      <SearchInput />
-    </div>
-    <div
-      css={css`
-        height: 200vh;
-      `}
-    >
-      検索結果
-    </div>
+    />
+    <VideoList />
   </div>
 );
