@@ -25,7 +25,7 @@ export default ({ children, title }: PopupProps) => {
   return (
     <FullScreen
       css={css`
-        background-color: ${color.POPUP_BACKGROUND};
+        background-color: ${color.TRANSPARENT_GRAY_HEIGHT};
         cursor: pointer;
         z-index: ${zIndex.POPUP};
       `}

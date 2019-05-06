@@ -5,9 +5,10 @@ import { jsx, css } from '@emotion/core';
 import * as React from 'react';
 
 import BrowserFullScreen from 'components/atoms/FullScreens/BrowserFullScreen';
-import VideoController from 'components/organisms/Video/VideoController';
+import VideoController from 'components/molecules/VideoControllers/VideoController';
 
 import PlayerMode from 'components/organisms/Video/PlayerMode';
+import MiniVideoController from 'components/molecules/VideoControllers/MiniVideoController';
 
 interface Props {
   className?: string;
@@ -38,6 +39,15 @@ export default ({ className, enableMiniPlayer }: Props) => {
       disableFullScreen();
     }
   }, []);
+  React.useEffect(() => {
+    if (mode !== 'fullscreen') {
+      if (enableMiniPlayer) {
+        setMode('miniplayer');
+      } else {
+        setMode('default');
+      }
+    }
+  }, [enableMiniPlayer]);
 
   return (
     <BrowserFullScreen
@@ -52,16 +62,28 @@ export default ({ className, enableMiniPlayer }: Props) => {
       className={className}
       onChange={handleFullScreenChange}
     >
-      <VideoController
-        css={css`
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-        `}
-        onFullscreenButtonClick={handleFullScreenButton}
-        isFullscreen={mode === 'fullscreen'}
-      />
+      {mode === 'miniplayer' ? (
+        <MiniVideoController
+          css={css`
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          `}
+        />
+      ) : (
+        <VideoController
+          css={css`
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+          `}
+          onFullscreenButtonClick={handleFullScreenButton}
+          isFullscreen={mode === 'fullscreen'}
+        />
+      )}
     </BrowserFullScreen>
   );
 };
