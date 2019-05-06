@@ -85,7 +85,8 @@ export default () => (
       mark,
       audio,
       video,
-      input {
+      input,
+      svg {
         box-sizing: border-box;
       }
     `}
