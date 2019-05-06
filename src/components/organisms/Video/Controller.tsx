@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { jsx, css } from '@emotion/core';
 
 import VideoController from 'components/molecules/VideoControllers/VideoController';
@@ -18,7 +18,6 @@ export default ({ mode, handleFullScreenButton, className }: Props) => {
   const [active, setActive] = useState(false);
   const [timeoutId, setTimeoutId] = useState<number>();
   const handleMouseMove = useCallback(() => {
-    window.clearTimeout(timeoutId);
     setActive(true);
     const id = window.setTimeout(() => {
       setActive(false);
@@ -26,9 +25,14 @@ export default ({ mode, handleFullScreenButton, className }: Props) => {
     setTimeoutId(id);
   }, [timeoutId]);
   const handleMouseLeave = useCallback(() => {
-    window.clearTimeout(timeoutId);
     setActive(false);
   }, [timeoutId]);
+  useEffect(
+    () => () => {
+      window.clearTimeout(timeoutId);
+    },
+    [timeoutId],
+  );
 
   return (
     <div
