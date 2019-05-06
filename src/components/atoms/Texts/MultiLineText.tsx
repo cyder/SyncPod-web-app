@@ -7,8 +7,9 @@ interface Props {
 
 export default ({ children, className }: Props) => (
   <div className={className}>
-    {children.split('\n').map((m: string) => (
-      <p key={m}>{m}</p>
+    {children.split('\n').map((m: string, i: number) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <p key={i}>{m}</p>
     ))}
   </div>
 );

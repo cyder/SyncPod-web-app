@@ -7,7 +7,7 @@ import { useIntersectionOnece } from 'util/hooks/use-intersection';
 
 export interface ImageProps {
   src: string;
-  alt: string;
+  alt?: string;
   draggable?: boolean;
   className?: string;
 }

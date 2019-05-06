@@ -8,4 +8,5 @@ export default {
   PRIMALY: '#FBB143',
 
   POPUP_BACKGROUND: 'rgba(0, 0, 0, 0.8)',
+  PLAYLIST_HOVER_BACKGROUND: 'rgba(0, 0, 0, 0.5)',
 };
