@@ -26,9 +26,7 @@ export default ({ children, className }: Props) => {
       setOffset(offset - wrapperWidth);
     } else {
       setOffset(0);
-      setIsStart(true);
     }
-    setIsEnd(false);
   }, [offset]);
 
   const handleRightButton = useCallback(() => {
@@ -42,9 +40,7 @@ export default ({ children, className }: Props) => {
       setOffset(offset + wrapperWidth);
     } else {
       setOffset(offset + remainingWidth);
-      setIsEnd(true);
     }
-    setIsStart(false);
   }, [offset]);
 
   useEffect(() => {
@@ -63,7 +59,7 @@ export default ({ children, className }: Props) => {
         setIsStart(true);
       }
     }
-  }, [children]);
+  }, [children, offset]);
 
   return (
     <div

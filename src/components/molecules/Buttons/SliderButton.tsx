@@ -3,9 +3,9 @@
 import { jsx, css } from '@emotion/core';
 
 import InlineSvgIcon from 'components/atoms/Icons/InlineSvgIcon';
+import BaseButton from 'components/atoms/Buttons/BaseButton';
 
 import { color } from 'constants/styles';
-import BaseButton from '../../atoms/Buttons/BaseButton';
 
 interface Props {
   direction: 'left' | 'right';
