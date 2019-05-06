@@ -32,7 +32,7 @@ export default ({ className, title, thumbnailUrl, isHover }: Props) => (
           left: 0;
           bottom: 0;
           right: 0;
-          background-color: ${color.PLAYLIST_HOVER_BACKGROUND};
+          background-color: ${color.TRANSPARENT_GRAY_MEDIUM};
           color: ${color.WHITE};
         `}
       >

@@ -7,7 +7,7 @@ export default {
   PRIMALY_DARK: '#F05C00',
   PRIMALY: '#FBB143',
 
-  TRANSPARENT_GRAY_HEIGHT: 'rgba(0, 0, 0, 0.8)',
+  TRANSPARENT_GRAY_DARK: 'rgba(0, 0, 0, 0.8)',
   TRANSPARENT_GRAY_MEDIUM: 'rgba(0, 0, 0, 0.5)',
 
   VIDEO_CONTROLLER_BACKGROUND: `linear-gradient(
