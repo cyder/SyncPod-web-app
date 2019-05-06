@@ -64,7 +64,13 @@ export default ({ room, isEditing, className }: Props) => {
       {isEditing ? (
         <VideoSearch />
       ) : (
-        <MainView {...room} videoAreaRef={videoAreaRef} />
+        <MainView
+          css={css`
+            margin-bottom: 5rem;
+          `}
+          {...room}
+          videoAreaRef={videoAreaRef}
+        />
       )}
       <RoomFooter />
       {wrapperRef.current && <Video css={style} enableMiniPlayer={isEditing} />}
