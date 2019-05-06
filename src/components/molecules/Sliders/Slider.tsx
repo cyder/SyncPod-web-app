@@ -58,6 +58,9 @@ export default ({ children, className }: Props) => {
       } else {
         setIsStart(true);
       }
+      if (isEnd && offset !== 0 && remainingWidth < 0) {
+        setOffset(offset + remainingWidth);
+      }
     }
   }, [children, offset]);
 
