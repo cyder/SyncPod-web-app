@@ -14,7 +14,11 @@ export type Icon =
   | 'appInfo'
   | 'share'
   | 'cyder'
-  | 'plus';
+  | 'plus'
+  | 'openFullscreen'
+  | 'closeFullscreen'
+  | 'speaker'
+  | 'speakerMute';
 
 const icons: Record<Icon, string> = {
   logo: '/svg/logo.svg',
@@ -29,6 +33,10 @@ const icons: Record<Icon, string> = {
   share: '/svg/share.svg',
   cyder: '/svg/cyder.svg',
   plus: '/svg/plus.svg',
+  openFullscreen: '/svg/open-fullscreen.svg',
+  closeFullscreen: '/svg/close-fullscreen.svg',
+  speaker: '/svg/speaker.svg',
+  speakerMute: '/svg/speaker-mute.svg',
 };
 
 interface Props {

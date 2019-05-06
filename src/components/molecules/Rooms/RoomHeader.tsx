@@ -2,7 +2,7 @@
 
 import { jsx, css } from '@emotion/core';
 
-import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
+import SvgIconButton from 'components/molecules/Buttons/SvgIconButtonWithLabel';
 
 import { color } from 'constants/styles';
 

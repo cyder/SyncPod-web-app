@@ -5,6 +5,7 @@ import { jsx, css } from '@emotion/core';
 import * as React from 'react';
 
 import BrowserFullScreen from 'components/atoms/FullScreens/BrowserFullScreen';
+import VideoController from 'components/organisms/Video/VideoController';
 
 import PlayerMode from 'components/organisms/Video/PlayerMode';
 
@@ -42,7 +43,8 @@ export default ({ className, enableMiniPlayer }: Props) => {
     <BrowserFullScreen
       enable={mode === 'fullscreen'}
       css={css`
-        background-color: #333333;
+        position: relative;
+        background-color: #eeeeee;
         color: #ffffff;
         width: 100%;
         height: 100%;
@@ -50,10 +52,16 @@ export default ({ className, enableMiniPlayer }: Props) => {
       className={className}
       onChange={handleFullScreenChange}
     >
-      video
-      <button type="button" onClick={handleFullScreenButton}>
-        Full Screen
-      </button>
+      <VideoController
+        css={css`
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        `}
+        onFullscreenButtonClick={handleFullScreenButton}
+        isFullscreen={mode === 'fullscreen'}
+      />
     </BrowserFullScreen>
   );
 };
