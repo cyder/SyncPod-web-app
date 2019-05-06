@@ -32,14 +32,17 @@ export default ({ className }: Props) => {
     },
   ];
   return (
-    <div
-      className={className}
-      css={css`
-        overflow: auto;
-      `}
-    >
+    <div className={className}>
       {list.length ? (
-        list.map(item => <VideoItem key={item.id} {...item} />)
+        list.map(item => (
+          <VideoItem
+            css={css`
+              margin-bottom: 2rem;
+            `}
+            key={item.id}
+            {...item}
+          />
+        ))
       ) : (
         <EmptyItem />
       )}

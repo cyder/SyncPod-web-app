@@ -5,7 +5,7 @@ import { jsx, css } from '@emotion/core';
 import SearchInput from 'components/organisms/VideoSearch/SearchInput';
 import VideoList from 'components/organisms/VideoSearch/VideoList';
 
-import { color, size } from 'constants/styles';
+import { color, size, zIndex } from 'constants/styles';
 
 interface Props {
   className?: string;
@@ -20,12 +20,17 @@ export default ({ className }: Props) => (
   >
     <SearchInput
       css={css`
-        padding: 2rem 0 1rem;
+        z-index: ${zIndex.SEARCH_INPUT};
+        padding: 2rem 0;
         position: sticky;
         top: ${size.HEADER_HEIGHT};
         background: ${color.WHITE};
       `}
     />
-    <VideoList />
+    <VideoList
+      css={css`
+        overflow: auto;
+      `}
+    />
   </div>
 );
