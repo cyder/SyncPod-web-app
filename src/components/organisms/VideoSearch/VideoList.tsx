@@ -5,7 +5,7 @@ import { jsx, css } from '@emotion/core';
 import VideoItem, {
   VideoData,
 } from 'components/organisms/VideoSearch/VideoItem';
-import EmptyItem from 'components/organisms/PlayList/EmptyItem';
+import EmptyItem from 'components/organisms/VideoSearch/EmptyItem';
 
 interface Props {
   className?: string;
