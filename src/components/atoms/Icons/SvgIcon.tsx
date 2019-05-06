@@ -13,7 +13,8 @@ export type Icon =
   | 'spImage'
   | 'appInfo'
   | 'share'
-  | 'cyder';
+  | 'cyder'
+  | 'plus';
 
 const icons: Record<Icon, string> = {
   logo: '/svg/logo.svg',
@@ -27,6 +28,7 @@ const icons: Record<Icon, string> = {
   appInfo: '/svg/app-info.svg',
   share: '/svg/share.svg',
   cyder: '/svg/cyder.svg',
+  plus: '/svg/plus.svg',
 };
 
 interface Props {

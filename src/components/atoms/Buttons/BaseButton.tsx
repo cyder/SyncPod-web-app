@@ -3,19 +3,12 @@
 import * as React from 'react';
 import { jsx, css } from '@emotion/core';
 
-export interface BaseButtonProps {
-  children?: React.ReactNode;
-  className?: string;
-  disabled?: boolean;
-  onClick?(e: React.MouseEvent<HTMLButtonElement>): void;
-}
+export type BaseButtonProps = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
-export default ({
-  children,
-  className,
-  disabled,
-  onClick,
-}: BaseButtonProps) => (
+export default (props: BaseButtonProps) => (
   <button
     css={css`
       display: block;
@@ -27,12 +20,9 @@ export default ({
       color: inherit;
       font-family: inherit;
       cursor: pointer;
+      text-align: left;
     `}
-    className={className}
     type="button"
-    disabled={disabled}
-    onClick={onClick}
-  >
-    {children}
-  </button>
+    {...props}
+  />
 );
