@@ -66,7 +66,8 @@ export default ({
         css={css`
           border-radius: 1000px;
           border: solid 2px ${color.BLACK};
-          padding: 1rem 3rem 1rem 1.5rem;
+          padding: 0 3rem 0 1.5rem;
+          height: 4.2rem;
           font-size: 1.4rem;
           outline: 0;
           width: 100%;
@@ -74,7 +75,7 @@ export default ({
 
           ::placeholder {
             font-size: 1rem;
-            transform: translate(0, -0.1rem);
+            transform: translate(0, -0.2rem);
           }
         `}
         onFocus={handleFocus}
