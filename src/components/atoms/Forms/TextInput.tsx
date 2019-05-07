@@ -16,6 +16,7 @@ export interface TextInputProps {
   className?: string;
   warning?: boolean;
   type?: TextInputType;
+  multiLine?: boolean;
   onChange?(value: string): void;
 }
 
@@ -27,12 +28,13 @@ export default ({
   onChange,
   warning,
   type,
+  multiLine,
 }: TextInputProps) => {
   const [currentValue, setCurrentValue] = React.useState('');
   const [inFocus, setInFocus] = React.useState(false);
 
   const handleChange = React.useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const data = e.target.value;
       setCurrentValue(data);
       if (onChange) {
@@ -54,6 +56,20 @@ export default ({
     }
   }, [value]);
 
+  const commonStyle = css`
+    border-radius: 2.1rem;
+    border: solid 2px ${color.BLACK};
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-size: 1.4rem;
+    outline: 0;
+    width: 100%;
+    color: inherit;
+
+    ::placeholder {
+      font-size: 1rem;
+    }
+  `;
+
   return (
     <div
       className={className}
@@ -61,30 +77,42 @@ export default ({
         position: relative;
       `}
     >
-      <input
-        value={currentValue}
-        css={css`
-          border-radius: 1000px;
-          border: solid 2px ${color.BLACK};
-          padding: 0 3rem 0 1.5rem;
-          height: 4.2rem;
-          font-size: 1.4rem;
-          outline: 0;
-          width: 100%;
-          color: inherit;
+      {multiLine ? (
+        <textarea
+          defaultValue={currentValue}
+          css={css`
+            ${commonStyle}
+            resize: none;
 
-          ::placeholder {
-            font-size: 1rem;
-            transform: translate(0, -0.2rem);
-          }
-        `}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        placeholder={inFocus ? '' : placeholder}
-        id={name}
-        type={type || 'text'}
-        onChange={handleChange}
-      />
+            ::placeholder {
+              transform: translate(0, 0.2rem);
+            }
+          `}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          placeholder={inFocus ? '' : placeholder}
+          id={name}
+          onChange={handleChange}
+          rows={8}
+        />
+      ) : (
+        <input
+          value={currentValue}
+          css={css`
+            ${commonStyle}
+
+            ::placeholder {
+              transform: translate(0, -0.2rem);
+            }
+          `}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          placeholder={inFocus ? '' : placeholder}
+          id={name}
+          type={type || 'text'}
+          onChange={handleChange}
+        />
+      )}
       {warning && (
         <SvgIcon
           css={css`
