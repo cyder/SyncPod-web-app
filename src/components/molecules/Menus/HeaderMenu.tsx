@@ -9,6 +9,7 @@ import { ShowCreateRoomPopup } from '@/queries/__generated__/ShowCreateRoomPopup
 import { ShowJoinRoomPopup } from '@/queries/__generated__/ShowJoinRoomPopup';
 import { ShowLoginPopup } from '@/queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from '@/queries/__generated__/ShowSignupPopup';
+import {Logout} from "@/queries/__generated__/Logout";
 import GetOwnUser, {logoutMutation} from 'queries/own-user';
 import {
   showCreateRoomMutation,
@@ -26,7 +27,7 @@ export default () => {
   const showCreateRoomPopup = useMutation<ShowCreateRoomPopup>(
     showCreateRoomMutation,
   );
-  const logout = useMutation<OwnUser>(logoutMutation);
+  const logout = useMutation<Logout>(logoutMutation);
   const { data, loading } = useQuery<OwnUser>(GetOwnUser);
   if (loading) {
     return null;

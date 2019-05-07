@@ -1,7 +1,7 @@
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { getCurrentPopupQuery } from '@/queries/popup';
-import currentUser from "@/queries/own-user";
+import getOwnUserQuery from "queries/own-user";
 import { PopupType } from '@/__generated__/globalTypes';
 import { CurrentPopup } from '@/queries/__generated__/CurrentPopup';
 import {OwnUser} from "@/queries/__generated__/OwnUser";
@@ -56,9 +56,9 @@ export default {
     _: {},
     __: {},
     { cache }: { cache: InMemoryCache },
-  ): OwnUser => {
+  ): boolean => {
     const data: OwnUser = { ownUser: null };
-    cache.writeQuery<OwnUser>({ query: currentUser, data });
-    return data;
+    cache.writeQuery<OwnUser>({ query: getOwnUserQuery, data });
+    return true;
   }
 };
