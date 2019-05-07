@@ -10,7 +10,7 @@ export interface CheckBox {
   label: string;
 }
 
-interface Props {
+export interface CheckBoxesProps {
   items: CheckBox[];
   className?: string;
   name: string;
@@ -18,7 +18,13 @@ interface Props {
   onChange?(id: string): string;
 }
 
-export default ({ className, items, name, value, onChange }: Props) => {
+export default ({
+  className,
+  items,
+  name,
+  value,
+  onChange,
+}: CheckBoxesProps) => {
   const [currentId, setCurrentId] = useState(value || items[0].id);
   const handleChange = useCallback((id: string) => {
     setCurrentId(id);

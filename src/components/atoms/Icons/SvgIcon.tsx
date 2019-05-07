@@ -15,6 +15,7 @@ export type Icon =
   | 'share'
   | 'cyder'
   | 'plus'
+  | 'hint'
   | 'openFullscreen'
   | 'closeFullscreen'
   | 'speaker'
@@ -33,6 +34,7 @@ const icons: Record<Icon, string> = {
   share: '/svg/share.svg',
   cyder: '/svg/cyder.svg',
   plus: '/svg/plus.svg',
+  hint: '/svg/hint.svg',
   openFullscreen: '/svg/open-fullscreen.svg',
   closeFullscreen: '/svg/close-fullscreen.svg',
   speaker: '/svg/speaker.svg',
