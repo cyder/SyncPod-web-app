@@ -5,6 +5,7 @@ import Wrapper, { PopupProps } from 'components/organisms/Popup/Wrapper';
 import Login from 'components/organisms/Popup/Login';
 import Signup from 'components/organisms/Popup/Signup';
 import JoinRoom from 'components/organisms/Popup/JoinRoom';
+import CreateRoom from 'components/organisms/Popup/CreateRoom';
 
 import { getCurrentPopupQuery } from 'queries/popup';
 import { PopupType } from '__generated__/globalTypes';
@@ -21,6 +22,8 @@ export default () => {
           return { title: 'アカウント作成', children: <Signup /> };
         case PopupType.JOIN_ROOM:
           return { title: 'ルームに参加', children: <JoinRoom /> };
+        case PopupType.CREATE_ROOM:
+          return { title: 'ルームを作成', children: <CreateRoom /> };
         default:
           return null;
       }

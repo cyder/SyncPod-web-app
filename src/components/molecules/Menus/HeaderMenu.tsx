@@ -9,11 +9,13 @@ import {
   showLoginPopupMutation,
   showSignupPopupMutation,
   showJoinRoomMutation,
+  showCreateRoomMutation,
 } from 'queries/popup';
 import GetOwnUser from 'queries/own-user';
 import { ShowLoginPopup } from 'queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from 'queries/__generated__/ShowSignupPopup';
 import { ShowJoinRoomPopup } from 'queries/__generated__/ShowJoinRoomPopup';
+import { ShowCreateRoomPopup } from 'queries/__generated__/ShowCreateRoomPopup';
 import { OwnUser } from 'queries/__generated__/OwnUser';
 
 export default () => {
@@ -21,6 +23,9 @@ export default () => {
   const showSignupPopup = useMutation<ShowSignupPopup>(showSignupPopupMutation);
   const showJoinRoomPopup = useMutation<ShowJoinRoomPopup>(
     showJoinRoomMutation,
+  );
+  const showCreateRoomPopup = useMutation<ShowCreateRoomPopup>(
+    showCreateRoomMutation,
   );
   const { data, loading } = useQuery<OwnUser>(GetOwnUser);
   if (loading) {
@@ -54,7 +59,9 @@ export default () => {
         ルームに参加する
       </HeaderMenuItem>
       {ownUser && (
-        <HeaderMenuItem onClick={() => {}}>ルームを作成する</HeaderMenuItem>
+        <HeaderMenuItem onClick={() => showCreateRoomPopup()}>
+          ルームを作成する
+        </HeaderMenuItem>
       )}
     </div>
   );

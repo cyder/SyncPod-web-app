@@ -32,6 +32,15 @@ export default {
     cache.writeQuery<CurrentPopup>({ query: getCurrentPopupQuery, data });
     return data;
   },
+  showCreateRoomPopup: (
+    _: {},
+    __: {},
+    { cache }: { cache: InMemoryCache },
+  ): CurrentPopup => {
+    const data: CurrentPopup = { currentPopup: PopupType.CREATE_ROOM };
+    cache.writeQuery<CurrentPopup>({ query: getCurrentPopupQuery, data });
+    return data;
+  },
   clearPopup: (
     _: {},
     __: {},

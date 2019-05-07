@@ -10,6 +10,7 @@ export default gql`
     showLoginPopup: PopupType
     showSignupPopup: PopupType
     showJoinRoomPopup: PopupType
+    showCreateRoomPopup: PopupType
     clearPopup: PopupType
   }
 
@@ -17,5 +18,6 @@ export default gql`
     LOGIN
     SIGNUP
     JOIN_ROOM
+    CREATE_ROOM
   }
 `;
