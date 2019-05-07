@@ -10,13 +10,14 @@ import { ShowJoinRoomPopup } from '@/queries/__generated__/ShowJoinRoomPopup';
 import { ShowLoginPopup } from '@/queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from '@/queries/__generated__/ShowSignupPopup';
 import {Logout} from "@/queries/__generated__/Logout";
-import GetOwnUser, {logoutMutation} from 'queries/own-user';
+import GetOwnUser from '@/queries/own-user';
 import {
   showCreateRoomMutation,
   showJoinRoomMutation,
   showLoginPopupMutation,
   showSignupPopupMutation
 } from 'queries/popup';
+import logoutMutation from '@/queries/logout';
 
 export default () => {
   const showLoginPopup = useMutation<ShowLoginPopup>(showLoginPopupMutation);

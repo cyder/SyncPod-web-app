@@ -11,9 +11,3 @@ export default gql`
     }
   }
 `;
-
-export const logoutMutation = gql`
-  mutation Logout {
-    logout @client
-  }
-`;
