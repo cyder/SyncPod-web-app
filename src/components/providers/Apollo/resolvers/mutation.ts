@@ -52,13 +52,9 @@ export default {
     cache.writeQuery<CurrentPopup>({ query: getCurrentPopupQuery, data });
     return data;
   },
-  logout: (
-    _: {},
-    __: {},
-    { cache }: { cache: InMemoryCache },
-  ): boolean => {
+  logout: (_: {}, __: {}, { cache }: { cache: InMemoryCache }): boolean => {
     const data: OwnUser = { ownUser: null };
     cache.writeQuery<OwnUser>({ query: getOwnUserQuery, data });
     return true;
-  }
+  },
 };
