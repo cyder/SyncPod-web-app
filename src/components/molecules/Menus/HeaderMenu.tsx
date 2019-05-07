@@ -9,13 +9,13 @@ import { ShowCreateRoomPopup } from '@/queries/__generated__/ShowCreateRoomPopup
 import { ShowJoinRoomPopup } from '@/queries/__generated__/ShowJoinRoomPopup';
 import { ShowLoginPopup } from '@/queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from '@/queries/__generated__/ShowSignupPopup';
-import GetOwnUser from '@/queries/own-user';
+import GetOwnUser, {logoutMutation} from 'queries/own-user';
 import {
   showCreateRoomMutation,
   showJoinRoomMutation,
   showLoginPopupMutation,
-  showSignupPopupMutation,
-} from '@/queries/popup';
+  showSignupPopupMutation
+} from 'queries/popup';
 
 export default () => {
   const showLoginPopup = useMutation<ShowLoginPopup>(showLoginPopupMutation);
@@ -26,6 +26,7 @@ export default () => {
   const showCreateRoomPopup = useMutation<ShowCreateRoomPopup>(
     showCreateRoomMutation,
   );
+  const logout = useMutation<OwnUser>(logoutMutation);
   const { data, loading } = useQuery<OwnUser>(GetOwnUser);
   if (loading) {
     return null;
@@ -52,7 +53,7 @@ export default () => {
         <HeaderMenuItem onClick={() => {}}>{ownUser.name}</HeaderMenuItem>
       )}
       {ownUser && (
-        <HeaderMenuItem onClick={() => {}}>ログアウト</HeaderMenuItem>
+        <HeaderMenuItem onClick={() => logout()}>ログアウト</HeaderMenuItem>
       )}
       <HeaderMenuItem onClick={() => showJoinRoomPopup()}>
         ルームに参加する
