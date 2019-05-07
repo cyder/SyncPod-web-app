@@ -11,7 +11,7 @@ export default (props: Props) => {
   const { label, name, hint, className } = props;
 
   return (
-    <FormLabel label={label} name={name} hints={hint} className={className}>
+    <FormLabel label={label} name={name} hint={hint} className={className}>
       <TextInput {...props} className={undefined} />
     </FormLabel>
   );
