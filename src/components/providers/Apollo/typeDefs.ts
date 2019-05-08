@@ -12,7 +12,7 @@ export default gql`
     showJoinRoomPopup: PopupType
     showCreateRoomPopup: PopupType
     clearPopup: PopupType
-    logout: Boolean
+    logout: User
   }
 
   enum PopupType {
