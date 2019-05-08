@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import * as React from 'react';
+import { useRef, useState } from 'react';
 import { jsx, css } from '@emotion/core';
 
 import {
@@ -21,18 +21,17 @@ interface Props {
  * html5のbrowser full screen
  */
 export default ({ enable, children, className, onChange }: Props) => {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const [prevEnable, setPrevEnable] = useState<boolean>();
 
-  React.useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
+  if (enable !== prevEnable && ref.current) {
     if (enable) {
-      openFullScreen(ref);
+      openFullScreen(ref.current);
     } else {
       closeFullScreen();
     }
-  }, [enable, ref]);
+    setPrevEnable(enable);
+  }
 
   useFullScreenChange(() => {
     if (currentFullScreenElement() === ref.current) {
