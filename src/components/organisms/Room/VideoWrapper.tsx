@@ -12,6 +12,8 @@ import { jsx, css, SerializedStyles } from '@emotion/core';
 
 import { useResizeEvent } from 'util/hooks/window-events';
 
+import { zIndex } from 'constants/styles';
+
 interface Props {
   isEditing: boolean;
   wrapperRef: RefObject<HTMLDivElement>;
@@ -153,7 +155,13 @@ export default ({
   }, [isEditing]);
 
   return (
-    <div css={style} ref={playerRef}>
+    <div
+      css={css`
+        ${style}
+        z-index: ${zIndex.VIDEO};
+      `}
+      ref={playerRef}
+    >
       {children}
     </div>
   );

@@ -25,7 +25,7 @@ export default ({ children, title }: PopupProps) => {
   return (
     <FullScreen
       css={css`
-        background-color: ${color.POPUP_BACKGROUND};
+        background-color: ${color.TRANSPARENT_GRAY_DARK};
         cursor: pointer;
         z-index: ${zIndex.POPUP};
       `}
@@ -59,8 +59,9 @@ export default ({ children, title }: PopupProps) => {
               position: absolute;
               top: 2rem;
               right: 2rem;
+              height: 2rem;
+              width: 2rem;
             `}
-            fontSize="2rem"
             icon="close"
             alt="閉じる"
             onClick={onClickBack}
