@@ -5,6 +5,8 @@ import { jsx, css } from '@emotion/core';
 
 import SliderButton from 'components/molecules/Buttons/SliderButton';
 
+import { useResizeEvent } from 'util/hooks/window-events';
+
 interface Props {
   children: ReactNode;
   className?: string;
@@ -43,7 +45,7 @@ export default ({ children, className }: Props) => {
     }
   }, [offset]);
 
-  useEffect(() => {
+  const update = useCallback(() => {
     if (wrapperRef.current && contentRef.current) {
       const wrapperWidth = wrapperRef.current.clientWidth;
       const remainingWidth =
@@ -62,7 +64,10 @@ export default ({ children, className }: Props) => {
         setOffset(offset + remainingWidth);
       }
     }
-  }, [children, offset]);
+  }, [isEnd, offset]);
+
+  useEffect(update, [children, offset]);
+  useResizeEvent(update);
 
   return (
     <div
