@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 export const currentFullScreenElement = (): Element | null => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const doc = document as any;
@@ -10,13 +8,13 @@ export const currentFullScreenElement = (): Element | null => {
   );
 };
 
-export const openFullScreen = (ref: React.RefObject<Element>): void => {
+export const openFullScreen = (element: Element): void => {
   if (currentFullScreenElement()) {
     return;
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const el = ref.current as any;
+  const el = element as any;
 
   if (el.requestFullscreen) {
     el.requestFullscreen();
