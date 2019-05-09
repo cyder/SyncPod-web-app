@@ -3,12 +3,14 @@
 import { jsx, css } from '@emotion/core';
 
 import SubmitIcon from 'constants/svg/submit.svg';
+import ArrowIcon from 'constants/svg/arrow.svg';
 
-export type Icon = 'submit';
+export type Icon = 'submit' | 'arrow';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const icons: Record<Icon, any> = {
   submit: SubmitIcon,
+  arrow: ArrowIcon,
 };
 
 interface Props {

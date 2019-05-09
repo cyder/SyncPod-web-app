@@ -9,6 +9,7 @@ export default {
 
   TRANSPARENT_GRAY_DARK: 'rgba(0, 0, 0, 0.8)',
   TRANSPARENT_GRAY_MEDIUM: 'rgba(0, 0, 0, 0.5)',
+  TRANSPARENT_GRAY_LIGHT: 'rgba(0, 0, 0, 0.2)',
 
   VIDEO_CONTROLLER_BACKGROUND: `linear-gradient(
     to Bottom,
