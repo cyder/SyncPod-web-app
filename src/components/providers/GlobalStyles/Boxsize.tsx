@@ -86,6 +86,7 @@ export default () => (
       audio,
       video,
       input,
+      textarea
       svg {
         box-sizing: border-box;
       }

@@ -1,41 +1,18 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 
 import TextInput, { TextInputProps } from 'components/atoms/Forms/TextInput';
+import FormLabel, { FormLabelProps } from 'components/atoms/Forms/FormLabel';
 
-interface Props extends TextInputProps {
-  label?: string;
-}
+type Props = TextInputProps & FormLabelProps;
 
-export default ({
-  value,
-  name,
-  label,
-  placeholder,
-  className,
-  onChange,
-  warning,
-  type,
-}: Props) => (
-  <div className={className}>
-    <label htmlFor={name}>
-      <div
-        css={css`
-          font-size: 1.2rem;
-          padding: 1rem 0;
-        `}
-      >
-        {label}
-      </div>
-      <TextInput
-        value={value}
-        name={name}
-        placeholder={placeholder}
-        warning={warning}
-        type={type}
-        onChange={onChange}
-      />
-    </label>
-  </div>
-);
+export default (props: Props) => {
+  const { label, name, hint, className } = props;
+
+  return (
+    <FormLabel label={label} name={name} hint={hint} className={className}>
+      <TextInput {...props} className={undefined} />
+    </FormLabel>
+  );
+};

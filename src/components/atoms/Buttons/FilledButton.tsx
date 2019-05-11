@@ -22,6 +22,7 @@ export default (props: Props) => {
         border-radius: 1000px;
         font-size: 1.4rem;
         padding: 0.8rem 3rem;
+        text-align: center;
       `}
       {...props}
     />
