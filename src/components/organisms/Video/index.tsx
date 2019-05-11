@@ -6,6 +6,7 @@ import * as React from 'react';
 
 import BrowserFullScreen from 'components/atoms/FullScreens/BrowserFullScreen';
 import Controller from 'components/organisms/Video/Controller';
+import YouTubePlayer from 'components/organisms/Video/YouTubePlayer';
 
 import PlayerMode from 'components/organisms/Video/PlayerMode';
 
@@ -53,14 +54,13 @@ export default ({ className, enableMiniPlayer }: Props) => {
       enable={mode === 'fullscreen'}
       css={css`
         position: relative;
-        background-color: #eeeeee;
-        color: #ffffff;
         width: 100%;
         height: 100%;
       `}
       className={className}
       onChange={handleFullScreenChange}
     >
+      <YouTubePlayer />
       <Controller
         css={css`
           position: absolute;
