@@ -2,11 +2,11 @@
 
 import { css, jsx } from '@emotion/core';
 
-import UserIcon, { User } from '@/components/atoms/Users/UserIcon';
 import Slider from '@/components/molecules/Sliders/Slider';
+import UserIcon, { UserData } from '@/components/molecules/Users/UserInfo';
 
 interface Props {
-  users: User[];
+  users: UserData[];
 }
 
 export default ({ users }: Props) => (
@@ -33,4 +33,4 @@ export default ({ users }: Props) => (
   </Slider>
 );
 
-export { User };
+export { UserData };

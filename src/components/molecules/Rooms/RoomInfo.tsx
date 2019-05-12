@@ -3,13 +3,13 @@
 import { css, jsx } from '@emotion/core';
 
 import MultiLineText from '@/components/atoms/Texts/MultiLineText';
-import UserIcon, { User } from '@/components/atoms/Users/UserIcon';
 import UserIconList from '@/components/molecules/Users/UserIconList';
+import UserInfo, { UserData } from '@/components/molecules/Users/UserInfo';
 import { color } from '@/constants/styles';
 
 export interface RoomInfoData {
-  onlineUsers: User[];
-  createUser: User;
+  onlineUsers: UserData[];
+  createUser: UserData;
   description: string;
 }
 
@@ -50,7 +50,7 @@ export default ({ onlineUsers, createUser, description, className }: Props) => {
           align-items: center;
         `}
       >
-        <UserIcon {...createUser} />
+        <UserInfo {...createUser} />
         <div
           css={css`
             font-size: 1.2rem;

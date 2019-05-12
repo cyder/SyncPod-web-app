@@ -3,12 +3,12 @@
 import { css, jsx } from '@emotion/core';
 
 import ShortDate from '@/components/atoms/Date/ShortDate';
-import UserIcon, { User } from '@/components/atoms/Users/UserIcon';
+import UserInfo, { UserData } from '@/components/molecules/Users/UserInfo';
 import { color } from '@/constants/styles';
 
 export interface ChatData {
   id: string;
-  user: User;
+  user: UserData;
   text: string;
   createdAt: Date;
 }
@@ -22,10 +22,11 @@ export default ({ className, user, text, createdAt }: Props) => (
     className={className}
     css={css`
       display: flex;
+      align-items: flex-start;
       padding: 0.5rem 0;
     `}
   >
-    <UserIcon {...user} size="3rem" />
+    <UserInfo {...user} size="3rem" />
     <div
       css={css`
         flex: 1;
@@ -54,4 +55,4 @@ export default ({ className, user, text, createdAt }: Props) => (
   </div>
 );
 
-export { User };
+export { UserData };
