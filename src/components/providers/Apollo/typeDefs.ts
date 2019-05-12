@@ -12,7 +12,7 @@ export default gql`
     showJoinRoomPopup: PopupType
     showCreateRoomPopup: PopupType
     clearPopup: PopupType
-    logout: User
+    logout: Unit
   }
 
   enum PopupType {
@@ -20,5 +20,9 @@ export default gql`
     SIGNUP
     JOIN_ROOM
     CREATE_ROOM
+  }
+
+  enum Unit {
+    UNIT
   }
 `;

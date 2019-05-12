@@ -1,10 +1,18 @@
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import {InMemoryCache} from 'apollo-cache-inmemory';
 
+<<<<<<< HEAD
 import { getCurrentPopupQuery } from '@/queries/popup';
 import getOwnUserQuery from "queries/own-user";
 import { PopupType } from '@/__generated__/globalTypes';
 import { CurrentPopup } from '@/queries/__generated__/CurrentPopup';
 import {OwnUser} from "@/queries/__generated__/OwnUser";
+=======
+import {getCurrentPopupQuery} from 'queries/popup';
+import getOwnUserQuery from 'queries/own-user';
+import {PopupType, Unit} from '__generated__/globalTypes';
+import {CurrentPopup} from 'queries/__generated__/CurrentPopup';
+import {OwnUser} from 'queries/__generated__/OwnUser';
+>>>>>>> Add unit type
 
 export default {
   showLoginPopup: (
@@ -52,9 +60,9 @@ export default {
     cache.writeQuery<CurrentPopup>({ query: getCurrentPopupQuery, data });
     return data;
   },
-  logout: (_: {}, __: {}, { cache }: { cache: InMemoryCache }): OwnUser | null => {
+  logout: (_: {}, __: {}, { cache }: { cache: InMemoryCache }): Unit => {
     const data: OwnUser = { ownUser: null };
     cache.writeQuery<OwnUser>({ query: getOwnUserQuery, data });
-    return null;
+    return Unit.UNIT
   },
 };
