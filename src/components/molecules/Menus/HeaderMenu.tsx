@@ -4,20 +4,20 @@ import { css, jsx } from '@emotion/core';
 import { useMutation, useQuery } from 'react-apollo-hooks';
 
 import HeaderMenuItem from '@/components/atoms/Menus/HeaderMenuItem';
+import { Logout } from '@/queries/__generated__/Logout';
 import { OwnUser } from '@/queries/__generated__/OwnUser';
 import { ShowCreateRoomPopup } from '@/queries/__generated__/ShowCreateRoomPopup';
 import { ShowJoinRoomPopup } from '@/queries/__generated__/ShowJoinRoomPopup';
 import { ShowLoginPopup } from '@/queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from '@/queries/__generated__/ShowSignupPopup';
-import {Logout} from "@/queries/__generated__/Logout";
+import logoutMutation from '@/queries/logout';
 import GetOwnUser from '@/queries/own-user';
 import {
   showCreateRoomMutation,
   showJoinRoomMutation,
   showLoginPopupMutation,
-  showSignupPopupMutation
+  showSignupPopupMutation,
 } from '@/queries/popup';
-import logoutMutation from '@/queries/logout';
 
 export default () => {
   const showLoginPopup = useMutation<ShowLoginPopup>(showLoginPopupMutation);
