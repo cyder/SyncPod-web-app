@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, ClassNames } from '@emotion/core';
+import { ClassNames, jsx } from '@emotion/core';
 import YouTube from 'react-youtube';
 
-import { color } from 'constants/styles';
+import { color } from '@/constants/styles';
 
 export default () => (
   <ClassNames>

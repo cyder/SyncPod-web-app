@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Room from 'components/organisms/Room';
+import Room from '@/components/organisms/Room';
 
 interface Props {
   roomKey: string;

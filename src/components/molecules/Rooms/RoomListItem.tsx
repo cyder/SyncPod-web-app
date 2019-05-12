@@ -1,15 +1,14 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 
-import Hoverable from 'components/atoms/Features/Hoverable';
-import RoomThumbnail from 'components/molecules/Rooms/RoomThumbnail';
-import SingleLineText from 'components/atoms/Texts/SingleLineText';
-import FilledLabel from 'components/atoms/Labels/FilledLabel';
-
-import { roomRoute } from 'components/Router/config';
-import { color } from 'constants/styles';
+import { roomRoute } from '@/components/Router/config';
+import Hoverable from '@/components/atoms/Features/Hoverable';
+import FilledLabel from '@/components/atoms/Labels/FilledLabel';
+import SingleLineText from '@/components/atoms/Texts/SingleLineText';
+import RoomThumbnail from '@/components/molecules/Rooms/RoomThumbnail';
+import { color } from '@/constants/styles';
 
 interface Video {
   title: string;

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { Global, css } from '@emotion/core';
+import * as React from 'react';
 
 export default () => (
   <Global
@@ -86,7 +86,7 @@ export default () => (
       audio,
       video,
       input,
-      textarea
+      textarea,
       svg {
         box-sizing: border-box;
       }

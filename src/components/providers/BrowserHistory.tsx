@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { createBrowserHistory } from 'history';
+import * as React from 'react';
 
 const history = createBrowserHistory();
 export const historyContext = React.createContext(history);

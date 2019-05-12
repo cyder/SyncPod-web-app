@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
 
-import FilledButton from 'components/atoms/Buttons/FilledButton';
-
-import { color } from 'constants/styles';
+import FilledButton from '@/components/atoms/Buttons/FilledButton';
+import { color } from '@/constants/styles';
 
 export interface FormElement {
   key: string;

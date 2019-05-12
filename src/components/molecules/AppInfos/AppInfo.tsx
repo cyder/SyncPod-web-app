@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-import AppLinks from 'components/molecules/AppInfos/AppLinks';
-
-import { color } from 'constants/styles';
+import SvgIcon from '@/components/atoms/Icons/SvgIcon';
+import AppLinks from '@/components/molecules/AppInfos/AppLinks';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

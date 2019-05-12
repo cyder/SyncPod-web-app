@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // eslint-disable-next-line import/prefer-default-export
 export const useIntersectionOnece = (

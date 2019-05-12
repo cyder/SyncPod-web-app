@@ -1,10 +1,10 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
 
-import SvgIcon, { Icon } from 'components/atoms/Icons/SvgIcon';
-import BaseButton from 'components/atoms/Buttons/TextButton';
+import BaseButton from '@/components/atoms/Buttons/TextButton';
+import SvgIcon, { Icon } from '@/components/atoms/Icons/SvgIcon';
 
 interface Props {
   icon: Icon;

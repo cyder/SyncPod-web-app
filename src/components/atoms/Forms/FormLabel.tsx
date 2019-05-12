@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import { ReactNode } from 'react';
-import { jsx, css } from '@emotion/core';
 
-import Hint from 'components/atoms/Hints/Hint';
+import Hint from '@/components/atoms/Hints/Hint';
 
 export interface FormLabelProps {
   label: string;

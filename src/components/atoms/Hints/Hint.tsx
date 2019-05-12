@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import { useState } from 'react';
-import { jsx, css } from '@emotion/core';
 
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-import Hoverable from 'components/atoms/Features/Hoverable';
-import MultiLineText from 'components/atoms/Texts/MultiLineText';
-
-import { color } from 'constants/styles';
+import Hoverable from '@/components/atoms/Features/Hoverable';
+import SvgIcon from '@/components/atoms/Icons/SvgIcon';
+import MultiLineText from '@/components/atoms/Texts/MultiLineText';
+import { color } from '@/constants/styles';
 
 interface Props {
   hint: string;

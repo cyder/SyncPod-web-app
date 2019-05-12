@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { useRef, useState, useCallback } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { useCallback, useRef, useState } from 'react';
 
-import { useIntersectionOnece } from 'util/hooks/use-intersection';
+import { useIntersectionOnece } from '@/util/hooks/use-intersection';
 
 export interface ImageProps {
   src: string;

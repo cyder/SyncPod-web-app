@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { useState, useCallback, useEffect } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { useCallback, useEffect, useState } from 'react';
 
-import VideoController from 'components/molecules/VideoControllers/VideoController';
-import MiniVideoController from 'components/molecules/VideoControllers/MiniVideoController';
-
-import PlayerMode from 'components/organisms/Video/PlayerMode';
+import MiniVideoController from '@/components/molecules/VideoControllers/MiniVideoController';
+import VideoController from '@/components/molecules/VideoControllers/VideoController';
+import PlayerMode from '@/components/organisms/Video/PlayerMode';
 
 interface Props {
   mode: PlayerMode;

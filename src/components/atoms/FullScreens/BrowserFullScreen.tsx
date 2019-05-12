@@ -1,14 +1,14 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import { useRef, useState } from 'react';
-import { jsx, css } from '@emotion/core';
 
 import {
+  closeFullScreen,
   currentFullScreenElement,
   openFullScreen,
-  closeFullScreen,
-} from 'util/browser-api/full-screen';
-import { useFullScreenChange } from 'util/hooks/window-events';
+} from '@/util/browser-api/full-screen';
+import { useFullScreenChange } from '@/util/hooks/window-events';
 
 interface Props {
   enable?: boolean;

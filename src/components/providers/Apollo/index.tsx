@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { ApolloProvider } from 'react-apollo-hooks';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 import ApolloClient from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import * as React from 'react';
+import { ApolloProvider } from 'react-apollo-hooks';
 
-import config from 'config';
-import resolvers from 'components/providers/Apollo/resolvers';
-import typeDefs from 'components/providers/Apollo/typeDefs';
+import resolvers from '@/components/providers/Apollo/resolvers';
+import typeDefs from '@/components/providers/Apollo/typeDefs';
+import config from '@/config';
 
 interface Props {
   children: React.ReactNode;

@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SvgIcon, { Icon } from 'components/atoms/Icons/SvgIcon';
-import ExternalLink from 'components/atoms/Links/ExternalLink';
-
-import links from 'constants/links';
+import SvgIcon, { Icon } from '@/components/atoms/Icons/SvgIcon';
+import ExternalLink from '@/components/atoms/Links/ExternalLink';
+import links from '@/constants/links';
 
 type App = 'ios' | 'android';
 

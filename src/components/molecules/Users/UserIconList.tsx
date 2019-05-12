@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import UserIcon, { User } from 'components/atoms/Users/UserIcon';
-import Slider from 'components/molecules/Sliders/Slider';
+import UserIcon, { User } from '@/components/atoms/Users/UserIcon';
+import Slider from '@/components/molecules/Sliders/Slider';
 
 interface Props {
   users: User[];

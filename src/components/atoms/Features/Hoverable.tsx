@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import BaseButton from 'components/atoms/Buttons/BaseButton';
+import BaseButton from '@/components/atoms/Buttons/BaseButton';
 
 interface Props {
   onHoverChange(isHover: boolean): void;

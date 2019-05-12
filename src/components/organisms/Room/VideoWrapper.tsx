@@ -1,18 +1,17 @@
 /** @jsx jsx */
 
+import { SerializedStyles, css, jsx } from '@emotion/core';
 import {
   ReactNode,
   RefObject,
-  useRef,
-  useState,
   useCallback,
   useEffect,
+  useRef,
+  useState,
 } from 'react';
-import { jsx, css, SerializedStyles } from '@emotion/core';
 
-import { useResizeEvent } from 'util/hooks/window-events';
-
-import { zIndex } from 'constants/styles';
+import { zIndex } from '@/constants/styles';
+import { useResizeEvent } from '@/util/hooks/window-events';
 
 interface Props {
   isEditing: boolean;

@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import { useCallback } from 'react';
-import { jsx, css } from '@emotion/core';
 
-import TabBarItem from 'components/organisms/Tab/TabBarItem';
-
-import { color } from 'constants/styles';
+import TabBarItem from '@/components/organisms/Tab/TabBarItem';
+import { color } from '@/constants/styles';
 
 interface Props {
   titles: string[];

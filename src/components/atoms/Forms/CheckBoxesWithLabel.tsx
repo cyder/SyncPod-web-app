@@ -1,9 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import CheckBoxes, { CheckBoxesProps } from 'components/atoms/Forms/CheckBoxes';
-import FormLabel, { FormLabelProps } from 'components/atoms/Forms/FormLabel';
+import CheckBoxes, {
+  CheckBoxesProps,
+} from '@/components/atoms/Forms/CheckBoxes';
+import FormLabel, { FormLabelProps } from '@/components/atoms/Forms/FormLabel';
 
 type Props = CheckBoxesProps & FormLabelProps;
 

@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SubmitIcon from 'constants/svg/submit.svg';
-import ArrowIcon from 'constants/svg/arrow.svg';
+import ArrowIcon from '@/constants/svg/arrow.svg';
+import SubmitIcon from '@/constants/svg/submit.svg';
 
 export type Icon = 'submit' | 'arrow';
 

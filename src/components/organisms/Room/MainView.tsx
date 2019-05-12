@@ -1,17 +1,16 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
 
+import AspectRatio from '@/components/atoms/Layouts/AspectRatio';
 import RoomHeader, {
   RoomHeaderData,
-} from 'components/molecules/Rooms/RoomHeader';
-import AspectRatio from 'components/atoms/Layouts/AspectRatio';
+} from '@/components/molecules/Rooms/RoomHeader';
+import RoomInfo, { RoomInfoData } from '@/components/molecules/Rooms/RoomInfo';
 import RoomVideoInfo, {
   VideoData,
-} from 'components/molecules/Videos/RoomVideoInfo';
-
-import RoomInfo, { RoomInfoData } from 'components/molecules/Rooms/RoomInfo';
+} from '@/components/molecules/Videos/RoomVideoInfo';
 
 type Data = RoomHeaderData & RoomInfoData;
 

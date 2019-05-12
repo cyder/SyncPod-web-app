@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import TextInput from 'components/atoms/Forms/TextInput';
-import BaseButton from 'components/atoms/Buttons/BaseButton';
-import InlineSvgIcon from 'components/atoms/Icons/InlineSvgIcon';
-
-import { color } from 'constants/styles';
+import BaseButton from '@/components/atoms/Buttons/BaseButton';
+import TextInput from '@/components/atoms/Forms/TextInput';
+import InlineSvgIcon from '@/components/atoms/Icons/InlineSvgIcon';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

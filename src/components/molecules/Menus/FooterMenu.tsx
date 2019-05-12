@@ -1,14 +1,12 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import FooterMenuItem from 'components/atoms/Menus/FooterMenuItem';
-
-import ExternalLink from 'components/atoms/Links/ExternalLink';
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-
-import { color } from 'constants/styles';
-import links from 'constants/links';
+import SvgIcon from '@/components/atoms/Icons/SvgIcon';
+import ExternalLink from '@/components/atoms/Links/ExternalLink';
+import FooterMenuItem from '@/components/atoms/Menus/FooterMenuItem';
+import links from '@/constants/links';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

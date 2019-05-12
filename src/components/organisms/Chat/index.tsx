@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import ChatList from 'components/organisms/Chat/ChatList';
-import ChatInput from 'components/organisms/Chat/ChatInput';
+import ChatInput from '@/components/organisms/Chat/ChatInput';
+import ChatList from '@/components/organisms/Chat/ChatList';
 
 interface Props {
   className?: string;

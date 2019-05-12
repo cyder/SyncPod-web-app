@@ -79,7 +79,10 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    modules: ['node_modules'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
     extensions: ['.mjs', '.ts', '.tsx', '.js', '.jsx'],
   },
   devServer: {

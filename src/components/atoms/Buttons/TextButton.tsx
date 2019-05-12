@@ -1,10 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
 import BaseButton, {
   BaseButtonProps,
-} from 'components/atoms/Buttons/BaseButton';
+} from '@/components/atoms/Buttons/BaseButton';
 
 export type TextButtonProps = BaseButtonProps;
 

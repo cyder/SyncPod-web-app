@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import EditButton from 'components/organisms/PlayList/EditButton';
-import VideoList from 'components/organisms/PlayList/VideoList';
+import EditButton from '@/components/organisms/PlayList/EditButton';
+import VideoList from '@/components/organisms/PlayList/VideoList';
 
 interface Props {
   className?: string;

@@ -2,7 +2,7 @@
 
 import { jsx } from '@emotion/core';
 
-import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
+import SvgIconButton from '@/components/atoms/Buttons/SvgIconButton';
 
 interface Props {
   className?: string;
