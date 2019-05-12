@@ -4,11 +4,13 @@ import { css, jsx } from '@emotion/core';
 import { useMutation, useQuery } from 'react-apollo-hooks';
 
 import HeaderMenuItem from '@/components/atoms/Menus/HeaderMenuItem';
+import { Logout } from '@/queries/__generated__/Logout';
 import { OwnUser } from '@/queries/__generated__/OwnUser';
 import { ShowCreateRoomPopup } from '@/queries/__generated__/ShowCreateRoomPopup';
 import { ShowJoinRoomPopup } from '@/queries/__generated__/ShowJoinRoomPopup';
 import { ShowLoginPopup } from '@/queries/__generated__/ShowLoginPopup';
 import { ShowSignupPopup } from '@/queries/__generated__/ShowSignupPopup';
+import logoutMutation from '@/queries/logout';
 import GetOwnUser from '@/queries/own-user';
 import {
   showCreateRoomMutation,
@@ -26,6 +28,7 @@ export default () => {
   const showCreateRoomPopup = useMutation<ShowCreateRoomPopup>(
     showCreateRoomMutation,
   );
+  const logout = useMutation<Logout>(logoutMutation);
   const { data, loading } = useQuery<OwnUser>(GetOwnUser);
   if (loading) {
     return null;
@@ -52,7 +55,7 @@ export default () => {
         <HeaderMenuItem onClick={() => {}}>{ownUser.name}</HeaderMenuItem>
       )}
       {ownUser && (
-        <HeaderMenuItem onClick={() => {}}>ログアウト</HeaderMenuItem>
+        <HeaderMenuItem onClick={() => logout()}>ログアウト</HeaderMenuItem>
       )}
       <HeaderMenuItem onClick={() => showJoinRoomPopup()}>
         ルームに参加する
