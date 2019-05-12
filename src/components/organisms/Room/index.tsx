@@ -24,44 +24,54 @@ export default ({ roomKey }: Props) => {
       {
         id: 1,
         name: 'ユーザ1',
+        isOnline: true,
         icon:
           'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
       },
       {
         id: 2,
         name: 'ユーザ2',
+        isOnline: true,
       },
       {
         id: 3,
         name: 'ユーザ3',
+        isOnline: true,
       },
       {
         id: 4,
         name: 'ユーザ4',
+        isOnline: true,
       },
       {
         id: 5,
         name: 'ユーザ5',
+        isOnline: true,
       },
       {
         id: 6,
         name: 'ユーザ6',
+        isOnline: true,
       },
       {
         id: 7,
         name: 'ユーザ7',
+        isOnline: true,
       },
       {
         id: 8,
         name: 'ユーザ8',
+        isOnline: true,
       },
       {
         id: 9,
         name: 'ユーザ9',
+        isOnline: true,
       },
       {
         id: 10,
         name: 'ユーザ10',
+        isOnline: true,
       },
     ],
     createUser: {
