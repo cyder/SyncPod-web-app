@@ -6,14 +6,17 @@ import Popup from '@/components/organisms/Popup';
 import ApolloProvider from '@/components/providers/Apollo';
 import HistoryProvider from '@/components/providers/BrowserHistory';
 import GlobalStyles from '@/components/providers/GlobalStyles';
+import OverlayProvider from '@/components/providers/Overlay';
 
 export default () => (
   <ApolloProvider>
     <HistoryProvider>
-      <GlobalStyles />
-      <Header />
-      <Router />
-      <Popup />
+      <OverlayProvider>
+        <GlobalStyles />
+        <Header />
+        <Router />
+        <Popup />
+      </OverlayProvider>
     </HistoryProvider>
   </ApolloProvider>
 );
