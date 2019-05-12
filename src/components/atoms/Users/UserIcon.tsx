@@ -7,7 +7,7 @@ import LazyLoadImage from '@/components/atoms/Images/LazyLoadImage';
 import { color } from '@/constants/styles';
 
 export interface User {
-  id: string;
+  id: number;
   icon?: string;
   name: string;
 }

@@ -13,7 +13,7 @@ interface Props {
 
 export default ({ className }: Props) => {
   const user: UserData = {
-    id: 'user1',
+    id: 1,
     name: 'ユーザ1',
     icon:
       'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
@@ -29,7 +29,7 @@ export default ({ className }: Props) => {
     },
     {
       id: 'chat3',
-      user: { id: 'user2', name: 'ユーザ2' },
+      user: { id: 2, name: 'ユーザ2' },
       text: 'チャットのテキスト',
       createdAt: new Date(),
     },
