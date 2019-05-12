@@ -30,7 +30,6 @@ export default (props: Props) => {
           border-radius: 1rem;
           border: 2px solid ${color.PRIMALY};
           background: ${color.WHITE};
-          margin: 1rem 0;
           width: 18rem;
         `}
         nearRef={iconRef}
