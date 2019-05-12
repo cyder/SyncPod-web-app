@@ -1,18 +1,10 @@
 import {InMemoryCache} from 'apollo-cache-inmemory';
 
-<<<<<<< HEAD
 import { getCurrentPopupQuery } from '@/queries/popup';
-import getOwnUserQuery from "queries/own-user";
-import { PopupType } from '@/__generated__/globalTypes';
+import getOwnUserQuery from "@/queries/own-user";
+import { PopupType, Unit } from '@/__generated__/globalTypes';
 import { CurrentPopup } from '@/queries/__generated__/CurrentPopup';
 import {OwnUser} from "@/queries/__generated__/OwnUser";
-=======
-import {getCurrentPopupQuery} from 'queries/popup';
-import getOwnUserQuery from 'queries/own-user';
-import {PopupType, Unit} from '__generated__/globalTypes';
-import {CurrentPopup} from 'queries/__generated__/CurrentPopup';
-import {OwnUser} from 'queries/__generated__/OwnUser';
->>>>>>> Add unit type
 
 export default {
   showLoginPopup: (

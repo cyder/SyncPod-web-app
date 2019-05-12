@@ -16,7 +16,7 @@ import {
   showJoinRoomMutation,
   showLoginPopupMutation,
   showSignupPopupMutation
-} from 'queries/popup';
+} from '@/queries/popup';
 import logoutMutation from '@/queries/logout';
 
 export default () => {
