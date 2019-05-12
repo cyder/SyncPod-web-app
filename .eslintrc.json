@@ -23,13 +23,7 @@
   },
   "settings": {
     "import/extensions": [".ts", ".tsx"],
-    "import/resolver": {
-      "typescript": {},
-      "node": {
-        "moduleDirectory": ["node_modules", "/"],
-        "extensions": [".ts", ".tsx"]
-      }
-    }
+    "import/resolver": "webpack"
   },
   "extends": [
     "plugin:react/recommended",
