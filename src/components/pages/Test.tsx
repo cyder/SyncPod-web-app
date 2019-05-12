@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { useMutation } from 'react-apollo-hooks';
 
-import { showLoginPopupMutation, showSignupPopupMutation } from 'queries/popup';
-import { ShowLoginPopup } from 'queries/__generated__/ShowLoginPopup';
-import { ShowSignupPopup } from 'queries/__generated__/ShowSignupPopup';
+import { ShowLoginPopup } from '@/queries/__generated__/ShowLoginPopup';
+import { ShowSignupPopup } from '@/queries/__generated__/ShowSignupPopup';
+import {
+  showLoginPopupMutation,
+  showSignupPopupMutation,
+} from '@/queries/popup';
 
 export default () => {
   const showLoginPopup = useMutation<ShowLoginPopup>(showLoginPopupMutation);

@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
 
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-
-import { color } from 'constants/styles';
+import SvgIcon from '@/components/atoms/Icons/SvgIcon';
+import { color } from '@/constants/styles';
 
 type TextInputType = 'text' | 'password' | 'email';
 

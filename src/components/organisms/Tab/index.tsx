@@ -1,10 +1,10 @@
 /** @jsx jsx */
 
-import { ReactNode, useState, useEffect } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { ReactNode, useEffect, useState } from 'react';
 
-import TabBar from 'components/organisms/Tab/TabBar';
-import ContentWrapper from 'components/organisms/Tab/ContentWrapper';
+import ContentWrapper from '@/components/organisms/Tab/ContentWrapper';
+import TabBar from '@/components/organisms/Tab/TabBar';
 
 export interface TabItem {
   title: string;

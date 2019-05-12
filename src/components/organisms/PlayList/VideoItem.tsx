@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import VideoThumbnail from 'components/molecules/Videos/VideoThumbnail';
-import PublishedDate from 'components/atoms/Date/PublishedDate';
+import PublishedDate from '@/components/atoms/Date/PublishedDate';
+import VideoThumbnail from '@/components/molecules/Videos/VideoThumbnail';
 
 export interface VideoData {
   id: string;

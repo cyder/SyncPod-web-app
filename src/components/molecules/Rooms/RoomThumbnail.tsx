@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import LazyLoadImage from 'components/atoms/Images/LazyLoadImage';
-import AspectRatio from 'components/atoms/Layouts/AspectRatio';
-import DefaultImage from 'components/atoms/Images/DefaultImage';
-import Card from 'components/atoms/Cards/Card';
-
-import { color } from 'constants/styles';
+import Card from '@/components/atoms/Cards/Card';
+import DefaultImage from '@/components/atoms/Images/DefaultImage';
+import LazyLoadImage from '@/components/atoms/Images/LazyLoadImage';
+import AspectRatio from '@/components/atoms/Layouts/AspectRatio';
+import { color } from '@/constants/styles';
 
 interface Video {
   title: string;

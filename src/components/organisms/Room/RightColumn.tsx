@@ -1,10 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import Tab from 'components/organisms/Tab';
-import Chat from 'components/organisms/Chat';
-import PlayList from 'components/organisms/PlayList';
+import Chat from '@/components/organisms/Chat';
+import PlayList from '@/components/organisms/PlayList';
+import Tab from '@/components/organisms/Tab';
 
 interface Props {
   className?: string;

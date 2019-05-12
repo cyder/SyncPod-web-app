@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { ReactNode, useState, useEffect, useRef, useCallback } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
-import SliderButton from 'components/molecules/Buttons/SliderButton';
-
-import { useResizeEvent } from 'util/hooks/window-events';
+import SliderButton from '@/components/molecules/Buttons/SliderButton';
+import { useResizeEvent } from '@/util/hooks/window-events';
 
 interface Props {
   children: ReactNode;

@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import UserIcon, { User } from 'components/atoms/Users/UserIcon';
-import ShortDate from 'components/atoms/Date/ShortDate';
-
-import { color } from 'constants/styles';
+import ShortDate from '@/components/atoms/Date/ShortDate';
+import UserIcon, { User } from '@/components/atoms/Users/UserIcon';
+import { color } from '@/constants/styles';
 
 export interface ChatData {
   id: string;

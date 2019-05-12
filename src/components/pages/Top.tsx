@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import RoomList, { RoomListItemProps } from 'components/organisms/RoomList';
-import MainFooter from 'components/molecules/Footers/MainFooter';
+import MainFooter from '@/components/molecules/Footers/MainFooter';
+import RoomList, { RoomListItemProps } from '@/components/organisms/RoomList';
 
 export default () => {
   const popularRooms: RoomListItemProps[] = [

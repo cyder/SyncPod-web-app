@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { useState, useCallback } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { useCallback, useState } from 'react';
 
-import { color } from 'constants/styles';
+import { color } from '@/constants/styles';
 
 export interface CheckBox {
   id: string;

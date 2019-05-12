@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SearchInput from 'components/organisms/VideoSearch/SearchInput';
-import VideoList from 'components/organisms/VideoSearch/VideoList';
-
-import { color, size, zIndex } from 'constants/styles';
+import SearchInput from '@/components/organisms/VideoSearch/SearchInput';
+import VideoList from '@/components/organisms/VideoSearch/VideoList';
+import { color, size, zIndex } from '@/constants/styles';
 
 interface Props {
   className?: string;

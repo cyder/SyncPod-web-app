@@ -1,8 +1,8 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import { color } from 'constants/styles';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

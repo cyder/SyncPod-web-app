@@ -1,10 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import RoomThumbnail from 'components/molecules/Rooms/RoomThumbnail';
-
-import { color } from 'constants/styles';
+import RoomThumbnail from '@/components/molecules/Rooms/RoomThumbnail';
+import { color } from '@/constants/styles';
 
 interface Props {
   message: string;

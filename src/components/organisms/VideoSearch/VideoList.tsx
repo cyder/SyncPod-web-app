@@ -1,11 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
+import EmptyItem from '@/components/organisms/VideoSearch/EmptyItem';
 import VideoItem, {
   VideoData,
-} from 'components/organisms/VideoSearch/VideoItem';
-import EmptyItem from 'components/organisms/VideoSearch/EmptyItem';
+} from '@/components/organisms/VideoSearch/VideoItem';
 
 interface Props {
   className?: string;

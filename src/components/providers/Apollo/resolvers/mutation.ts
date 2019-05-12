@@ -1,8 +1,8 @@
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-import { getCurrentPopupQuery } from 'queries/popup';
-import { PopupType } from '__generated__/globalTypes';
-import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
+import { PopupType } from '@/__generated__/globalTypes';
+import { CurrentPopup } from '@/queries/__generated__/CurrentPopup';
+import { getCurrentPopupQuery } from '@/queries/popup';
 
 export default {
   showLoginPopup: (

@@ -1,7 +1,7 @@
-import * as React from 'react';
 import { Global, css } from '@emotion/core';
+import * as React from 'react';
 
-import { color } from 'constants/styles';
+import { color } from '@/constants/styles';
 
 export default () => (
   <Global

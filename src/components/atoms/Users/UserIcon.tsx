@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import LazyLoadImage from 'components/atoms/Images/LazyLoadImage';
-import DefaultImage from 'components/atoms/Images/DefaultImage';
-
-import { color } from 'constants/styles';
+import DefaultImage from '@/components/atoms/Images/DefaultImage';
+import LazyLoadImage from '@/components/atoms/Images/LazyLoadImage';
+import { color } from '@/constants/styles';
 
 export interface User {
   id: string;

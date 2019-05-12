@@ -1,13 +1,13 @@
 /** @jsx jsx */
 
-import { useState, useCallback } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { useCallback, useState } from 'react';
 
-import Hoverable from 'components/atoms/Features/Hoverable';
-import VideoSearchThumbnail from 'components/organisms/VideoSearch/VideoSearchThumbnail';
+import Hoverable from '@/components/atoms/Features/Hoverable';
 import VideoSearchInfo, {
   VideoInfoData,
-} from 'components/organisms/VideoSearch/VideoSearchInfo';
+} from '@/components/organisms/VideoSearch/VideoSearchInfo';
+import VideoSearchThumbnail from '@/components/organisms/VideoSearch/VideoSearchThumbnail';
 
 export interface VideoData extends VideoInfoData {
   id: string;

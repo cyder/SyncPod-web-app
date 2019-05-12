@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import ProgressiveBar from 'components/atoms/Bars/ProgressiveBar';
-import FullscreenButton from 'components/molecules/Buttons/FullscreenButton';
-import SpeakerButton from 'components/molecules/Buttons/SpeakerButton';
-
-import { color } from 'constants/styles';
+import ProgressiveBar from '@/components/atoms/Bars/ProgressiveBar';
+import FullscreenButton from '@/components/molecules/Buttons/FullscreenButton';
+import SpeakerButton from '@/components/molecules/Buttons/SpeakerButton';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

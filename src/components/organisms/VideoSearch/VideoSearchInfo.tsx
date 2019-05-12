@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import PublishedDate from 'components/atoms/Date/PublishedDate';
-import OverflowHiddenText from 'components/atoms/Texts/OverflowHiddenText';
-
-import { color } from 'constants/styles';
+import PublishedDate from '@/components/atoms/Date/PublishedDate';
+import OverflowHiddenText from '@/components/atoms/Texts/OverflowHiddenText';
+import { color } from '@/constants/styles';
 
 export interface VideoInfoData {
   title: string;

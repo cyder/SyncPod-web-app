@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { useQuery } from 'react-apollo-hooks';
 
-import Wrapper, { PopupProps } from 'components/organisms/Popup/Wrapper';
-import Login from 'components/organisms/Popup/Login';
-import Signup from 'components/organisms/Popup/Signup';
-import JoinRoom from 'components/organisms/Popup/JoinRoom';
-import CreateRoom from 'components/organisms/Popup/CreateRoom';
-
-import { getCurrentPopupQuery } from 'queries/popup';
-import { PopupType } from '__generated__/globalTypes';
-import { CurrentPopup } from 'queries/__generated__/CurrentPopup';
+import { PopupType } from '@/__generated__/globalTypes';
+import CreateRoom from '@/components/organisms/Popup/CreateRoom';
+import JoinRoom from '@/components/organisms/Popup/JoinRoom';
+import Login from '@/components/organisms/Popup/Login';
+import Signup from '@/components/organisms/Popup/Signup';
+import Wrapper, { PopupProps } from '@/components/organisms/Popup/Wrapper';
+import { CurrentPopup } from '@/queries/__generated__/CurrentPopup';
+import { getCurrentPopupQuery } from '@/queries/popup';
 
 export default () => {
   const { data } = useQuery<CurrentPopup>(getCurrentPopupQuery);

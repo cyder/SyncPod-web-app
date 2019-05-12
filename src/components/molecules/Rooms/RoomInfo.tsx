@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import UserIcon, { User } from 'components/atoms/Users/UserIcon';
-import UserIconList from 'components/molecules/Users/UserIconList';
-import MultiLineText from 'components/atoms/Texts/MultiLineText';
-
-import { color } from 'constants/styles';
+import MultiLineText from '@/components/atoms/Texts/MultiLineText';
+import UserIcon, { User } from '@/components/atoms/Users/UserIcon';
+import UserIconList from '@/components/molecules/Users/UserIconList';
+import { color } from '@/constants/styles';
 
 export interface RoomInfoData {
   onlineUsers: User[];

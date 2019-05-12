@@ -1,10 +1,9 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SvgIconButton from 'components/molecules/Buttons/SvgIconButtonWithLabel';
-
-import { color } from 'constants/styles';
+import SvgIconButton from '@/components/molecules/Buttons/SvgIconButtonWithLabel';
+import { color } from '@/constants/styles';
 
 export interface RoomHeaderData {
   name: string;

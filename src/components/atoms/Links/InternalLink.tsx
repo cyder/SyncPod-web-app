@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { historyContext } from 'components/providers/BrowserHistory';
+import { historyContext } from '@/components/providers/BrowserHistory';
 
 export interface InternalLinkProps {
   className?: string;

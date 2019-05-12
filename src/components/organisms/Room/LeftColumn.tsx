@@ -1,13 +1,13 @@
 /** @jsx jsx */
 
+import { css, jsx } from '@emotion/core';
 import { useRef, useState } from 'react';
-import { jsx, css } from '@emotion/core';
 
-import RoomFooter from 'components/molecules/Footers/RoomFooter';
-import MainView, { RoomData } from 'components/organisms/Room/MainView';
-import VideoSearch from 'components/organisms/VideoSearch';
-import VideoWrapper from 'components/organisms/Room/VideoWrapper';
-import Video from 'components/organisms/Video';
+import RoomFooter from '@/components/molecules/Footers/RoomFooter';
+import MainView, { RoomData } from '@/components/organisms/Room/MainView';
+import VideoWrapper from '@/components/organisms/Room/VideoWrapper';
+import Video from '@/components/organisms/Video';
+import VideoSearch from '@/components/organisms/VideoSearch';
 
 interface Props {
   room: RoomData;

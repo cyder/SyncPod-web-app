@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SpeakerButton from 'components/molecules/Buttons/SpeakerButton';
-import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
-
-import { color } from 'constants/styles';
-import Center from 'components/atoms/Layouts/Center';
+import SvgIconButton from '@/components/atoms/Buttons/SvgIconButton';
+import Center from '@/components/atoms/Layouts/Center';
+import SpeakerButton from '@/components/molecules/Buttons/SpeakerButton';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

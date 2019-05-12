@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 
-import RightColumn from 'components/organisms/Room/RightColumn';
-import LeftColumn, { RoomData } from 'components/organisms/Room/LeftColumn';
-
-import { size } from 'constants/styles';
+import LeftColumn, { RoomData } from '@/components/organisms/Room/LeftColumn';
+import RightColumn from '@/components/organisms/Room/RightColumn';
+import { size } from '@/constants/styles';
 
 interface Props {
   roomKey: string;

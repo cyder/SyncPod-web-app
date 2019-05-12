@@ -1,10 +1,9 @@
 import * as pathToRegexp from 'path-to-regexp';
 
-import { Drop } from 'util/typescript';
-
 import InternalLink, {
   InternalLinkProps,
-} from 'components/atoms/Links/InternalLink';
+} from '@/components/atoms/Links/InternalLink';
+import { Drop } from '@/util/typescript';
 
 export default class Route<T extends object = {}> {
   public constructor(

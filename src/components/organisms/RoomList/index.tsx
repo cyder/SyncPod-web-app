@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
+import RoomEmptyItem from '@/components/molecules/Rooms/RoomEmptyItem';
 import RoomListItem, {
   RoomListItemProps,
-} from 'components/molecules/Rooms/RoomListItem';
-
-import { color } from 'constants/styles';
-import RoomEmptyItem from 'components/molecules/Rooms/RoomEmptyItem';
+} from '@/components/molecules/Rooms/RoomListItem';
+import { color } from '@/constants/styles';
 
 export interface RoomListProps {
   title: string;

@@ -2,8 +2,8 @@
 
 import { jsx } from '@emotion/core';
 
-import TextInput, { TextInputProps } from 'components/atoms/Forms/TextInput';
-import FormLabel, { FormLabelProps } from 'components/atoms/Forms/FormLabel';
+import FormLabel, { FormLabelProps } from '@/components/atoms/Forms/FormLabel';
+import TextInput, { TextInputProps } from '@/components/atoms/Forms/TextInput';
 
 type Props = TextInputProps & FormLabelProps;
 

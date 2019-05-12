@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import FooterMenu from 'components/molecules/Menus/FooterMenu';
-import AppInfo from 'components/molecules/AppInfos/AppInfo';
-import Copylight from 'components/atoms/Copylights/Copylight';
-
-import { color } from 'constants/styles';
+import Copylight from '@/components/atoms/Copylights/Copylight';
+import AppInfo from '@/components/molecules/AppInfos/AppInfo';
+import FooterMenu from '@/components/molecules/Menus/FooterMenu';
+import { color } from '@/constants/styles';
 
 interface Props {
   className?: string;

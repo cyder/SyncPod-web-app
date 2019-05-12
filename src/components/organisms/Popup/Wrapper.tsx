@@ -1,13 +1,12 @@
 /** @jsx jsx */
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
-import { jsx, css } from '@emotion/core';
 
-import Center from 'components/atoms/Layouts/Center';
-import FullScreen from 'components/atoms/FullScreens/BodyFullScreen';
-import SvgIconButton from 'components/atoms/Buttons/SvgIconButton';
-
-import { color, zIndex } from 'constants/styles';
-import { useClearPopup } from 'util/hooks/apollo';
+import SvgIconButton from '@/components/atoms/Buttons/SvgIconButton';
+import FullScreen from '@/components/atoms/FullScreens/BodyFullScreen';
+import Center from '@/components/atoms/Layouts/Center';
+import { color, zIndex } from '@/constants/styles';
+import { useClearPopup } from '@/util/hooks/apollo';
 
 export interface PopupProps {
   title: string;

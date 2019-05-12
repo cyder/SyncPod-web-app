@@ -1,13 +1,12 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import Card from 'components/atoms/Cards/Card';
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-import Center from 'components/atoms/Layouts/Center';
-import VideoThumbnail from 'components/molecules/Videos/VideoThumbnail';
-
-import { color } from 'constants/styles';
+import Card from '@/components/atoms/Cards/Card';
+import SvgIcon from '@/components/atoms/Icons/SvgIcon';
+import Center from '@/components/atoms/Layouts/Center';
+import VideoThumbnail from '@/components/molecules/Videos/VideoThumbnail';
+import { color } from '@/constants/styles';
 
 interface Props {
   title: string;

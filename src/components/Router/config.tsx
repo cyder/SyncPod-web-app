@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import Top from 'components/pages/Top';
-import Room from 'components/pages/Room';
-import Test from 'components/pages/Test';
-import NotFound from 'components/pages/NotFound';
-import Route from 'components/Router/route';
+import Route from '@/components/Router/route';
+import NotFound from '@/components/pages/NotFound';
+import Room from '@/components/pages/Room';
+import Test from '@/components/pages/Test';
+import Top from '@/components/pages/Top';
 
 export const topRoute = new Route('/', () => <Top />);
 export const roomRoute = new Route(

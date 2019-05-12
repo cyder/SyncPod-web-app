@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import InlineSvgIcon from 'components/atoms/Icons/InlineSvgIcon';
-import BaseButton from 'components/atoms/Buttons/BaseButton';
-
-import { color } from 'constants/styles';
+import BaseButton from '@/components/atoms/Buttons/BaseButton';
+import InlineSvgIcon from '@/components/atoms/Icons/InlineSvgIcon';
+import { color } from '@/constants/styles';
 
 interface Props {
   direction: 'left' | 'right';

@@ -1,14 +1,14 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useMutation } from 'react-apollo-hooks';
 
-import { clearPopupMutation } from 'queries/popup';
-import LoginMutation from 'queries/login';
-import SignUpMutation from 'queries/signup';
-import GetOwnUser from 'queries/own-user';
-import { ClearPopup } from 'queries/__generated__/ClearPopup';
-import { Login, LoginVariables } from 'queries/__generated__/Login';
-import { Signup, SignupVariables } from 'queries/__generated__/Signup';
-import { OwnUser } from 'queries/__generated__/OwnUser';
+import { ClearPopup } from '@/queries/__generated__/ClearPopup';
+import { Login, LoginVariables } from '@/queries/__generated__/Login';
+import { OwnUser } from '@/queries/__generated__/OwnUser';
+import { Signup, SignupVariables } from '@/queries/__generated__/Signup';
+import LoginMutation from '@/queries/login';
+import GetOwnUser from '@/queries/own-user';
+import { clearPopupMutation } from '@/queries/popup';
+import SignUpMutation from '@/queries/signup';
 
 export const useClearPopup = (): (() => void) => {
   const clearPopup = useMutation<ClearPopup>(clearPopupMutation);

@@ -1,8 +1,8 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import TextInput from 'components/atoms/Forms/TextInput';
+import TextInput from '@/components/atoms/Forms/TextInput';
 
 interface Props {
   className?: string;

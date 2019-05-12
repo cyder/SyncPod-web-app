@@ -1,14 +1,12 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
-
+import { css, jsx } from '@emotion/core';
 import * as React from 'react';
 
-import BrowserFullScreen from 'components/atoms/FullScreens/BrowserFullScreen';
-import Controller from 'components/organisms/Video/Controller';
-import YouTubePlayer from 'components/organisms/Video/YouTubePlayer';
-
-import PlayerMode from 'components/organisms/Video/PlayerMode';
+import BrowserFullScreen from '@/components/atoms/FullScreens/BrowserFullScreen';
+import Controller from '@/components/organisms/Video/Controller';
+import PlayerMode from '@/components/organisms/Video/PlayerMode';
+import YouTubePlayer from '@/components/organisms/Video/YouTubePlayer';
 
 interface Props {
   className?: string;

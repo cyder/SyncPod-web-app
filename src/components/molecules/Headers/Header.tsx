@@ -1,11 +1,10 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
-import SvgIcon from 'components/atoms/Icons/SvgIcon';
-import HeaderMenu from 'components/molecules/Menus/HeaderMenu';
-
-import { color, size, zIndex } from 'constants/styles';
+import SvgIcon from '@/components/atoms/Icons/SvgIcon';
+import HeaderMenu from '@/components/molecules/Menus/HeaderMenu';
+import { color, size, zIndex } from '@/constants/styles';
 
 export default () => (
   <div

@@ -1,12 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
 import BaseButton, {
   BaseButtonProps,
-} from 'components/atoms/Buttons/BaseButton';
-
-import { color } from 'constants/styles';
+} from '@/components/atoms/Buttons/BaseButton';
+import { color } from '@/constants/styles';
 
 interface Props extends BaseButtonProps {
   backgroundColor?: string;

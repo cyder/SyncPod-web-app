@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
-import { useRef, useState, useEffect } from 'react';
-import { jsx, css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { useEffect, useRef, useState } from 'react';
 
-import MultiLineText from 'components/atoms/Texts/MultiLineText';
+import MultiLineText from '@/components/atoms/Texts/MultiLineText';
 
 interface Props {
   lineHeight: number;
