@@ -15,6 +15,7 @@
     "@types/graphql": "14.0.7",
     "@types/history": "4.7.2",
     "@types/node": "11.11.5",
+    "@types/react-helmet": "^5.0.8",
     "@types/react-youtube": "^7.6.1",
     "@typescript-eslint/eslint-plugin": "1.2.0",
     "@typescript-eslint/parser": "1.2.0",
@@ -60,6 +61,7 @@
     "react": "16.8.4",
     "react-apollo-hooks": "0.4.3",
     "react-dom": "16.8.4",
+    "react-helmet": "^5.2.1",
     "react-youtube": "^7.9.0",
     "reset-css": "^4.0.1"
   }
