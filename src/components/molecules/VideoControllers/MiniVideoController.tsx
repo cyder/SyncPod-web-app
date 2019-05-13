@@ -1,10 +1,12 @@
 /** @jsx jsx */
 
 import { css, jsx } from '@emotion/core';
+import { useCallback, useContext } from 'react';
 
 import SvgIconButton from '@/components/atoms/Buttons/SvgIconButton';
 import Center from '@/components/atoms/Layouts/Center';
 import SpeakerButton from '@/components/molecules/Buttons/SpeakerButton';
+import { editingContet } from '@/components/organisms/Room/Provider';
 import { color } from '@/constants/styles';
 
 interface Props {
@@ -12,6 +14,11 @@ interface Props {
 }
 
 export default ({ className }: Props) => {
+  const { setIsEditing } = useContext(editingContet);
+  const handleExpandButton = useCallback(() => {
+    setIsEditing(false);
+  }, []);
+
   const buttonStyle = css`
     padding: 2.5rem;
     height: 8rem;
@@ -26,7 +33,11 @@ export default ({ className }: Props) => {
       className={className}
     >
       <SpeakerButton css={buttonStyle} />
-      <SvgIconButton css={buttonStyle} icon="openFullscreen" />
+      <SvgIconButton
+        onClick={handleExpandButton}
+        css={buttonStyle}
+        icon="openFullscreen"
+      />
     </Center>
   );
 };
