@@ -1,9 +1,9 @@
 /** @jsx jsx */
 
 import { css, jsx } from '@emotion/core';
-import * as React from 'react';
 
 import LeftColumn, { RoomData } from '@/components/organisms/Room/LeftColumn';
+import Provider from '@/components/organisms/Room/Provider';
 import RightColumn from '@/components/organisms/Room/RightColumn';
 import { size } from '@/constants/styles';
 
@@ -12,7 +12,6 @@ interface Props {
 }
 
 export default ({ roomKey }: Props) => {
-  const [isEditing, setIsEditing] = React.useState(false);
   const room: RoomData = {
     roomKey,
     name: 'ルーム名',
@@ -75,39 +74,39 @@ export default ({ roomKey }: Props) => {
   };
 
   return (
-    <div
-      css={css`
-        display: flex;
-        width: 100%;
-        max-width: 1600px;
-        margin: auto;
-        padding: 0 1rem;
-      `}
-    >
+    <Provider>
       <div
         css={css`
-          flex: 1;
-          min-width: 0;
+          display: flex;
+          width: 100%;
+          max-width: 1600px;
+          margin: auto;
+          padding: 0 1rem;
         `}
       >
-        <LeftColumn room={room} isEditing={isEditing} />
-      </div>
-      <div
-        css={css`
-          flex: 0 0 360px;
-          height: calc(100vh - ${size.HEADER_HEIGHT});
-          position: sticky;
-          top: ${size.HEADER_HEIGHT};
-        `}
-      >
-        <RightColumn
+        <div
           css={css`
-            height: 100%;
+            flex: 1;
+            min-width: 0;
           `}
-          isEditing={isEditing}
-          setIsEditing={setIsEditing}
-        />
+        >
+          <LeftColumn room={room} />
+        </div>
+        <div
+          css={css`
+            flex: 0 0 360px;
+            height: calc(100vh - ${size.HEADER_HEIGHT});
+            position: sticky;
+            top: ${size.HEADER_HEIGHT};
+          `}
+        >
+          <RightColumn
+            css={css`
+              height: 100%;
+            `}
+          />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 };

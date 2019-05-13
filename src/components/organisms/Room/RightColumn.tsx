@@ -8,11 +8,9 @@ import Tab from '@/components/organisms/Tab';
 
 interface Props {
   className?: string;
-  isEditing: boolean;
-  setIsEditing(flag: boolean): void;
 }
 
-export default ({ className, isEditing, setIsEditing }: Props) => (
+export default ({ className }: Props) => (
   <div
     className={className}
     css={css`
@@ -26,9 +24,7 @@ export default ({ className, isEditing, setIsEditing }: Props) => (
         { title: 'チャット', component: <Chat /> },
         {
           title: 'プレイリスト',
-          component: (
-            <PlayList isEditing={isEditing} setIsEditing={setIsEditing} />
-          ),
+          component: <PlayList />,
         },
       ]}
     />
