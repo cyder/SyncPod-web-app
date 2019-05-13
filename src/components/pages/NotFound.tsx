@@ -2,6 +2,7 @@
 
 import { css, jsx } from '@emotion/core';
 
+import { topRoute } from '@/components/Router/config';
 import FilledButton from '@/components/atoms/Buttons/FilledButton';
 import SvgIcon from '@/components/atoms/Icons/SvgIcon';
 import Center from '@/components/atoms/Layouts/Center';
@@ -47,6 +48,8 @@ export default () => (
         }
       </MultiLineText>
     </div>
-    <FilledButton>TOPに戻る</FilledButton>
+    <topRoute.Link params={{}}>
+      <FilledButton>TOPに戻る</FilledButton>
+    </topRoute.Link>
   </Center>
 );
