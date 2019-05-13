@@ -7,6 +7,7 @@ export default {
   BLACK_DARK: '#000000',
   PRIMALY_DARK: '#F05C00',
   PRIMALY: '#FBB143',
+  PRIMALY_LIGHT: '#F1E2B9',
 
   TRANSPARENT_GRAY_DARK: 'rgba(0, 0, 0, 0.8)',
   TRANSPARENT_GRAY_MEDIUM: 'rgba(0, 0, 0, 0.5)',
