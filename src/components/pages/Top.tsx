@@ -2,6 +2,7 @@
 
 import { css, jsx } from '@emotion/core';
 
+import Head from '@/components/atoms/Heads/Head';
 import MainFooter from '@/components/molecules/Footers/MainFooter';
 import RoomList, { RoomListItemProps } from '@/components/organisms/RoomList';
 
@@ -61,6 +62,7 @@ export default () => {
 
   return (
     <div>
+      <Head />
       <div
         css={css`
           max-width: 140rem;
