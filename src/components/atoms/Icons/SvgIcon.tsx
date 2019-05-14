@@ -19,7 +19,8 @@ export type Icon =
   | 'openFullscreen'
   | 'closeFullscreen'
   | 'speaker'
-  | 'speakerMute';
+  | 'speakerMute'
+  | 'notFound';
 
 const icons: Record<Icon, string> = {
   logo: '/svg/logo.svg',
@@ -39,6 +40,7 @@ const icons: Record<Icon, string> = {
   closeFullscreen: '/svg/close-fullscreen.svg',
   speaker: '/svg/speaker.svg',
   speakerMute: '/svg/speaker-mute.svg',
+  notFound: '/svg/not-found.svg',
 };
 
 interface Props {
