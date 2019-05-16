@@ -22,50 +22,60 @@ export default ({ roomKey }: Props) => {
     },
     onlineUsers: [
       {
-        id: 'user1',
+        id: 1,
         name: 'ユーザ1',
+        isOnline: true,
         icon:
           'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
       },
       {
-        id: 'user2',
+        id: 2,
         name: 'ユーザ2',
+        isOnline: true,
       },
       {
-        id: 'user3',
+        id: 3,
         name: 'ユーザ3',
+        isOnline: true,
       },
       {
-        id: 'user4',
+        id: 4,
         name: 'ユーザ4',
+        isOnline: true,
       },
       {
-        id: 'user5',
+        id: 5,
         name: 'ユーザ5',
+        isOnline: true,
       },
       {
-        id: 'user6',
+        id: 6,
         name: 'ユーザ6',
+        isOnline: true,
       },
       {
-        id: 'user7',
+        id: 7,
         name: 'ユーザ7',
+        isOnline: true,
       },
       {
-        id: 'user8',
+        id: 8,
         name: 'ユーザ8',
+        isOnline: true,
       },
       {
-        id: 'user9',
+        id: 9,
         name: 'ユーザ9',
+        isOnline: true,
       },
       {
-        id: 'user10',
+        id: 10,
         name: 'ユーザ10',
+        isOnline: true,
       },
     ],
     createUser: {
-      id: 'room owner',
+      id: 11,
       name: 'ユーザ名',
       icon:
         'https://pbs.twimg.com/profile_images/1085340387277828096/kEcxyrYF_400x400.jpg',
