@@ -7,11 +7,9 @@ import VideoList from '@/components/organisms/PlayList/VideoList';
 
 interface Props {
   className?: string;
-  isEditing: boolean;
-  setIsEditing(flag: boolean): void;
 }
 
-export default ({ className, isEditing, setIsEditing }: Props) => (
+export default ({ className }: Props) => (
   <div
     className={className}
     css={css`
@@ -20,7 +18,7 @@ export default ({ className, isEditing, setIsEditing }: Props) => (
       height: 100%;
     `}
   >
-    <EditButton isEditing={isEditing} setIsEditing={setIsEditing} />
+    <EditButton />
     <VideoList
       css={css`
         flex: 1 1 0;
